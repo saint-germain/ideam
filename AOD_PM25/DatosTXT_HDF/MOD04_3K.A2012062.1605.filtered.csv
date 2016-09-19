@@ -1,0 +1,3 @@
+,Year,Month,Day,Hour,Minute,Second,Latitude,Longitude,Optical_Depth_Land_And_Ocean,Image_Optical_Depth_Land_And_Ocean,Land_sea_Flag,Land_Ocean_Quality_Flag
+99205,2012.0,3.0,2.0,16.0,6.0,44.0,5.16461086273,-74.5802688599,0.433000020566,0.433000020566,1.0,3.0
+99656,2012.0,3.0,2.0,16.0,6.0,44.0,5.18680906296,-74.5811309814,0.326000015484,0.326000015484,1.0,3.0
