@@ -20,10 +20,11 @@ for isfile in os.listdir("../Datos_Insitu/"):
     if isfile.endswith(".csv") and not(isfile.startswith(".")):
         isfilelist.append(isfile)
 for isfile in isfilelist:
+# Buscamos los datos in situ
     filename="../Datos_Insitu/"+isfile
-    df=pd.read_csv(filename,skiprows=2)
-    df=df.drop(df.index[[0]])
-    df=df.drop(df.index[range(len(df)-8,len(df))])
+    df=pd.read_csv(filename, names=["No","date","PM25"]) # con el formato alex
+    df=df.drop(df.index[[0]]) # quitamos el encabezado
+# Filtramos los datos invalidos
     filter=(df.PM25=='Sin Data')
     df1=df[~filter]
     filter2=(df1.PM25=='InVld')
@@ -34,11 +35,17 @@ for isfile in isfilelist:
     df1=df1[~filter4]
     filter5=(df1.PM25=='<Muestra')
     df1=df1[~filter5]
+# Filtramos los NaN
+    filter6=np.isnan(pd.to_numeric(df1.PM25, errors='coerce'))
+    df1=df1[~filter6]
+# Encontramos el total de datos invalidos por filtro y los sumamos
     invdata=filter.sum()+filter2.sum()+filter3.sum()+filter4.sum()+filter5.sum()
     print "Hay %s datos invalidos de %s datos en %s" %(invdata,len(df),isfile)
+# Si todos los datos estan mal, rechazamos ese in situ para esa estacion
     if(invdata==len(df)):
         print isfile+" no sera incluido en el analisis."
-    if(invdata!=len(df)):
+# Bloque de busqueda de archivos satelitales (una busqueda por cada in situ)
+    if(invdata!=len(df)): # si hay datos buenos en el in situ, continua
         satfilelist=[]
         pm25list=[]
         datelist=[]
@@ -47,11 +54,12 @@ for isfile in isfilelist:
         estcerc=[]
         estmed=[]
         for satfile in os.listdir("."):
-            if satfile.endswith(".csv") and satfile[10:14]==isfile[-8:-4]:
+            if satfile.endswith(".csv") and satfile[10:14]==isfile[-8:-4]: # Aqui encontramos el ano del in situ y lo comparamos con los archivos satelitales que sean de ese mismo ano
     #            print satfile
                 satfilelist.append(satfile)
         if len(satfilelist)==0 :
             print "No hay archivos de MODIS para el %s" % isfile[-8:-4]
+# Miramos la lista de datos disponibles de MODIS para ese ano y encontramos la fecha de cada uno con su nombre respectivo
         for satfile in satfilelist:
             success=False
             sdf=pd.read_csv(satfile)
@@ -69,14 +77,15 @@ for isfile in isfilelist:
             dlist=[]
             pmlist=[]
 
-            trange=timedelta(minutes=30)
+            trange=timedelta(minutes=30) # dejamos media hora antes o despues para encontrar datos validos
             for i in range(len(df1)):
-                date=(df1["Fecha & Hora"].iloc[i])
-                day=int(date[0:2])
-                month=int(date[3:5])
-                year=int(date[6:10])
-                hour=int(date[11:13])
-                minute=int(date[14:16])
+# Pasamos "date" a series de tiempo
+                date=(df1["date"].iloc[i])
+                day=pd.to_datetime(date).day
+                month=pd.to_datetime(date).month
+                year=pd.to_datetime(date).year
+                hour=pd.to_datetime(date).hour
+                minute=pd.to_datetime(date).minute
                 if hour < 24 :
                     isdate=datetime(year,month,day,hour,minute)
                 if satdate-trange <= isdate <=satdate+trange:
