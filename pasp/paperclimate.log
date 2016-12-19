@@ -1,0 +1,213 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.10.14)  19 DEC 2016 17:03
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**paperclimate.tex
+(./paperclimate.tex
+LaTeX2e <2011/06/27>
+Babel <3.9h> and hyphenation patterns for 2 languages loaded.
+(./iopart.cls
+Document Class: iopart 1996/06/10 v0.0 IOP Journals LaTeX article class
+(./iopart12.clo
+File: iopart12.clo 1997/01/15 v1.0 LaTeX2e file (size option)
+)
+\c@jnl=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\indentedwidth=\skip43
+\mathindent=\dimen102
+\c@eqnval=\count87
+) (./harvard.sty
+Package: harvard 
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/units/nicefrac.sty
+Package: nicefrac 1998/08/04 v0.9b Nice fractions
+\L@UnitsRaiseDisplaystyle=\skip44
+\L@UnitsRaiseTextstyle=\skip45
+\L@UnitsRaiseScriptstyle=\skip46
+)
+(./paperclimate.aux)
+\openout1 = `paperclimate.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+Missing character: There is no Â in font cmbx12!
+Missing character: There is no ¬ in font cmbx12!
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 15.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 15.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 15.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 16.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 16.
+
+
+LaTeX Warning: Reference `jlab1' on page 1 undefined on input line 37.
+
+
+LaTeX Warning: Citation 'nakano' on page 1 undefined on input line 71.
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ­ in font cmr12!
+
+
+LaTeX Warning: Reference `totmap' on page 2 undefined on input line 76.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
+
+ []
+
+
+LaTeX Warning: Reference `bic' on page 3 undefined on input line 111.
+
+
+LaTeX Warning: Reference `clusth' on page 3 undefined on input line 111.
+
+
+LaTeX Warning: Reference `clustb' on page 3 undefined on input line 111.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 134--135
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 136--137
+
+ []
+
+
+LaTeX Warning: Reference `figelev' on page 4 undefined on input line 138.
+
+[4] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 191--192
+
+ []
+
+
+LaTeX Warning: Reference `mapsl' on page 6 undefined on input line 202.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 202--203
+
+ []
+
+
+LaTeX Warning: Reference `73sl' on page 6 undefined on input line 204.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--205
+
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 206--207
+
+ []
+
+
+LaTeX Warning: Reference `boycun' on page 7 undefined on input line 208.
+
+
+LaTeX Warning: Reference `biglatlon' on page 7 undefined on input line 208.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--209
+
+ []
+
+
+LaTeX Warning: Reference `gmmlatlon' on page 7 undefined on input line 210.
+
+
+LaTeX Warning: Reference `latlonreg' on page 7 undefined on input line 210.
+
+
+LaTeX Warning: Reference `lasabana' on page 7 undefined on input line 214.
+
+[7]
+
+LaTeX Warning: Reference `villadeley' on page 8 undefined on input line 223.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 238--239
+
+ []
+
+[8] (./paperclimate.bbl) [9] (./paperclimate.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 738 strings out of 495028
+ 6511 string characters out of 6181496
+ 64762 words of memory out of 5000000
+ 4005 multiletter control sequences out of 15000+600000
+ 9273 words of font info for 33 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 22i,8n,22p,1303b,335s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
+0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on paperclimate.pdf (9 pages, 217734 bytes).
+PDF statistics:
+ 98 PDF objects out of 1000 (max. 8388607)
+ 70 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

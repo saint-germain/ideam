@@ -1,0 +1,23 @@
+\begin{thebibliography}{xx}
+
+\harvarditem{Pedregosa et~al.}{2011}{sklearn}
+Pedregosa F, Varoquaux G, Gramfort A, Michel V, Thirion B, Grisel O, Blondel M,
+  Prettenhofer P, Weiss R, Dubourg V, Vanderplas J, Passos A, Cournapeau D,
+  Brucher M, Perrot M \harvardand\ Duchesnay E  2011 {\em Journal of Machine
+  Learning Research} {\bf 12},~2825--2830.
+
+\harvarditem{Reynolds}{2009}{gmm}
+Reynolds D  2009 Springer US Boston, MA pp.~659--663.
+\newline\harvardurl{"http://dx.doi.org/10.1007/978-0-387-73003-5\_196"}
+
+\harvarditem{Schwarz}{1978}{bicref}
+Schwarz G  1978 {\em Ann. Statist.} {\bf 6}(2),~461--464.
+\newline\harvardurl{http://dx.doi.org/10.1214/aos/1176344136}
+
+\harvarditem{Shaw \harvardand\ Jebara}{2009}{embed}
+Shaw B \harvardand\ Jebara T  2009 {\em in} `Proceedings of the 26th Annual
+  International Conference on Machine Learning' ICML '09 ACM New York, NY, USA
+  pp.~937--944.
+\newline\harvardurl{http://doi.acm.org/10.1145/1553374.1553494}
+
+\end{thebibliography}
