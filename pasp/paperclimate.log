@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.10.14)  19 DEC 2016 17:03
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.10.14)  20 DEC 2016 16:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -36,6 +36,90 @@ Package: nicefrac 1998/08/04 v0.9b Nice fractions
 \L@UnitsRaiseTextstyle=\skip45
 \L@UnitsRaiseScriptstyle=\skip46
 )
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count88
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf.sty
+Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+)))
 (./paperclimate.aux)
 \openout1 = `paperclimate.aux'.
 
@@ -51,6 +135,21 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
+
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count89
+\scratchdimen=\dimen105
+\scratchbox=\box26
+\nofMPsegments=\count90
+\nofMParguments=\count91
+\everyMPshowfont=\toks15
+\MPscratchCnt=\count92
+\MPscratchDim=\dimen106
+\MPnumerator=\count93
+\makeMPintoPDFobject=\count94
+\everyMPtoPDFconversion=\toks16
+)
 Missing character: There is no Â in font cmbx12!
 Missing character: There is no ¬ in font cmbx12!
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -84,111 +183,128 @@ Underfull \hbox (badness 10000) in paragraph at lines 76--77
 
  []
 
+Package epstopdf Info: Source file: <totmap.eps>
+(epstopdf)                    date: 2016-12-20 15:31:36
+(epstopdf)                    size: 428021 bytes
+(epstopdf)             Output file: <totmap-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-12-20 15:36:48
+(epstopdf)                    size: 2428648 bytes
+(epstopdf)             Command: <repstopdf --outfile=totmap-eps-converted-to.pd
+f totmap.eps>
+(epstopdf)             \includegraphics on input line 80.
+Package epstopdf Info: Output file is already uptodate.
+<totmap-eps-converted-to.pdf, id=15, 433.62pt x 433.62pt>
+File: totmap-eps-converted-to.pdf Graphic file (type pdf)
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--100
+<use totmap-eps-converted-to.pdf>
+Package pdftex.def Info: totmap-eps-converted-to.pdf used on input line 80.
+(pdftex.def)             Requested size: 346.89647pt x 346.89647pt.
 
- []
-
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 109--110
-
- []
-
-
-LaTeX Warning: Reference `bic' on page 3 undefined on input line 111.
-
-
-LaTeX Warning: Reference `clusth' on page 3 undefined on input line 111.
-
-
-LaTeX Warning: Reference `clustb' on page 3 undefined on input line 111.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 111--112
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
 
  []
 
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 134--135
+[2] [3 <./totmap-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 136--137
+LaTeX Warning: Reference `bic' on page 4 undefined on input line 119.
+
+
+LaTeX Warning: Reference `clusth' on page 4 undefined on input line 119.
+
+
+LaTeX Warning: Reference `clustb' on page 4 undefined on input line 119.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
 
  []
 
 
-LaTeX Warning: Reference `figelev' on page 4 undefined on input line 138.
+Underfull \hbox (badness 10000) in paragraph at lines 142--143
 
-[4] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 191--192
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 144--145
 
  []
 
 
-LaTeX Warning: Reference `mapsl' on page 6 undefined on input line 202.
+LaTeX Warning: Reference `figelev' on page 5 undefined on input line 146.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 202--203
-
- []
-
-
-LaTeX Warning: Reference `73sl' on page 6 undefined on input line 204.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 204--205
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 199--200
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 206--207
+
+LaTeX Warning: Reference `mapsl' on page 7 undefined on input line 210.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 210--211
 
  []
 
 
-LaTeX Warning: Reference `boycun' on page 7 undefined on input line 208.
+LaTeX Warning: Reference `73sl' on page 7 undefined on input line 212.
 
 
-LaTeX Warning: Reference `biglatlon' on page 7 undefined on input line 208.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 208--209
+Underfull \hbox (badness 10000) in paragraph at lines 212--213
 
  []
 
 
-LaTeX Warning: Reference `gmmlatlon' on page 7 undefined on input line 210.
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
+
+ []
 
 
-LaTeX Warning: Reference `latlonreg' on page 7 undefined on input line 210.
+LaTeX Warning: Reference `boycun' on page 7 undefined on input line 216.
 
 
-LaTeX Warning: Reference `lasabana' on page 7 undefined on input line 214.
+LaTeX Warning: Reference `biglatlon' on page 7 undefined on input line 216.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
+
+ []
 
 [7]
 
-LaTeX Warning: Reference `villadeley' on page 8 undefined on input line 223.
+LaTeX Warning: Reference `gmmlatlon' on page 8 undefined on input line 218.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 238--239
+LaTeX Warning: Reference `latlonreg' on page 8 undefined on input line 218.
+
+
+LaTeX Warning: Reference `lasabana' on page 8 undefined on input line 222.
+
+
+LaTeX Warning: Reference `villadeley' on page 8 undefined on input line 231.
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 246--247
 
  []
 
-[8] (./paperclimate.bbl) [9] (./paperclimate.aux)
+(./paperclimate.bbl) [9] (./paperclimate.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 738 strings out of 495028
- 6511 string characters out of 6181496
- 64762 words of memory out of 5000000
- 4005 multiletter control sequences out of 15000+600000
+ 2000 strings out of 495028
+ 25486 string characters out of 6181496
+ 90030 words of memory out of 5000000
+ 5200 multiletter control sequences out of 15000+600000
  9273 words of font info for 33 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 22i,8n,22p,1303b,335s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,8n,23p,1303b,351s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
@@ -204,10 +320,10 @@ cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
 hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on paperclimate.pdf (9 pages, 217734 bytes).
+Output written on paperclimate.pdf (9 pages, 2644400 bytes).
 PDF statistics:
- 98 PDF objects out of 1000 (max. 8388607)
- 70 compressed objects within 1 object stream
+ 128 PDF objects out of 1000 (max. 8388607)
+ 76 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

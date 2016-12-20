@@ -2,8 +2,8 @@
 \newcommand{\gguide}{{\it Preparing graphics for IOP Publishing journals}}
 \usepackage{harvard} 
 \usepackage{nicefrac} 
-
-
+\usepackage{graphicx}
+\usepackage{epstopdf}
 %Uncomment next line if AMS fonts required
 %\usepackage{iopams}  
 \begin{document}
@@ -74,6 +74,14 @@ The \verb"iopart" \LaTeXe\ article class file is provided to help authors prepar
 \section{Methods}
 
 The meteorological data used in this study was gathered for 30 years (1980-2010) in 2046 Instituto de Hidrolog\'ia, Meteorología y Estudios Ambientales (IDEAM) weather stations across Colombia (Figure \ref{totmap}). The  variables that we considered relevant to our work were: Precipitation (mm/mo), Rainy Days (d/mo),  Relative Humidity (\%), and Sunshine (h/d). These variables are reported as multi-annual monthly data, i.e. each variable is reported monthly from January to December averaged over the 1980-2010 range. For precipitation, each monthly datum corresponds to the cumulative monthly value.  For rainy days, each monthly datum corresponds to the number of rainy days for that month.  For relative humidity, each monthly datum corresponds to the  average daily value averaged over each month. For sunshine, each monthly datum corresponds to the cumulative daily value averaged over each month. All stations reported precipitation values, although only 2002 reported rainy days values, 445 reported relative humidity values, and 336 reported sunshine values. This means that not all available stations registered all meteorological variables relevant to this study. We classify stations according to which variables they measured (Table \ref{tabstype}).\\
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.8]{totmap.eps}
+\caption{Say What}
+\end{center}
+\end{figure}
+
 
 \begin{table}
 \caption{\label{tabstype}Types of stations classified according to measured variables.}
