@@ -1,0 +1,22 @@
+id,label,timeset,weight<links>,score<avg._citations>,cluster,weight<occurrences>,score<avg._norm._citations>,weight<total_link_strength>,score<avg._pub._year>
+1.0,absorption,,3.0,30.5,5.0,2.0,0.9362,5.0,2007.5
+6.0,atmospheric effects,,3.0,10.1667,4.0,6.0,1.0789,7.0,2011.5
+7.0,atmospheric measurements,,3.0,74.3333,1.0,3.0,1.7223,5.0,2005.6667
+9.0,atmospheric propagation,,1.0,43.5,1.0,2.0,1.2857,1.0,2011.5
+19.0,continuum,,3.0,30.5,5.0,2.0,0.9362,5.0,2007.5
+38.0,integrated liquid water,,2.0,1.5,3.0,2.0,0.4286,3.0,2010.0
+39.0,integrated water vapor,,2.0,1.5,3.0,2.0,0.4286,3.0,2010.0
+50.0,microwave radiometry,,3.0,17.25,1.0,4.0,0.7793,6.0,2005.25
+52.0,middle atmosphere,,2.0,37.0,2.0,2.0,1.7228,2.0,2005.0
+60.0,millimeter-wave radiometry,,2.0,11.0,3.0,3.0,0.2884,5.0,2003.6667
+75.0,radiative transfer,,2.0,36.5,4.0,2.0,0.5399,2.0,2008.5
+78.0,radio astronomy,,2.0,56.0,1.0,3.0,1.589,2.0,2010.0
+82.0,radiometer,,2.0,4.25,2.0,4.0,0.6018,4.0,2011.25
+84.0,radiosonde,,3.0,1.5,2.0,2.0,0.6,3.0,2007.5
+88.0,remote sensing,,6.0,13.125,3.0,8.0,0.5241,14.0,2005.25
+90.0,satellite communication,,2.0,3.5,1.0,2.0,0.7,2.0,2015.0
+95.0,site testing,,3.0,12.0,4.0,5.0,1.0146,7.0,2010.6
+100.0,submillimeter,,3.0,23.3333,4.0,3.0,1.0051,3.0,2008.3333
+109.0,terahertz,,5.0,17.6667,5.0,3.0,0.681,5.0,2011.3333
+118.0,water vapor,,9.0,16.7273,2.0,11.0,0.8817,17.0,2005.5455
+120.0,water vapour,,3.0,18.0,2.0,3.0,0.5698,3.0,2006.3333

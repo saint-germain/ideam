@@ -1,0 +1,156 @@
+id,label,timeset,weight<links>,weight<citations>,cluster,weight<total_link_strength>
+38.0,"alduchov oa, 1996, j appl meteorol, v35, p601, doi 10.1175/1520-0450(1996)035<0601:imfaos>2.0.co;2",,6.0,2.0,1.0,6.0
+66.0,"basili p, 2001, ieee t geosci remote, v39, p2436, doi 10.1109/36.964980",,14.0,2.0,4.0,14.0
+76.0,"bauer a, 1993, j quant spectrosc ra, v50, p463, doi 10.1016/0022-4073(93)90039-k",,38.0,3.0,2.0,57.0
+77.0,"bauer a, 1995, j quant spectrosc ra, v53, p411, doi 10.1016/0022-4073(95)90016-0",,26.0,2.0,2.0,32.0
+80.0,"bauer a, 1998, j quant spectrosc ra, v59, p273, doi 10.1016/s0022-4073(97)00111-8",,31.0,2.0,2.0,39.0
+111.0,"bevis m, 1992, j geophys res-atmos, v97, p15787",,14.0,3.0,3.0,17.0
+112.0,"bevis m, 1994, j appl meteorol, v33, p379, doi 10.1175/1520-0450(1994)033<0379:gmmzwd>2.0.co;2",,21.0,3.0,3.0,22.0
+144.0,"borysow a, 1986, astrophys j, v311, p1043, doi 10.1086/164841",,33.0,2.0,2.0,50.0
+149.0,"brasseur g p, 1999, atmospheric chem glo",,15.0,2.0,4.0,19.0
+166.0,"buehler sa, 2005, j quant spectrosc ra, v91, p65, doi 10.1016/j.jqsrt.2004.05.051",,18.0,2.0,4.0,18.0
+176.0,"bussmann rs, 2005, astrophys j, v622, p1343, doi 10.1086/427935",,17.0,2.0,1.0,17.0
+178.0,"bustos r, 2014, publ astron soc pac, v126, p1126, doi 10.1086/679330",,24.0,2.0,1.0,25.0
+182.0,"butchart n, 1986, j atmos sci, v43, p1319, doi 10.1175/1520-0469(1986)043<1319:taotsp>2.0.co;2",,10.0,2.0,4.0,12.0
+186.0,"cadeddu mp, 2006, p micr spec m san ju, p252",,8.0,2.0,3.0,11.0
+189.0,"cady-pereira ke, 2008, j atmos ocean tech, v25, p873, doi 10.1175/2007jtecha1027.1",,30.0,3.0,3.0,48.0
+192.0,"calisse pg, 2004, publ astron soc aust, v21, p252, doi 10.1071/as02044",,37.0,3.0,1.0,44.0
+193.0,"calisse pg, 2004, publ astron soc aust, v21, p256, doi 10.1071/as03018",,32.0,4.0,1.0,38.0
+204.0,"cernicharo j, 1985, atm program compute",,33.0,2.0,2.0,50.0
+205.0,"cernicharo j, 1988, thesis u paris 7",,33.0,2.0,2.0,50.0
+209.0,"chamberlin ra, 1994, appl optics, v33, p1095, doi 10.1364/ao.33.001095",,41.0,3.0,1.0,46.0
+211.0,"chamberlin ra, 1997, astrophys j, v476, p428, doi 10.1086/303621",,42.0,3.0,1.0,44.0
+213.0,"chamberlin ra, 2001, jgr, v106, p20",,33.0,2.0,2.0,33.0
+214.0,"chamberlin ra, 2003, p soc photo-opt ins, v4855, p609, doi 10.1117/12.488694",,25.0,2.0,1.0,28.0
+215.0,"chamberlin ra, 2004, publ astron soc aust, v21, p264, doi 10.1071/as03012",,25.0,2.0,1.0,28.0
+228.0,"chen p, 2000, astrophys j suppl s, v128, p371, doi 10.1086/313377",,33.0,2.0,2.0,37.0
+229.0,"cheville ra, 1999, j opt soc am b, v16, p317, doi 10.1364/josab.16.000317",,18.0,2.0,2.0,26.0
+242.0,"cimini d, 2007, ieee t geosci remote, v45, p2169, doi 10.1109/tgrs.2007.897450",,37.0,4.0,3.0,55.0
+243.0,"cimini d, 2009, ieee t geosci remote, v47, p3098, doi 10.1109/tgrs.2009.2020743",,33.0,3.0,3.0,51.0
+252.0,"clough sa, 1989, atmos res, v23, p229, doi 10.1016/0169-8095(89)90020-3",,78.0,8.0,2.0,145.0
+255.0,"clough sa, 2005, j quant spectrosc ra, v91, p233, doi 10.1016/j.jqsrt.2004.05.058",,44.0,3.0,3.0,50.0
+265.0,"connolley wm, 1993, q j roy meteor soc, v119, p325, doi 10.1002/qj.49711951006",,19.0,2.0,1.0,21.0
+269.0,"cook r. l., 1984, microwave mol spectr",,35.0,2.0,2.0,43.0
+273.0,"crewell s, 2003, radio sci, v38, doi 10.1029/2002rs002634",,30.0,2.0,3.0,45.0
+285.0,"dagg ir, 1978, can j phys, v56, p1037",,31.0,2.0,2.0,39.0
+290.0,"davis gr, 1993, j quant spectrosc ra, v50, p673, doi 10.1016/0022-4073(93)90034-f",,36.0,2.0,2.0,39.0
+291.0,"davis gr, 1997, icarus, v130, p387, doi 10.1006/icar.1997.5836",,1.0,2.0,1.0,1.0
+292.0,"davis jl, 1985, radio sci, v20, p1593, doi 10.1029/rs020i006p01593",,14.0,2.0,3.0,16.0
+304.0,"decker mt, 1978, j appl meteorol, v17, p1788, doi 10.1175/1520-0450(1978)017<1788:eeogbm>2.0.co;2",,11.0,2.0,6.0,11.0
+311.0,"denny sp, 2013, new astron, v25, p114, doi 10.1016/j.newast.2013.04.008",,5.0,2.0,1.0,5.0
+318.0,"dicke rh, 1946, phys rev, v70, p340, doi 10.1103/physrev.70.340",,29.0,3.0,1.0,34.0
+325.0,"dragovan m, 1990, appl optics, v29, p463, doi 10.1364/ao.29.000463",,24.0,3.0,1.0,29.0
+342.0,"elliott wp, 1991, b am meteorol soc, v72, p1507, doi 10.1175/1520-0477(1991)072<1507:otuorh>2.0.co;2",,17.0,2.0,1.0,17.0
+361.0,"evans kf, 1998, j appl meteorol, v37, p184, doi 10.1175/1520-0450(1998)037<0184:mosprs>2.0.co;2",,24.0,3.0,5.0,26.0
+399.0,"fortuin jpf, 1998, j geophys res-atmos, v103, p31709, doi 10.1029/1998jd200008",,10.0,2.0,1.0,10.0
+434.0,"gasster sd, 1988, j opt soc am b, v5, p593, doi 10.1364/josab.5.000593",,18.0,2.0,2.0,26.0
+440.0,"gettelman a, 2006, j geophys res-atmos, v111, doi 10.1029/2005jd006636",,33.0,2.0,1.0,36.0
+449.0,"giovanelli r, 2001, publ astron soc pac, v113, p803, doi 10.1086/322136",,20.0,2.0,1.0,27.0
+476.0,"grischkowsky d, 1990, j opt soc am b, v7, p2006, doi 10.1364/josab.7.002006",,18.0,2.0,2.0,26.0
+481.0,"gross ep, 1955, phys rev, v97, p395, doi 10.1103/physrev.97.395",,36.0,3.0,6.0,43.0
+482.0,"grossman e, 1989, at users manual",,33.0,2.0,2.0,50.0
+501.0,"han y, 2000, ieee t geosci remote, v38, p1260, doi 10.1109/36.843018",,31.0,3.0,4.0,38.0
+505.0,"harde h, 1997, j phys chem a, v101, p3646, doi 10.1021/jp962974c",,18.0,2.0,2.0,26.0
+508.0,"harries je, 1996, j geophys res-atmos, v101, p10205, doi 10.1029/95jd02933",,11.0,2.0,4.0,15.0
+530.0,"hewison tj, 2006, meteorol z, v15, p27, doi 10.1127/0941-2948/2006/0097",,33.0,2.0,3.0,39.0
+551.0,"hogg dc, 1983, j clim appl meteorol, v22, p789, doi 10.1175/1520-0450(1983)022<0789:asdcmr>2.0.co;2",,9.0,2.0,6.0,12.0
+557.0,"holland ws, 1999, mon not r astron soc, v303, p659, doi 10.1046/j.1365-8711.1999.02111.x",,20.0,2.0,1.0,20.0
+575.0,"hyland rw, 1983, ashrae t, v89, p500",,18.0,2.0,1.0,18.0
+580.0,"jacquinet-husson n, 1999, j quant spectrosc ra, v62, p205, doi 10.1016/s0022-4073(98)00111-3",,33.0,2.0,2.0,50.0
+584.0,"janssen m., 1993, atmospheric remote s",,19.0,2.0,4.0,24.0
+603.0,"kakar rk, 1983, j clim appl meteorol, v22, p1282, doi 10.1175/1520-0450(1983)022<1282:rocsmp>2.0.co;2",,10.0,2.0,5.0,14.0
+611.0,"karmakar pk, 1999, int j remote sens, v20, p2637, doi 10.1080/014311699211985",,9.0,2.0,6.0,12.0
+636.0,"king j. c., 1997, antarctic meteorolog",,41.0,5.0,1.0,49.0
+669.0,"kuhn t, 2002, j quant spectrosc ra, v74, p545, doi 10.1016/s0022-4073(01)00271-0",,40.0,2.0,3.0,43.0
+683.0,"lane a. p., 1998, astronomical society of the pacific conference series, v141, p289",,26.0,2.0,2.0,27.0
+708.0,"liebe h.j., 1987, 87224 ntia",,52.0,4.0,4.0,58.0
+709.0,"liebe h.j., 1993, p agard 52 spec m el",,44.0,4.0,2.0,82.0
+711.0,"liebe hj, 1985, radio sci, v20, p1069, doi 10.1029/rs020i005p01069",,16.0,3.0,6.0,22.0
+714.0,"liebe hj, 1989, int j infrared milli, v10, p631, doi 10.1007/bf01009565",,71.0,9.0,2.0,123.0
+715.0,"liebe hj, 1991, int j infrared milli, v12, p659, doi 10.1007/bf01008897",,22.0,2.0,3.0,22.0
+716.0,"liebe hj, 1992, j quant spectrosc ra, v48, p629, doi 10.1016/0022-4073(92)90127-p",,10.0,2.0,6.0,10.0
+719.0,"liljegren j. c., 2000, microwave radiometry, p433",,33.0,2.0,3.0,39.0
+724.0,"liljegren jc, 2005, ieee t geosci remote, v43, p1102, doi 10.1109/tgrs.2004.839593",,46.0,5.0,3.0,77.0
+733.0,"lohnert u, 2009, j appl meteorol clim, v48, p1017, doi 10.1175/2008jamc2060.1",,30.0,2.0,3.0,45.0
+743.0,"ma q, 1990, j chem phys, v93, p6127, doi 10.1063/1.458984",,44.0,4.0,2.0,82.0
+744.0,"ma q, 1999, j chem phys, v111, p5909, doi 10.1063/1.479886",,26.0,2.0,2.0,28.0
+766.0,"marrone dp, 2004, astrophys j, v612, p940, doi 10.1086/422831",,20.0,2.0,1.0,27.0
+768.0,"martin l, 2003, thesis u bern bern",,19.0,2.0,4.0,24.0
+770.0,"marvil j., 2005, new astron, v11, p218",,4.0,2.0,1.0,6.0
+775.0,"matsuo h, 1998, publ astron soc jpn, v50, p359, doi 10.1093/pasj/50.3.359",,49.0,3.0,1.0,62.0
+776.0,"matsushima f, 1995, j mol struct, v352, p371, doi 10.1016/0022-2860(94)08531-l",,33.0,2.0,2.0,37.0
+778.0,"matsushita s, 1999, publ astron soc jpn, v51, p603, doi 10.1093/pasj/51.5.603",,49.0,4.0,1.0,77.0
+783.0,"mattioli v, 2007, j atmos ocean tech, v24, p415, doi 10.1175/jtech1982.1",,26.0,2.0,3.0,28.0
+814.0,"memmo a, 2005, ieee t geosci remote, v43, p1050, doi 10.1109/tgrs.2004.841488",,7.0,2.0,3.0,8.0
+826.0,"miao jg, 2001, j geophys res-atmos, v106, p10187, doi 10.1029/2000jd900811",,27.0,4.0,1.0,34.0
+832.0,"miloshevich lm, 2006, j geophys res-atmos, v111, doi 10.1029/2005jd006083",,31.0,2.0,1.0,31.0
+833.0,"miloshevich lm, 2009, j geophys res-atmos, v114, doi 10.1029/2008jd011565",,25.0,2.0,3.0,28.0
+848.0,"moran jm, 1981, radio sci, v16, p235, doi 10.1029/rs016i002p00235",,9.0,2.0,6.0,12.0
+859.0,"murphy dm, 2005, q j roy meteor soc, v131, p1539, doi 10.1256/qj.04.94",,23.0,2.0,1.0,23.0
+860.0,"murtagh d, 2002, can j phys, v80, p309, doi 10.1139/p01-157",,27.0,3.0,4.0,33.0
+871.0,"nedoluha ge, 1995, j geophys res-atmos, v100, p2927, doi 10.1029/94jd02952",,18.0,3.0,4.0,27.0
+873.0,"nedoluha ge, 1997, j geophys res-atmos, v102, p16647, doi 10.1029/97jd01095",,18.0,3.0,4.0,27.0
+875.0,"nedoluha ge, 1998, j geophys res-atmos, v103, p3531, doi 10.1029/97jd03282",,24.0,3.0,4.0,32.0
+884.0,"niell ae, 1996, j geophys res-sol ea, v101, p3227, doi 10.1029/95jb03048",,14.0,3.0,3.0,17.0
+893.0,"oltmans sj, 2000, geophys res lett, v27, p3453, doi 10.1029/2000gl012133",,18.0,3.0,4.0,27.0
+903.0,"paine s, 2000, publ astron soc pac, v112, p108, doi 10.1086/316497",,60.0,6.0,1.0,106.0
+921.0,"pardo jr, 2001, ieee t antenn propag, v49, p1683, doi 10.1109/8.982447",,44.0,6.0,1.0,62.0
+922.0,"pardo jr, 2001, j quant spectrosc ra, v68, p419, doi 10.1016/s0022-4073(00)00034-0",,55.0,4.0,2.0,76.0
+926.0,"parrish a, 1988, radio sci, v23, p106, doi 10.1029/rs023i002p00106",,19.0,2.0,4.0,24.0
+930.0,"payne vh, 2008, ieee t geosci remote, v46, p3601, doi 10.1109/tgrs.2008.2002435",,48.0,4.0,3.0,73.0
+931.0,"payne vh, 2011, ieee t geosci remote, v49, p2194, doi 10.1109/tgrs.2010.2091416",,26.0,2.0,3.0,30.0
+940.0,"peterson jb, 2003, publ astron soc pac, v115, p383, doi 10.1086/368101",,37.0,3.0,1.0,47.0
+948.0,"pickett hm, 1998, j quant spectrosc ra, v60, p883, doi 10.1016/s0022-4073(98)00091-0",,51.0,5.0,2.0,94.0
+953.0,"podobedov vb, 2004, j quant spectrosc ra, v87, p377, doi 10.1016/j.jqsrt.2004.03.001",,18.0,2.0,2.0,26.0
+954.0,"podobedov vb, 2005, j quant spectrosc ra, v91, p287, doi 10.1016/j.jqsrt.2004.05.061",,33.0,3.0,2.0,44.0
+971.0,"racette p, 1996, j atmos ocean tech, v13, p610, doi 10.1175/1520-0426(1996)013<0610:aamwir>2.0.co;2",,10.0,3.0,5.0,16.0
+972.0,"racette pe, 2005, j atmos ocean tech, v22, p317, doi 10.1175/jtech1711.1",,41.0,5.0,3.0,70.0
+973.0,"radford s, 2002, astr soc p, v266, p148",,27.0,3.0,1.0,29.0
+977.0,"radford sje, 1998, p soc photo-opt ins, v3357, p486, doi 10.1117/12.317382",,25.0,3.0,1.0,33.0
+979.0,"radford sje, 2008, proc spie, v7012, doi 10.1117/12.789335",,20.0,2.0,1.0,27.0
+980.0,"radford sje, 2011, rev mex ast astr, v41, p87",,20.0,2.0,1.0,27.0
+987.0,"randel wj, 1998, j atmos sci, v55, p163, doi 10.1175/1520-0469(1998)055<0163:scaqvi>2.0.co;2",,10.0,2.0,4.0,12.0
+997.0,"revercomb he, 2003, b am meteorol soc, v84, p217, doi 10.1175/bams-84-2-217",,45.0,4.0,3.0,71.0
+1001.0,"rice dp, 1979, infrared phys, v19, p575, doi 10.1016/0020-0891(79)90076-9",,33.0,2.0,2.0,50.0
+1015.0,"rodgers c., 2000, inverse methods atmo",,33.0,3.0,4.0,34.0
+1022.0,"rose t, 2005, atmos res, v75, p183, doi 10.1016/j.atmosres.2004.12.005",,30.0,2.0,3.0,45.0
+1023.0,"rosenkranz p. w., 1993, atmospheric remote s",,33.0,2.0,2.0,50.0
+1024.0,"rosenkranz p. w., 1993, atmospheric remote s, p37",,17.0,2.0,2.0,17.0
+1026.0,"rosenkranz pw, 1982, j appl meteorol, v21, p1364, doi 10.1175/1520-0450(1982)021<1364:amfeoa>2.0.co;2",,10.0,2.0,5.0,14.0
+1029.0,"rosenkranz pw, 1998, radio sci, v33, p919, doi 10.1029/98rs01182",,78.0,9.0,3.0,115.0
+1030.0,"rosenkranz pw, 1999, radio sci, v34, p1025",,30.0,2.0,3.0,33.0
+1031.0,"rosenlof kh, 2001, geophys res lett, v28, p1195, doi 10.1029/2000gl012502",,11.0,2.0,4.0,15.0
+1034.0,"rothman ls, 1992, j quant spectrosc ra, v48, p469, doi 10.1016/0022-4073(92)90115-k",,38.0,3.0,2.0,64.0
+1036.0,"rothman ls, 2005, j quant spectrosc ra, v96, p139, doi 10.1016/j.jqsrt.2004.10.008",,46.0,4.0,2.0,55.0
+1037.0,"rothman ls, 2009, j quant spectrosc ra, v110, p533, doi 10.1016/j.jqsrt.2009.02.013",,24.0,2.0,1.0,26.0
+1041.0,"russell jm, 1993, j geophys res-atmos, v98, p10777, doi 10.1029/93jd00799",,10.0,2.0,4.0,12.0
+1060.0,"schaerer g, 1979, radio sci, v14, p371, doi 10.1029/rs014i003p00371",,10.0,2.0,5.0,14.0
+1076.0,"schwerdtfeger w, 1984, weather climate anta",,22.0,2.0,1.0,25.0
+1088.0,"serabyn e, 1998, appl optics, v37, p2185, doi 10.1364/ao.37.002185",,40.0,3.0,2.0,68.0
+1126.0,"sonntag d., 1990, zeitschrift fur meteorologie, v40, p340",,7.0,2.0,1.0,7.0
+1136.0,"stark aa, 2001, publ astron soc pac, v113, p567, doi 10.1086/320281",,22.0,2.0,1.0,25.0
+1174.0,"thacker dl, 1995, ieee t instrum meas, v44, p355, doi 10.1109/19.377851",,19.0,2.0,4.0,24.0
+1183.0,"tomasi c, 2011, j geophys res-atmos, v116, doi 10.1029/2011jd015803",,20.0,2.0,1.0,21.0
+1189.0,"townes c h, 1955, microwave spectrosco",,25.0,2.0,2.0,26.0
+1190.0,"townes ch, 1990, publ astron soc pac, v102, p357, doi 10.1086/132641",,32.0,2.0,2.0,33.0
+1204.0,"turner dd, 1999, j atmos ocean tech, v16, p1062, doi 10.1175/1520-0426(1999)016<1062:tfhrlw>2.0.co;2",,30.0,2.0,3.0,34.0
+1206.0,"turner dd, 2003, j atmos ocean tech, v20, p117, doi 10.1175/1520-0426(2003)020<0117:dbaviv>2.0.co;2",,37.0,3.0,3.0,59.0
+1208.0,"turner dd, 2007, b am meteorol soc, v88, p177, doi 10.1175/bams-88-2-177",,33.0,3.0,3.0,51.0
+1209.0,"turner dd, 2007, ieee t geosci remote, v45, p3680, doi 10.1109/tgrs.2007.903703",,33.0,4.0,3.0,54.0
+1210.0,"turner dd, 2007, j geophys res-atmos, v112, doi 10.1029/2007jd008530",,30.0,2.0,3.0,45.0
+1211.0,"turner dd, 2009, ieee t geosci remote, v47, p3326, doi 10.1109/tgrs.2009.2022262",,26.0,2.0,3.0,30.0
+1224.0,"urban j, 2004, j quant spectrosc ra, v83, p529, doi [10.1016/s0022-4073(03)00104-3 10.1016/s0022-4073(03)001040-3]",,32.0,4.0,4.0,33.0
+1228.0,"valenziano l, 1999, publ astron soc aust, v16, p167",,11.0,2.0,1.0,12.0
+1232.0,"vanvleck jh, 1945, rev mod phys, v17, p227, doi 10.1103/revmodphys.17.227",,56.0,6.0,2.0,98.0
+1239.0,"vomel h, 2007, j atmos ocean tech, v24, p953, doi 10.1175/jtech2019.1",,25.0,2.0,3.0,28.0
+1254.0,"wang jr, 1983, j clim appl meteorol, v22, p779, doi 10.1175/1520-0450(1983)022<0779:pawvbm>2.0.co;2",,10.0,2.0,5.0,14.0
+1259.0,"wang jr, 1997, ieee t geosci remote, v35, p212, doi 10.1109/36.563259",,9.0,2.0,5.0,9.0
+1263.0,"wang jr, 2001, ieee t geosci remote, v39, p595, doi 10.1109/36.911117",,10.0,3.0,5.0,13.0
+1264.0,"wang jr, 2001, j geophys res-atmos, v106, p15251, doi 10.1029/2000jd900262",,7.0,2.0,5.0,9.0
+1276.0,"waters jw, 1999, j atmos sci, v56, p194, doi 10.1175/1520-0469(1999)056<0194:tuaeml>2.0.co;2",,26.0,2.0,4.0,26.0
+1291.0,"westwater e. r., 2006, p micr spec m san ju, p77",,8.0,2.0,3.0,11.0
+1298.0,"westwater er, 1993, atmospheric remote s, p145",,21.0,3.0,4.0,23.0
+1300.0,"westwater er, 2001, j geophys res-atmos, v106, p32019, doi 10.1029/2000jd000055",,34.0,3.0,3.0,49.0
+1301.0,"westwater er, 2003, j atmos ocean tech, v20, p953, doi 10.1175/1520-0426(2003)20<953:rhsamr>2.0.co;2",,24.0,2.0,4.0,26.0
+1344.0,"yang h, 2010, publ astron soc pac, v122, p490",,21.0,3.0,1.0,23.0
+1358.0,"zhevakin s.a., 1963, izv vuz r, v6, p674",,38.0,3.0,2.0,58.0
