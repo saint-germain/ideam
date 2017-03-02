@@ -3,47 +3,46 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: paperclimate.aux
 The style file: jphysicsB.bst
 Database file #1: paperclimate.bib
-Warning--I didn't find a database entry for "nakano"
 Warning--can't use both author and editor fields in gmm
-You've used 4 entries,
+You've used 7 entries,
             2796 wiz_defined-function locations,
-            658 strings with 5574 characters,
-and the built_in function-call counts, 28244 in all, are:
-= -- 4669
-> -- 382
+            684 strings with 6285 characters,
+and the built_in function-call counts, 39656 in all, are:
+= -- 6521
+> -- 529
 < -- 0
-+ -- 2306
-- -- 120
-* -- 2532
-:= -- 5466
-add.period$ -- 4
-call.type$ -- 4
-change.case$ -- 52
-chr.to.int$ -- 4
-cite$ -- 5
-duplicate$ -- 75
-empty$ -- 155
-format.name$ -- 138
-if$ -- 5093
++ -- 3166
+- -- 162
+* -- 3534
+:= -- 7756
+add.period$ -- 8
+call.type$ -- 7
+change.case$ -- 91
+chr.to.int$ -- 7
+cite$ -- 8
+duplicate$ -- 117
+empty$ -- 259
+format.name$ -- 201
+if$ -- 7144
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 5
-newline$ -- 18
-num.names$ -- 40
-pop$ -- 15
+missing$ -- 8
+newline$ -- 31
+num.names$ -- 70
+pop$ -- 20
 preamble$ -- 1
-purify$ -- 60
+purify$ -- 105
 quote$ -- 0
-skip$ -- 69
+skip$ -- 105
 stack$ -- 0
-substring$ -- 6788
-swap$ -- 22
-text.length$ -- 56
+substring$ -- 9400
+swap$ -- 28
+text.length$ -- 98
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 14
+type$ -- 26
 warning$ -- 1
-while$ -- 90
+while$ -- 155
 width$ -- 0
-write$ -- 55
-(There were 2 warnings)
+write$ -- 93
+(There was 1 warning)
