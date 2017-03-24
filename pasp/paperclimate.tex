@@ -66,15 +66,15 @@ If you have any queries about this document or any aspect of preparing your arti
 
 \section{Introduction}
 
-Besides astronomical observations, satellite communications in the THz frequency range are a growing field, given that the ``classical radio or whatevs''
+Besides astronomical observations, satellite communications technology in the THz frequency range is a rapidly growing field \cite{newera,suen2016}. Atmospheric models for absorption of THz photons \cite{rosenkranz,lababs} and artifact removal models \cite{removal} have been developed recently, specially considering that the ``classical radio or whatevs'' BLAHBLAH. Also Colombia and previous work \cite{pinzon}. \\
 
-Astronomical observations in the millimeter and sub-millimeter wavelength range require that atmospheric effects affecting absorption at these wavelengths are kept to a minimum \cite{chajpwv,radford2016}. The main factor contributing to the atmospheric opacity is water vapor, which very efficiently absorbs light in the THz range due to BLAHBLAHBLAH. In order to characterize a site according to its atmospheric transparency to THz radiation, it is necessary to retrieve the precipitable water vapor profile either via remote sensing techniques such as microwave radiometry \cite{radiometer}, satellite measurements \cite{spaceradio}, or indirectly via models of in situ climatological measurements or GPS-delay studies. \\
+Astronomical observations in the millimeter and sub-millimeter wavelength range require that atmospheric effects affecting absorption at these wavelengths are kept to a minimum \cite{southpole,radford2016,chajpwv}. The main factor contributing to the atmospheric opacity is water vapor, which very efficiently absorbs light in the THz range due to BLAHBLAHBLAH \cite{pardocerni,pardocerni2,cont350}. In order to characterize a site according to its atmospheric transparency to THz radiation, it is necessary to retrieve the precipitable water vapor profile either via remote sensing techniques such as microwave radiometry \cite{radiometer,paine2000fourier,southpole2}, satellite measurements \cite{aqua,spacemols,suen2014,spaceradio}, radiosonde humidity measurements \cite{radiosonde,radiosonde2} or indirectly via models of in situ climatological measurements \cite{climatology} or GPS-delay studies \cite{gpsorig,gpsmap}. \\
 
-Most of the precipitable water vapor that can potentially affect the path of a THz photon hoping to get through the atmosphere actually exists in the troposphere. The lower the elevation of a potential site, the longer the path becomes for that photon, increasing its chances of being absorbed by a water vapor molecule. For this reason, the geographic characterization of the quality of a site is given in terms of the local water vapor column above the potential site. This water vapor column is usually expressed as the amount of precipitable water vapor, given in mm.\\
+Most of the precipitable water vapor that can potentially affect the path of a THz photon hoping to get through the atmosphere actually exists in the troposphere. The lower the elevation of a potential site, the longer the path becomes for that photon, increasing its chances of being absorbed by a water vapor molecule \cite{liebe1989mpm,linecont,lababs}, either by line absorbtion \cite{submmlines} or by the continuum \cite{turner2009}. For this reason, the characterization of the quality of a site is given in terms of the local water vapor column above the potential site \cite{mkradio,southpole3,he2012,atacama}. This water vapor column is usually expressed as the amount of precipitable water vapor, given in mm.\\
 
-The water vapor column above a potential site can change rapidly (during the course of the day) or it can change seasonally. This is why medium-to-long term monitoring of the atmosphere above a site is required before building an expensive mm/sub-mm wave radio telescope.\\
+The water vapor column above a potential site can change rapidly (during the course of the day) or it can change seasonally \cite{arm2013,caumont2016}. This is why medium-to-long term monitoring of the atmosphere above a site is required before building an expensive mm/sub-mm wave radio telescope. However, even in best-case scenarios, earth-based telescopes will always be limited by atmospheric absorption of light specially at THz frequencies, where windows of observations are few and in some cases, narrow \cite{arrlim,limits}. \\
 
-You \cite{embed}
+Radiometers are complex and expensive \cite{radiopro,receiver}. We are poor and for this reason we did what we did BLAHBLAH. In an upcoming paper we analize satellite data in order to retrieve seasonal precipitable water vapor measurements for the regions this initial study suggests.
   
   
 \section{Methods}
@@ -112,7 +112,7 @@ $T_8$&Y&Y&Y&Y&314\\
 
 Since the data represent multi-annual seasonal variations, we wish to classify and group together stations that show a similar climatological behavior for each variable, regardless of the station's location, elevation or type. This way, we can relate weather patterns of regions which are not obviously related climatologically but might show a similar behavior, e.g. dry weather patterns in Guajira (a desert region in the north of Colombia) with similar dry conditions present at high-mountain sites in the Andes mountain range.\\
 
-We classified stations using a low-dimensional embedding \cite{embed} for each variable, which ensures that a classification algorithm can uncover features in the data across a number of dimensions that is lower than the native dimensionality of the data (which in this case is monthly, i.e. $N_\mathrm{dim}=12$). This involves a dimensionality reduction algorithm followed by a clustering algorithm. Given that we wish to make a grouping of stations showing similar climatological patterns without making too many assumptions on the data, we decided to use unsupervised learning techniques.  In our case, we chose Principal Component Analysis (PCA) covering 95\% of the variance followed by a Gaussian Mixture Model yielding a low/locally minimum Bayesian Information Criterion (BIC) value. 
+We classified stations using a low-dimensional embedding of the data \cite{embed} for each variable. This ensures that a classification algorithm can uncover features in the data across a number of dimensions that is lower than the native dimensionality of the data (which in this case is monthly, i.e. $N_\mathrm{dim}=12$). This involves a dimensionality reduction algorithm followed by a clustering algorithm. Given that we wish to make a grouping of stations showing similar climatological patterns without making too many assumptions on the data, we decided to use unsupervised learning techniques.  In our case, we chose Principal Component Analysis (PCA) covering 95\% of the variance followed by a Gaussian Mixture Model yielding a low/locally minimum Bayesian Information Criterion (BIC) value. 
 
 \subsection{Principal Component Analysis}
 
@@ -255,12 +255,13 @@ This is a \emph{p\'aramo} region, characterized by high-mountain tundra weather.
 
 % tables for our three favorites, Ubat\'e, Villa, Sol.
 
-One, to the NWW of Bogot\'a, another to the N of Bogot\'a, in the region known as Valle de Ubat\'e, 
+One, to the NWW of Bogot\'a, another to the N of Bogot\'a, in the region known as Valle de Ubat\'e, \\
 
-4000 masl might be interesting as well, but there are not enough stations.
+4000 masl might be interesting as well, but there are not enough stations.\\
+
+Seasonality plots\\
 
  
- %c y después ok
 
 
   
