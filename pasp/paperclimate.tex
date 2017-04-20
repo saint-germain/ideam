@@ -10,7 +10,7 @@
 
 \title[Site Location Study for a Millimeter Observatory in the Colombian Andes I: In Situ]{Site location study for a high-mountain millimeter observatory in the Colombian Andes I: In situ data}
 
-% low dimensional embedding of climatological data for astronomical site testing in the Colombian andes
+% Low Dimensional Embedding of Climate Data for Radio Astronomical Site Testing in the Colombian Andes
 
 \author{Germ¬\'an Chaparro Molano$^{1}$}
 \address{$^1$Grupo de Simulaci\'on, An\'alisis y Modelado, Vicerrector\'ia de Investigaci\'on, Universidad ECCI, Bogot\'a, Colombia}
@@ -66,22 +66,22 @@ If you have any queries about this document or any aspect of preparing your arti
 
 \section{Introduction}
 
-Besides astronomical observations in the THz frequency range, development of THz satellite communications technology is also a rapidly growing field \cite{newera}. Atmospheric models for absorption of THz photons \cite{rosenkranz,lababs} and artifact removal models \cite{removal} have been developed recently, specially considering that the ``classical radio window'' in telecommunications has become saturated, and terabit satellite links could be used in the near future \cite{suen2016}. Near-equatorial countries face a challenge in using this frequency band for satellite telecommunications and astronomical observations due to the presence of a tropical belt of dense water vapor, which efficiently absorbs THz radiation \cite{tropicalbelt}. Previous studies of astronomical site testing in the visible range have yielded that nighttime humidity conditions across the northern Andes are only suitable for educational observatories \cite{pinzon}. However, considering that millimeter/sub-millimeter observations need not be done during the night, unusually dry, clear-daytime-sky, high altitude regions in the Northern Andes could be suitable for a world-class millimeter-wave observatory. \\
+The development of astronomical instrumentation technology in the 0.2-2 THz range has been rapidly growing in recentl years along with THz satellite communications technology \cite{newera} specially considering that the ``classical radio window'' in telecommunications has become saturated. Atmospheric models for absorption of THz photons \cite{rosenkranz,lababs} and artifact removal models \cite{removal} have been developed recently. Near-equatorial countries face a challenge in using this frequency band for astronomical observations and telecommunications using terabit satellite links  \cite{suen2016} due to the presence of a tropical belt of dense water vapor which efficiently absorbs THz radiation \cite{tropicalbelt}. Previous studies of astronomical site testing in the visible range have yielded that nighttime humidity conditions across the Northern Andes are only suitable for educational observatories \cite{pinzon}. However, considering that millimeter/sub-millimeter observations need not be done during the night, unusually dry, clear-daytime-sky, high altitude regions in the Northern Andes could be suitable for a world-class millimeter-wave observatory. \\
 
-Astronomical observations in the millimeter and sub-millimeter wavelength range require that atmospheric effects affecting absorption at these wavelengths are kept to a minimum \cite{southpole,radford2016,chajpwv}. The main factor contributing to the atmospheric opacity is water vapor, which very efficiently absorbs light in the THz range \cite{pardocerni,pardocerni2,cont350} due to a continuum absorption spectrum formed by collisionally broadened absorption lines of water vapor in this frequency range  \cite{linecont}. In order to characterize a site according to its atmospheric transparency to THz radiation, it is necessary to retrieve the precipitable water vapor profile either via remote sensing techniques such as microwave radiometry \cite{radiometer,paine2000fourier,southpole2}, satellite measurements \cite{aqua,spacemols,suen2014,spaceradio}, radiosonde humidity measurements \cite{radiosonde,radiosonde2} or indirectly via models of in situ climatological measurements \cite{climatology} or GPS-delay studies \cite{gpsorig,gpsmap}. \\
+Astronomical observations in the millimeter and sub-millimeter wavelength range require that atmospheric effects affecting absorption at these wavelengths are kept to a minimum \cite{southpole,radford2016,chajpwv}. The main factor contributing to the atmospheric opacity is water vapor, which very efficiently absorbs light in the THz range \cite{pardocerni,pardocerni2,cont350} due to a continuum absorption spectrum formed by collisionally broadened absorption lines of water vapor in this frequency range  \cite{linecont,submmlines,turner2009}. In order to characterize a site according to its atmospheric transparency to THz radiation, it is necessary to retrieve the precipitable water vapor profile either via remote sensing techniques such as microwave radiometry \cite{radiometer,paine2000fourier,southpole2}, satellite measurements \cite{aqua,spacemols,suen2014,spaceradio}, radiosonde humidity measurements \cite{radiosonde,radiosonde2} or indirectly via models of in situ climatological measurements \cite{climatology} or GPS-delay studies \cite{gpsorig,gpsmap}. \\
 
-Most of the precipitable water vapor that can potentially affect the path of a THz photon hoping to get through the atmosphere actually exists in the troposphere. The lower the elevation of a potential site, the longer the path becomes for that photon, increasing its chances of being absorbed by a water vapor molecule \cite{liebe1989mpm,linecont,lababs}, either by line absorbtion \cite{submmlines} or by the continuum \cite{turner2009}. For this reason, the characterization of the quality of a site is given in terms of the local water vapor column above the potential site \cite{mkradio,southpole3,he2012,atacama}. This water vapor column is usually expressed as the amount of precipitable water vapor, given in mm.\\
+Most of the precipitable water vapor that can potentially affect the path of a THz photon hoping to get through the atmosphere actually exists in the troposphere. The lower the elevation of a potential site, the longer the path becomes for that photon, increasing its chances of being absorbed by a water vapor molecule \cite{liebe1989mpm,linecont,lababs}. For this reason, the quality of a site is determined by the atmospheric water vapor column above the potential site \cite{mkradio,southpole3,he2012,atacama}. This water vapor column is usually expressed as the amount of precipitable water vapor, given in mm.\\
 
 The water vapor column above a potential site can change rapidly (during the course of the day) or it can change seasonally \cite{arm2013,caumont2016}. This is why medium-to-long term monitoring of the atmosphere above a site is required before building an expensive mm/sub-mm wave radio telescope. However, even in best-case scenarios, earth-based telescopes will always be limited by atmospheric absorption of light specially at THz frequencies, where windows of observations are few and in some cases, narrow \cite{arrlim,limits}. \\
 
-Although radiometer measurements are desirable for directly measuring atmospheric water vapor column, they are complex and expensive \cite{radiopro,receiver}. For this reason, we decided to screen climatological data for measurements indicative of local long-term clear sky, low humidity conditions as proxies for a locally low precipitable water vapor column. By low-dimensionally embedding the data, we are able to correlate unusually dry regions regardless of their geographical location. Given that the climatological variables were sparsely measured by weather stations across Colombia, we evaluated the aptness of a given location using a Bayesian probability-derived quality index. Finally, we geographically clustered our candidate locations in order to identify regions of interest. We compared our regions of interest with regions with unusually low precipitable water vapor in low-resolution water vapor satellite maps \cite{suen2016} and find a possibly significative geographical correlation.  In an upcoming paper we will analize satellite data in order to retrieve high-resolution seasonal precipitable water vapor maps for our regions of interest.\\
+Although radiometer measurements are desirable for directly measuring the atmospheric water vapor column, their development and/or deployment can be complex and expensive \cite{radiopro,receiver}. For this reason we screened historic climate data for evidence of local long-term clear sky, low humidity conditions as proxies for a locally low precipitable water vapor column. By low-dimensionally embedding the data, we are able to reduce the dimensionality of multi-annual monthly data from $N_\mathrm{dim}=12$ to $N_\mathrm{dim}\le3$. Thus, we can correlate unusually dry regions regardless of their geographical location. Given that the climatological variables were sparsely measured by weather stations across Colombia, we evaluated the aptness of a given location using a Bayesian probability-derived quality index. Finally, we geographically clustered our candidate locations in order to identify regions of interest. We compared our regions of interest with regions with unusually low precipitable water vapor in low-resolution water vapor satellite maps \cite{suen2016} and find a possibly significative geographical correlation.  In an upcoming paper we will analize satellite data in order to retrieve high-resolution seasonal precipitable water vapor maps for our regions of interest.\\
 
 This paper is organized as follows.
   
   
-\section{Climatological data}
+\section{The Dataset}
 
-The meteorological data used in this study were gathered over 30 years (1980-2010) in 2046 weather stations monitored by the Instituto de Hidrolog\'ia, Meteorolog\'ia y Estudios Ambientales (IDEAM) in Colombia (Figure \ref{totmap}). The  variables that we considered relevant to our work were: Precipitation (mm/mo), Rain Days (d/mo),  Relative Humidity (\%), and Sunshine Duration (h/d). These variables are reported as multi-annual monthly data, i.e. each variable is reported monthly from January to December averaged over the 30 year range. For precipitation, each monthly datum corresponds to the cumulative monthly value.  For rain days, each monthly datum corresponds to the number of rain days for that month.  For relative humidity, each monthly datum corresponds to the  average daily value averaged over each month. For sunshine duration, each monthly datum corresponds to the daily value averaged over each month. All stations reported precipitation values, although only 2002 reported rain days, 445 reported relative humidity , and 336 reported sunshine duration. This means that not all available stations registered all meteorological variables relevant to this work. Thus, we classify stations according to which variables were measured (Table \ref{tabstype}).\\
+The meteorological data used in this study were gathered over 30 years (1980-2010) in 2046 weather stations monitored by the Instituto de Hidrolog\'ia, Meteorolog\'ia y Estudios Ambientales (IDEAM) in Colombia (Figure \ref{totmap}). The  variables that we considered relevant to our work were: Precipitation (mm/mo), Rain Days (d/mo),  Relative Humidity (\%), and Sunshine Duration (h/d). These variables are reported as multi-annual monthly data, i.e. each variable is reported monthly from January to December averaged over the 30 year range. For precipitation, each monthly datum corresponds to the cumulative monthly value.  For rain days, each monthly datum corresponds to the number of rain days for that month.  For relative humidity, each monthly datum corresponds to the  average daily value averaged over each month. For sunshine duration, each monthly datum corresponds to the daily value averaged over each month. All stations reported precipitation values, although only 2002 reported rain days, 445 reported relative humidity, and 336 reported sunshine duration. This means that not all stations registered all the meteorological variables relevant to this work. Thus, we classify stations according to which variables they measured (Table \ref{tabstype}).\\
 
 \begin{figure}
 \begin{center}
@@ -164,6 +164,65 @@ Sunshine Duration&$S$&5&Tied&1,4,5\\
 \end{tabular}
 \end{indented}
 \end{table}
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.5]{ldeh.eps}
+\includegraphics[scale=0.5]{ldel.eps}
+\includegraphics[scale=0.5]{lded.eps}
+\includegraphics[scale=0.5]{ldeb.eps}
+\caption{Lowest BIC Gaussian Mixture Model clustering of reduced dimensionality climate data. Colors indicate the clustering classification.}\label{lde}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.5]{gmmh0.eps}
+\includegraphics[scale=0.5]{gmmh1.eps}
+\caption{Climate clusters as predicted by the lowest-BIC Gaussian Mixture Model for relative humidity. Left column: Average monthly relative humidity and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each relative humidity cluster.}\label{clusth}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.5]{gmml0.eps}
+\includegraphics[scale=0.5]{gmml1.eps}
+\includegraphics[scale=0.5]{gmml2.eps}
+\includegraphics[scale=0.5]{gmml3.eps}
+\includegraphics[scale=0.5]{gmml4.eps}
+\includegraphics[scale=0.5]{gmml5.eps}
+\includegraphics[scale=0.5]{gmml6.eps}
+\includegraphics[scale=0.5]{gmml7.eps}
+\includegraphics[scale=0.5]{gmml8.eps}
+\includegraphics[scale=0.5]{gmml9.eps}
+\includegraphics[scale=0.5]{gmml10.eps}
+\caption{Climate clusters as predicted by the lowest-BIC Gaussian Mixture Model for precipitation. Left column: Average monthly precipitation and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each precipitation cluster.}\label{clustl}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.5]{gmmd0.eps}
+\includegraphics[scale=0.5]{gmmd1.eps}
+\includegraphics[scale=0.5]{gmmd2.eps}
+\includegraphics[scale=0.5]{gmmd3.eps}
+\includegraphics[scale=0.5]{gmmd4.eps}
+\includegraphics[scale=0.5]{gmmd5.eps}
+\caption{Climate clusters as predicted by the lowest-BIC Gaussian Mixture Model for rain days. Left column: Average monthly rain days and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each rain days cluster.}\label{clustl}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.5]{gmmb0.eps}
+\includegraphics[scale=0.5]{gmmb1.eps}
+\includegraphics[scale=0.5]{gmmb2.eps}
+\includegraphics[scale=0.5]{gmmb3.eps}
+\includegraphics[scale=0.5]{gmmb4.eps}
+\caption{Climate clusters as predicted by the lowest-BIC Gaussian Mixture Model for sunshine duration. Left column: Average monthly sunshine duration and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each sunshine duration cluster.}\label{clustl}
+\end{center}
+\end{figure}
+
 
 \section{Quality Index for Regions of Interest}
 
