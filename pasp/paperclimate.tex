@@ -50,7 +50,7 @@ If you have any queries about this document or any aspect of preparing your arti
 %
 % Uncomment for keywords
 %\vspace{2pc}
-\noindent{\it Keywords}: water vapor, atmospheric effects, site testing, absorption, integrated water vapor, radio astronomy, satellite communication, atmospheric propagation\\
+\noindent{\it Keywords}: Water Vapor, Atmospheric Effects, Site Testing, Radio Astronomy, Satellite Communication, \\
 %
 % Uncomment for Submitted to journal title message
 \submitto{PASP}
@@ -66,7 +66,7 @@ If you have any queries about this document or any aspect of preparing your arti
 
 \section{Introduction}
 
-The development of astronomical instrumentation technology in the 0.2-2 THz range has been rapidly growing in recentl years along with THz satellite communications technology \cite{newera} specially considering that the ``classical radio window'' in telecommunications has become saturated. Atmospheric models for absorption of THz photons \cite{rosenkranz,lababs} and artifact removal models \cite{removal} have been developed recently. Near-equatorial countries face a challenge in using this frequency band for astronomical observations and telecommunications using terabit satellite links  \cite{suen2016} due to the presence of a tropical belt of dense water vapor which efficiently absorbs THz radiation \cite{tropicalbelt}. Previous studies of astronomical site testing in the visible range have yielded that nighttime humidity conditions across the Northern Andes are only suitable for educational observatories \cite{pinzon}. However, considering that millimeter/sub-millimeter observations need not be done during the night, unusually dry, clear-daytime-sky, high altitude regions in the Northern Andes could be suitable for a world-class millimeter-wave observatory. \\
+The development of astronomical instrumentation technology in the 0.2-2 THz range has been rapidly growing in recent years. Also, interest in THz technology, specially applied to satellite telecommunications has also grown due to the saturation of the ``classical radio window'' in telecommunications  \cite{newera}, and atmospheric models for absorption of THz photons \cite{rosenkranz,lababs} and artifact removal models \cite{removal} have been developed recently due to this interest. Near-equatorial countries face a challenge in using this frequency band for astronomical observations and telecommunications using terabit satellite links  \cite{suen2016} due to the presence of a tropical belt of dense water vapor which efficiently absorbs THz radiation \cite{tropicalbelt}. In the Northern Andes, previous studies of astronomical site testing in the visible range have shown that high nighttime humidity conditions make this region suitable only for educational observatories \cite{pinzon}. However, considering that millimeter/sub-millimeter observations need not be done during the night, unusually dry, clear-daytime-sky, high altitude regions in the Northern Andes could be suitable candidates for a world-class millimeter-wave observatory. \\
 
 Astronomical observations in the millimeter and sub-millimeter wavelength range require that atmospheric effects affecting absorption at these wavelengths are kept to a minimum \cite{southpole,radford2016,chajpwv}. The main factor contributing to the atmospheric opacity is water vapor, which very efficiently absorbs light in the THz range \cite{pardocerni,pardocerni2,cont350} due to a continuum absorption spectrum formed by collisionally broadened absorption lines of water vapor in this frequency range  \cite{linecont,submmlines,turner2009}. In order to characterize a site according to its atmospheric transparency to THz radiation, it is necessary to retrieve the precipitable water vapor profile either via remote sensing techniques such as microwave radiometry \cite{radiometer,paine2000fourier,southpole2}, satellite measurements \cite{aqua,spacemols,suen2014,spaceradio}, radiosonde humidity measurements \cite{radiosonde,radiosonde2} or indirectly via models of in situ climatological measurements \cite{climatology} or GPS-delay studies \cite{gpsorig,gpsmap}. \\
 
@@ -85,10 +85,12 @@ The meteorological data used in this study were gathered over 30 years (1980-201
 
 \begin{figure}
 \begin{center}
-\includegraphics[scale=0.8]{totmap.eps}
-\caption{1$\sigma$ (solid) and 2$\sigma$ (dashed) countours of a gaussian kernel density estimation of the geographical distribution of weather stations (small green points) from the IDEAM 1980-2010 database. The estimation was done using the Python \texttt{scipy.stats.gaussian\_kde}  function.}\label{totmap}
+\includegraphics[scale=0.5]{totmap.pdf}
+\includegraphics[scale=0.5]{elev.pdf}
+\caption{Distribution of weather stations in the dataset. (a) 1$\sigma$ (solid) and 2$\sigma$ (dashed) countours of a gaussian kernel density estimation of the geographical distribution of weather stations (small green points) from the IDEAM 1980-2010 database. The estimation was done using the Python \texttt{scipy.stats.gaussian\_kde}  function. (b) Altitude histogram for all stations in the dataset.}\label{totmap}
 \end{center}
 \end{figure}
+
 
 
 \begin{table}
@@ -124,7 +126,7 @@ We were able to reduce the dimensionality of the data for each variable from  $N
 
 \begin{figure}
 \begin{center}
-\includegraphics[scale=0.8]{pcah.eps}
+\includegraphics[scale=0.8]{pcah.pdf}
 \caption{Relative humidity data projected across 2 principal components. The dimensionality of the data has been reduced from 12 to 2 while covering 95\% of the variance of the data. }\label{pcah}
 \end{center}
 \end{figure}
@@ -133,23 +135,84 @@ We were able to reduce the dimensionality of the data for each variable from  $N
 
 After projecting the data along the components found by the PCA algorithm, we clustered the dimensionally-reduced data using a Gaussian Mixture Model, which uses an Expectation-Maximization algorithm to find a Maximum Likelihood model composed of a number $N_\mathrm{G-C}$ of Gaussian distributions, each of which represents a cluster in the data \cite{gmm}. Depending on the restrictions put on the covariance of each Gaussian distribution across the data space, the number of free parameters can go from $N_\mathrm{G-C}(N_\mathrm{dim}+1)$ (spherical covariance) to  $N_\mathrm{G-C}(3N_\mathrm{dim}+1)$ (full covariance). Since the number of components and covariance restriction is given by the user and not \emph{a posteriori} by the algorithm, me need to make sure that the Gaussian components do not over-fit the data, e.g. a model which yields one cluster per datum should be disallowed.\\
 
-In order to achieve this, we compare the Bayesian Information Criterion \cite{bicref} for a grid of Gaussian clusters ($N_\mathrm{G-C}<20$) and covariance restriction methods for each variable (Figure \ref{bic}). We selected the models which yielded the lowest BIC value and plotted the climatological clusters in Figures \ref{clusth}-\ref{clustb}. To do this we used the Python \texttt{sklearn.mixture.GMM} module \cite{sklearn}.\\
+In order to achieve this, we compare the Bayesian Information Criterion \cite{bicref} for a grid of Gaussian clusters ($N_\mathrm{G-C}<20$) and covariance restriction methods for each variable (Figure \ref{bic}). To do this we used the Python \texttt{sklearn.mixture.GMM} module \cite{sklearn}. We selected the models which produced the lowest BIC value, and plotted the GMM-classified, PCA-projected climate data in Figure \ref{lde}. \\
+
+From the climatological clusters in Figures \ref{clusth}-\ref{clustb} we selected clusters that indicate a dry, sunny climate. Table \ref{tabclu} shows the selected number of clusters and covariance method for each variable along with our preferred clusters . From here on, if a station appears in one of our preferred clusters, we will say that it satisfies our criterion for that specific variable.\\
 
 \begin{figure}
 \begin{center}
-\includegraphics[scale=0.5]{bich.eps}
-\includegraphics[scale=0.5]{bicl.eps}\\
-\includegraphics[scale=0.5]{bicd.eps}
-\includegraphics[scale=0.5]{bicb.eps}
+\includegraphics[scale=0.5]{bich.pdf}
+\includegraphics[scale=0.5]{bicl.pdf}\\
+\includegraphics[scale=0.5]{bicd.pdf}
+\includegraphics[scale=0.5]{bicb.pdf}
 \caption{Bayesian Information Criterion (BIC) results for Gaussian Mixture Models using a different number of clusters and using different covariance restriction methods applied on each measured variable dataset.}\label{bic}
 \end{center}
 \end{figure}
 
 
-Table \ref{tabclu} shows the selected number of clusters and covariance method for each variable along with our preferred clusters that correlate with dry, sunny climate. From here on, if a station appears in one of our preferred clusters, we will say that it satisfies our criterion for that specific variable.
+
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.5]{ldeh.pdf}
+\includegraphics[scale=0.5]{ldel.pdf}
+\includegraphics[scale=0.5]{lded.pdf}
+\includegraphics[scale=0.5]{ldeb.pdf}
+\caption{Lowest BIC Gaussian Mixture Model clustering of reduced dimensionality climate data. Colors indicate the results of the clustering classification.}\label{lde}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.5]{gmmh0.pdf}
+\includegraphics[scale=0.5]{gmmh1.pdf}
+\caption{Climate clusters as predicted by the lowest-BIC Gaussian Mixture Model for relative humidity. Left column: Average monthly relative humidity and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each relative humidity cluster.}\label{clusth}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.5]{gmml0.pdf}
+\includegraphics[scale=0.5]{gmml1.pdf}
+\includegraphics[scale=0.5]{gmml2.pdf}
+\includegraphics[scale=0.5]{gmml3.pdf}
+\includegraphics[scale=0.5]{gmml4.pdf}
+\includegraphics[scale=0.5]{gmml5.pdf}
+\includegraphics[scale=0.5]{gmml6.pdf}
+\includegraphics[scale=0.5]{gmml7.pdf}
+\includegraphics[scale=0.5]{gmml8.pdf}
+\includegraphics[scale=0.5]{gmml9.pdf}
+\includegraphics[scale=0.5]{gmml10.pdf}
+\caption{Climate clusters as predicted by the lowest-BIC Gaussian Mixture Model for precipitation. Left column: Average monthly precipitation and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each precipitation cluster.}\label{clustl}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.5]{gmmd0.pdf}
+\includegraphics[scale=0.5]{gmmd1.pdf}
+\includegraphics[scale=0.5]{gmmd2.pdf}
+\includegraphics[scale=0.5]{gmmd3.pdf}
+\includegraphics[scale=0.5]{gmmd4.pdf}
+\includegraphics[scale=0.5]{gmmd5.pdf}
+\caption{Climate clusters as predicted by the lowest-BIC Gaussian Mixture Model for rain days. Left column: Average monthly rain days and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each rain days cluster.}\label{clustl}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.5]{gmmb0.pdf}
+\includegraphics[scale=0.5]{gmmb1.pdf}
+\includegraphics[scale=0.5]{gmmb2.pdf}
+\includegraphics[scale=0.5]{gmmb3.pdf}
+\includegraphics[scale=0.5]{gmmb4.pdf}
+\caption{Climate clusters as predicted by the lowest-BIC Gaussian Mixture Model for sunshine duration. Left column: Average monthly sunshine duration and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each sunshine duration cluster.}\label{clustl}
+\end{center}
+\end{figure}
 
 \begin{table}
-\caption{\label{tabclu}Climate clusters according to a lowest BIC-based selection of Gaussian Mixture Models.}
+\caption{\label{tabclu}Climate clusters according to a lowest BIC-based selection of Gaussian Mixture Models. See Figure \ref{bic}.}
 \begin{indented}
 \item[]\begin{tabular}{@{}lclll}
 \br
@@ -165,72 +228,14 @@ Sunshine Duration&$S$&5&Tied&1,4,5\\
 \end{indented}
 \end{table}
 
-\begin{figure}
-\begin{center}
-\includegraphics[scale=0.5]{ldeh.eps}
-\includegraphics[scale=0.5]{ldel.eps}
-\includegraphics[scale=0.5]{lded.eps}
-\includegraphics[scale=0.5]{ldeb.eps}
-\caption{Lowest BIC Gaussian Mixture Model clustering of reduced dimensionality climate data. Colors indicate the clustering classification.}\label{lde}
-\end{center}
-\end{figure}
+\section{Discussion}
 
-\begin{figure}
-\begin{center}
-\includegraphics[scale=0.5]{gmmh0.eps}
-\includegraphics[scale=0.5]{gmmh1.eps}
-\caption{Climate clusters as predicted by the lowest-BIC Gaussian Mixture Model for relative humidity. Left column: Average monthly relative humidity and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each relative humidity cluster.}\label{clusth}
-\end{center}
-\end{figure}
+We wish to identify all stations for whom all four criteria (humidity, precipitation, rain days, sunshine duration) for identifying a region as having a stable sunny, dry climate can be met.  However, since only a few stations measured all variables, it is not straightforward to accept or reject stations based on their satisfing a criterion, i.e. belonging to one of our preferred clusters. This requires setting up a measure of quality for individual stations depending on their location and the variables they measured. We will describe the selection process and probabilistic analysis that allows us to quantify a station's capability for indicating regions with an unusually dry, sunny climate.\\
 
-\begin{figure}
-\begin{center}
-\includegraphics[scale=0.5]{gmml0.eps}
-\includegraphics[scale=0.5]{gmml1.eps}
-\includegraphics[scale=0.5]{gmml2.eps}
-\includegraphics[scale=0.5]{gmml3.eps}
-\includegraphics[scale=0.5]{gmml4.eps}
-\includegraphics[scale=0.5]{gmml5.eps}
-\includegraphics[scale=0.5]{gmml6.eps}
-\includegraphics[scale=0.5]{gmml7.eps}
-\includegraphics[scale=0.5]{gmml8.eps}
-\includegraphics[scale=0.5]{gmml9.eps}
-\includegraphics[scale=0.5]{gmml10.eps}
-\caption{Climate clusters as predicted by the lowest-BIC Gaussian Mixture Model for precipitation. Left column: Average monthly precipitation and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each precipitation cluster.}\label{clustl}
-\end{center}
-\end{figure}
+We start by creating a shortlist of stations that meet criteria for (and only for) the variables they measured. This means that if a station has precipitation and humidity data, it should belong to a humidity and precipitation cluster listed in Table \ref{tabclu} or else it is rejected. 665 stations across Colombia showed such behavior. However, since we are interested in high-mountain regions, we included a criterion for elevation limiting our list to 119 stations located above 2000 masl. This shortlist was further reduced by requiring that the total average plus 1$\sigma$ for precipitation, rain days, and relative humidity is less than 4.3 mm/d, 17 d/mo, and 81\% respectively, and for sunshine duration, more than 4 h/d for any given station. This left us with 83 weather stations. \\
 
-\begin{figure}
-\begin{center}
-\includegraphics[scale=0.5]{gmmd0.eps}
-\includegraphics[scale=0.5]{gmmd1.eps}
-\includegraphics[scale=0.5]{gmmd2.eps}
-\includegraphics[scale=0.5]{gmmd3.eps}
-\includegraphics[scale=0.5]{gmmd4.eps}
-\includegraphics[scale=0.5]{gmmd5.eps}
-\caption{Climate clusters as predicted by the lowest-BIC Gaussian Mixture Model for rain days. Left column: Average monthly rain days and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each rain days cluster.}\label{clustl}
-\end{center}
-\end{figure}
+However, we want to give a measure of the quality of the station vis-a-vis our criteria, i.e. a station that meets less than all four criteria should still be considered in our analysis, but it cannot be given the same importance as a station that meets all four criteria. In order to account for this, and controlling for the fact that stations are not distributed evenly in elevation (Figure \ref{totmap}b), we propose a quality measure based on a probabilistic analysis of the data.
 
-\begin{figure}
-\begin{center}
-\includegraphics[scale=0.5]{gmmb0.eps}
-\includegraphics[scale=0.5]{gmmb1.eps}
-\includegraphics[scale=0.5]{gmmb2.eps}
-\includegraphics[scale=0.5]{gmmb3.eps}
-\includegraphics[scale=0.5]{gmmb4.eps}
-\caption{Climate clusters as predicted by the lowest-BIC Gaussian Mixture Model for sunshine duration. Left column: Average monthly sunshine duration and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each sunshine duration cluster.}\label{clustl}
-\end{center}
-\end{figure}
-
-
-\section{Quality Index for Regions of Interest}
-
-We wish to identify all stations for whom all four criteria for identifying a region as having a stable sunny, dry climate can be met.  However, since only a few stations measured all variables, it is not straightforward to accept or reject stations based on their satisfing a criterion, i.e. belonging to one of our preferred clusters. This requires setting up a measure of quality for individual stations depending on their location and the variables they measured. We will describe the selection process and probabilistic analysis that allows us to quantify a station's capability for indicating regions with an unusually dry, sunny climate.\\
-
-We start by creating a shortlist of stations that meet criteria for (and only for) the variables they measured. 665 stations across Colombia showed such behavior. However, since we are interested in high-mountain regions, we included a criterion for elevation limiting our list to 119 stations located above 2000 masl. This shortlist was further reduced by requiring that for a given station, the total average plus one  standard deviation for precipitation, rain days, and relative humidity correspond to less than 4.3 mm/d, 17 d/mo, and 81\% respectively, and for sunshine duration, to more than 4 h/d. This left us with 83 weather stations. \\
-
-However, we want to give a measure of the quality of the station vis-a-vis our criteria, i.e. a station that meets less than all four criteria should still be considered in our analysis, but it cannot be given the same importance as a station that meets all four criteria. In order to account for this, and controlling for the fact that stations are not distributed evenly in elevation (Figure \ref{figelev}), we propose a quality measure based on a probabilistic analysis of the data.
 
 \subsection{Probabilistic Analysis}
 
@@ -294,19 +299,27 @@ Here $P_\mathrm{min},P_\mathrm{max}$ are the lowest and highest values for the p
 
 \section{Results}
 
-We selected clusters of climatologically similar stations across Colombia using an unsupervised learning low-dimensional embedding algorithm for each measured variable. From these clusters, 83 weather stations came up as potential candidates for identifying high-mountain sites (at an elevation greater that 2000 masl) with an unusually dry, sunny weather (Figure \ref{mapsl}).\\
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.5]{slist.pdf}
+\includegraphics[scale=0.5]{slistz.pdf}
+\caption{Map of stations in our final shortlist. The highlighted region on (a) is seen in more detail in (b), which corresponds approximately to the Colombian \emph{altiplano} region. Marker size is proportional to the quality index $Q_j$, where the largest points correspond to a $Q_j=10$.}\label{shortlist}
+\end{center}
+\end{figure}
 
-Given that many of our candidate stations were lacking in relative humidity and sunshine duration data, we extrapolated using data from nearby stations (at less than 4 km away and at an elevation difference of less than 100 m). We made sure that in general, for stations less than 5 km away, the difference in relative humidity and sunshine duration data are less than 15\%. The extrapolated data suggested that 4 of the stations in the shortlist did not satisfy the relative humidity and sunshine duration criteria.  The remaining 73 stations are plotted in Figure \ref{73sl}.\\
+We selected clusters of climatologically similar stations across Colombia using an unsupervised learning low-dimensional embedding algorithm for each measured variable. From these clusters, 83 weather stations came up as potential candidates for identifying high-mountain sites (at an elevation greater that 2000 masl) with an unusually dry, sunny weather.\\
+
+Given that many of our candidate stations were lacking in relative humidity and sunshine duration data, we extrapolated using data from nearby stations (at less than 4 km away and at an elevation difference of less than 100 m). We made sure that in general, for stations less than 5 km away, the difference in relative humidity and sunshine duration data are less than 15\%. The extrapolated data suggested that 4 of the stations in the shortlist did not satisfy the relative humidity and sunshine duration criteria.  The remaining 79 stations are mapped in Figure \ref{shortlist}a.\\
 
 All stations outside of the region located within the latitude, longitude range $[(4.3,6.2),(-72.4,-74.5)]$ seem to be outliers, and while they could indicate unusually dry, sunny regions, there are not enough stations nearby to say anything conclusively. Furthermore, those stations only measured one or two variables, which leads us to reject them from our shortlist. \\
 
-The final 70 stations located nearby the Cundinamarca-Boyac\'a region of Colombia are shown in more detail in Figure \ref{boycun}. This Figure shows two tentative locations in the northern region (Boyac\'a department) appear, where the quality index $Q_j$ (proportional to the point size) indicates that all four criteria are satisfied. In order to see if those regions are geographically correlated, we grouped together these stations using a lowest-BIC spherical covariance Gaussian Mixture Model on their coordinates (Figure \ref{biglatlon}).\\
+The final 70 stations located nearby the Cundinamarca-Boyac\'a region of Colombia are shown in more detail in Figure \ref{shortlist}b. This figure shows two candidate locations in the northern region (Boyac\'a department), where the quality index $Q_j$ (proportional to the point size) indicates that all four criteria are satisfied. In order to see if those regions are geographically correlated, we grouped together these stations in a simplified manner using a lowest-BIC spherical covariance Gaussian Mixture Model on their coordinates \ref{geobic}.\\
 
-The stations are thus classified, and the colored points in Figure \ref{gmmlatlon} show 6 candidate regions. However, in order to see if the prediction from the Gaussian Mixture Models is indicative of regions with similar (dry, sunny) weather, we plotted the predicted variance regions for each cluster along with other stations in our sample (rejects) in Figure \ref{latlonreg}. From this figure, we can reject regions where the number of rejected stations within the predicted variance regions is similar to or higher than the number of stations in our shortlist for a specified cluster.
+ show 6 candidate regions we plotted the predicted variance regions for each cluster along with other stations in our sample (rejects) in Figure \ref{latlonreg}. From this figure, we can reject regions where the number of rejected stations within the predicted variance regions is similar to or higher than the number of stations in our shortlist for a specified cluster.
 
 \subsection{La Sabana}
 
-The region located to the west of Bogot\'a ()is a hilly region at an elevation above 2600 masl, with a large variety of microclimates, which explains the significant amount of stations from this region in our shortlist. However, Figure \ref{lasabana} shows that within this predicted variance region there are more stations that do not satisfy our criteria than stations that do. Furthermore, stations that meet and do not meet our criteria are homogeneously distributed. This, compounded with the fact that most (70\%) of these stations have a $Q$ value lower than 5.6 due to the lack of humidity/sunshine data, implies that at the moment this is not a strong candidate region of interest.
+The region located to the west of Bogot\'a is a hilly region at an elevation above 2600 masl, with a large variety of microclimates, which explains the significant amount of stations from this region in our shortlist. However, Figure \ref{lasabana} shows that within this predicted variance region there are more stations that do not satisfy our criteria than stations that do. Furthermore, stations that meet and do not meet our criteria are homogeneously distributed. This, compounded with the fact that most (70\%) of these stations have a $Q$ value lower than 5.6 due to the lack of humidity/sunshine data, implies that at the moment this is not a strong candidate region of interest.
 %light blue
 \subsection{Valle de Ubat\'e}
 
