@@ -303,7 +303,7 @@ Here $P_\mathrm{min},P_\mathrm{max}$ are the lowest and highest values for the p
 \begin{center}
 \includegraphics[scale=0.5]{slist.pdf}
 \includegraphics[scale=0.5]{slistz.pdf}
-\caption{Map of stations in our final shortlist. The highlighted region on (a) is seen in more detail in (b), which corresponds approximately to the Colombian \emph{altiplano} region. Marker size is proportional to the quality index $Q_j$, where the largest points correspond to a $Q_j=10$.}\label{shortlist}
+\caption{Map of stations in our final shortlist. The highlighted region on (a) is seen in more detail in (b), which corresponds approximately to the Colombian \emph{altiplano} region. Marker size is proportional to the probability $P_j$, where the largest points correspond to a $Q_j=10$.}\label{shortlist}
 \end{center}
 \end{figure}
 
@@ -311,9 +311,27 @@ We selected clusters of climatologically similar stations across Colombia using 
 
 Given that many of our candidate stations were lacking in relative humidity and sunshine duration data, we extrapolated using data from nearby stations (at less than 4 km away and at an elevation difference of less than 100 m). We made sure that in general, for stations less than 5 km away, the difference in relative humidity and sunshine duration data are less than 15\%. The extrapolated data suggested that 4 of the stations in the shortlist did not satisfy the relative humidity and sunshine duration criteria.  The remaining 79 stations are mapped in Figure \ref{shortlist}a.\\
 
-All stations outside of the region located within the latitude, longitude range $[(4.3,6.2),(-72.4,-74.5)]$ seem to be outliers, and while they could indicate unusually dry, sunny regions, there are not enough stations nearby to say anything conclusively. Furthermore, those stations only measured one or two variables, which leads us to reject them from our shortlist. \\
+All stations outside of the region located within the latitude, longitude range $[(4.3,6.2),(-72.4,-74.5)]$ seem to be outliers, and while they could indicate unusually dry, sunny regions, there are not enough stations nearby to say anything conclusively as can be seen in Figure \ref{outliers}. Furthermore, those stations only measured precipitation ($Q_j=2.2$), which leads us to reject them from our shortlist. \\
+%The points of interest outside this region are too sparsely located to suggest a candidate region of interest, \\
 
 The final 70 stations located nearby the Cundinamarca-Boyac\'a region of Colombia are shown in more detail in Figure \ref{shortlist}b. This figure shows two candidate locations in the northern region (Boyac\'a department), where the quality index $Q_j$ (proportional to the point size) indicates that all four criteria are satisfied. In order to see if those regions are geographically correlated, we grouped together these stations in a simplified manner using a lowest-BIC spherical covariance Gaussian Mixture Model on their coordinates \ref{geobic}.\\
+
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.55]{outliers.pdf}
+\caption{Map of stations in our final shortlist but outside of the Colombian \emph{altiplano} region highlighted in Figure \ref{shortlist}. Marker size is proportional to the Probability $P_j$, where the smallest points correspond to a $Q_j=2.2$.}\label{outliers}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.55]{geobic.pdf}
+\includegraphics[scale=0.55]{geobic2.pdf}
+\caption{Results  for a lowest-BIC spherical covariance Gaussian Mixture Model geographical clustering on the stations located inside the red circle in Figure \ref{shortlist}b. (a) BIC results for different number of clusters. (b) Lowest-BIC GMM geographical clustering classification.}\label{geobic}
+\end{center}
+\end{figure}
 
  show 6 candidate regions we plotted the predicted variance regions for each cluster along with other stations in our sample (rejects) in Figure \ref{latlonreg}. From this figure, we can reject regions where the number of rejected stations within the predicted variance regions is similar to or higher than the number of stations in our shortlist for a specified cluster.
 
