@@ -81,13 +81,13 @@ This paper is organized as follows.
   
 \section{The Dataset}
 
-The meteorological data used in this study were gathered over 30 years (1980-2010) in 2046 weather stations monitored by the Instituto de Hidrolog\'ia, Meteorolog\'ia y Estudios Ambientales (IDEAM) in Colombia (Figure \ref{totmap}). The  variables that we considered relevant to our work were: Precipitation (mm/mo), Rain Days (d/mo),  Relative Humidity (\%), and Sunshine Duration (h/d). These variables are reported as multi-annual monthly data, i.e. each variable is reported monthly from January to December averaged over the 30 year range. For precipitation, each monthly datum corresponds to the cumulative monthly value.  For rain days, each monthly datum corresponds to the number of rain days for that month.  For relative humidity, each monthly datum corresponds to the  average daily value averaged over each month. For sunshine duration, each monthly datum corresponds to the daily value averaged over each month. All stations reported precipitation values, although only 2002 reported rain days, 445 reported relative humidity, and 336 reported sunshine duration. This means that not all stations registered all the meteorological variables relevant to this work. Thus, we classify stations according to which variables they measured (Table \ref{tabstype}).\\
+The meteorological data used in this study were gathered over 30 years (1981-2010) in 2046 weather stations monitored by the Instituto de Hidrolog\'ia, Meteorolog\'ia y Estudios Ambientales (IDEAM) in Colombia (Figure \ref{totmap}). The  variables that we considered relevant to our work were: Precipitation (mm/mo), Rain Days (d/mo),  Relative Humidity (\%), and Sunshine Duration (h/d). These variables are reported as multi-annual monthly data, i.e. each variable is reported monthly from January to December averaged over the 30 year range. For precipitation, each monthly datum corresponds to the cumulative monthly value.  For rain days, each monthly datum corresponds to the number of rain days for that month.  For relative humidity, each monthly datum corresponds to the  average daily value averaged over each month. For sunshine duration, each monthly datum corresponds to the daily value averaged over each month. All stations reported precipitation values, although only 2002 reported rain days, 445 reported relative humidity, and 336 reported sunshine duration. This means that not all stations registered all the meteorological variables relevant to this work. Thus, we classify stations according to which variables they measured (Table \ref{tabstype}).\\
 
 \begin{figure}
 \begin{center}
 \includegraphics[scale=0.5]{totmap.pdf}
 \includegraphics[scale=0.5]{elev.pdf}
-\caption{Distribution of weather stations in the dataset. (a) 1$\sigma$ (solid) and 2$\sigma$ (dashed) countours of a gaussian kernel density estimation of the geographical distribution of weather stations (small green points) from the IDEAM 1980-2010 database. The estimation was done using the Python \texttt{scipy.stats.gaussian\_kde}  function. (b) Altitude histogram for all stations in the dataset.}\label{totmap}
+\caption{Distribution of weather stations in the dataset. (a) 1$\sigma$ (solid) and 2$\sigma$ (dashed) countours of a gaussian kernel density estimation of the geographical distribution of weather stations (small green points) from the IDEAM 1981-2010 database. The estimation was done using the Python \texttt{scipy.stats.gaussian\_kde}  function. (b) Altitude histogram for all stations in the dataset.}\label{totmap}
 \end{center}
 \end{figure}
 
@@ -237,9 +237,9 @@ We start by creating a shortlist of stations that meet criteria for (and only fo
 However, we want to give a measure of the quality of the station vis-a-vis our criteria, i.e. a station that meets less than all four criteria should still be considered in our analysis, but it cannot be given the same importance as a station that meets all four criteria. In order to account for this, and controlling for the fact that stations are not distributed evenly in elevation (Figure \ref{totmap}b), we propose a quality measure based on a probabilistic analysis of the data.
 
 
-\subsection{Probabilistic Analysis}
+\subsection{Bayesian probabilistic analysis}
 
-We base our analysis on the probability for our hypothesis that a station which appears in our shortlist meets all four criteria, given that it is located at a given elevation. We can write down this probability in terms of the following events:
+We quantify the quality of a given site using the probability for the hypothesis that a station which appears in our shortlist meets all four criteria, given that it is located at a given elevation. We can write down this probability in terms of the following events:
 
 \begin{itemize}
 \item $C$ is the event that a given station meets all four criteria, i.e. belongs to our preferred clusters for the four variables relevant to this study.
@@ -296,32 +296,28 @@ Q_j=9\ \frac{\log (\nicefrac{P_\mathrm{j}}{P_\mathrm{min}})}{\log (\nicefrac{P_\
 \end{equation}
 Here $P_\mathrm{min},P_\mathrm{max}$ are the lowest and highest values for the probabilities for the stations in the first shorlist of 665 stations that satisfy criteria for all measured variables. Thus, if $P_j=P_\mathrm{max}$, $Q_j=10$, and if $P_j=P_\mathrm{min}$, $Q_j=1$.
 
-
-\section{Results}
+\subsection{Final selection}
 
 \begin{figure}
 \begin{center}
 \includegraphics[scale=0.5]{slist.pdf}
 \includegraphics[scale=0.5]{slistz.pdf}
-\caption{Map of stations in our final shortlist. The highlighted region on (a) is seen in more detail in (b), which corresponds approximately to the Colombian \emph{altiplano} region. Marker size is proportional to the probability $P_j$, where the largest points correspond to a $Q_j=10$.}\label{shortlist}
+\caption{Map of stations in our final shortlist. The highlighted region on (a) is seen in more detail in (b), which corresponds approximately to the Colombian \emph{altiplano} region. Marker size is proportional to the probability $P_j$, where the largest size corresponds to $Q_j=10$.}\label{shortlist}
 \end{center}
 \end{figure}
 
-We selected clusters of climatologically similar stations across Colombia using an unsupervised learning low-dimensional embedding algorithm for each measured variable. From these clusters, 83 weather stations came up as potential candidates for identifying high-mountain sites (at an elevation greater that 2000 masl) with an unusually dry, sunny weather.\\
-
-Given that many of our candidate stations were lacking in relative humidity and sunshine duration data, we extrapolated using data from nearby stations (at less than 4 km away and at an elevation difference of less than 100 m). We made sure that in general, for stations less than 5 km away, the difference in relative humidity and sunshine duration data are less than 15\%. The extrapolated data suggested that 4 of the stations in the shortlist did not satisfy the relative humidity and sunshine duration criteria.  The remaining 79 stations are mapped in Figure \ref{shortlist}a.\\
-
-All stations outside of the region located within the latitude, longitude range $[(4.3,6.2),(-72.4,-74.5)]$ seem to be outliers, and while they could indicate unusually dry, sunny regions, there are not enough stations nearby to say anything conclusively as can be seen in Figure \ref{outliers}. Furthermore, those stations only measured precipitation ($Q_j=2.2$), which leads us to reject them from our shortlist. \\
-%The points of interest outside this region are too sparsely located to suggest a candidate region of interest, \\
-
-The final 70 stations located nearby the Cundinamarca-Boyac\'a region of Colombia are shown in more detail in Figure \ref{shortlist}b. This figure shows two candidate locations in the northern region (Boyac\'a department), where the quality index $Q_j$ (proportional to the point size) indicates that all four criteria are satisfied. In order to see if those regions are geographically correlated, we grouped together these stations in a simplified manner using a lowest-BIC spherical covariance Gaussian Mixture Model on their coordinates \ref{geobic}.\\
 
 
+Given that many of our 83 candidate stations were lacking in relative humidity and sunshine duration data, we extrapolated using data from nearby stations (at less than 4 km away and at an elevation difference of less than 100 m). We made sure that in general, for stations less than 5 km away, the difference in relative humidity and sunshine duration data is less than 15\%. The extrapolated data evidenced that 4 of the stations in the shortlist did not satisfy the relative humidity and sunshine duration criteria.  The remaining 79 stations are mapped in Figure \ref{shortlist}a.\\
+
+We rejected 9 of the stations in Figure \ref{shortlist}a, i.e. those located outside of the region located within the latitude, longitude range $[(4.3,6.2),(-72.4,-74.5)]$. Even tough they could be indicative of unusually dry, sunny regions, there are simply not enough stations nearby to say anything conclusively, as evidenced in Figure \ref{outliers}. Adding to this, the only variable they measured was precipitation ($Q_j=2.2$), which leads us to reject them from our shortlist. \\
+
+The final 70 stations located in the Cundinamarca-Boyac\'a region of Colombia are shown in more detail in Figure \ref{shortlist}b. This figure shows two candidate locations in the northern region (Boyac\'a department), where the quality index $Q_j$ (proportional to the point size) indicates that all four criteria are satisfied. In order to see if those regions are geographically correlated, we grouped together these stations in a simplified manner using a lowest-BIC spherical covariance Gaussian Mixture Model on their coordinates \ref{geobic}.
 
 \begin{figure}
 \begin{center}
 \includegraphics[scale=0.55]{outliers.pdf}
-\caption{Map of stations in our final shortlist but outside of the Colombian \emph{altiplano} region highlighted in Figure \ref{shortlist}. Marker size is proportional to the Probability $P_j$, where the smallest points correspond to a $Q_j=2.2$.}\label{outliers}
+\caption{Map of stations in our final shortlist but outside of the Colombian \emph{altiplano} region highlighted in Figure \ref{shortlist}. Marker size is proportional to the probability $P_j$, where the smallest size corresponds to $Q_j=2.2$.}\label{outliers}
 \end{center}
 \end{figure}
 
@@ -329,11 +325,22 @@ The final 70 stations located nearby the Cundinamarca-Boyac\'a region of Colombi
 \begin{center}
 \includegraphics[scale=0.55]{geobic.pdf}
 \includegraphics[scale=0.55]{geobic2.pdf}
-\caption{Results  for a lowest-BIC spherical covariance Gaussian Mixture Model geographical clustering on the stations located inside the red circle in Figure \ref{shortlist}b. (a) BIC results for different number of clusters. (b) Lowest-BIC GMM geographical clustering classification.}\label{geobic}
+\caption{Geographical clustering results  for a lowest-BIC spherical covariance Gaussian Mixture Model of the stations located inside the red circle in Figure \ref{shortlist}b. (a) BIC results for different number of clusters. (b) Lowest-BIC GMM geographical clustering classification. Marker size is proportional to the probability $P_j$, where the largest size corresponds to  $Q_j=10$ and the smallest size corresponds to $Q_j=2.2$. }\label{geobic}
 \end{center}
 \end{figure}
 
- show 6 candidate regions we plotted the predicted variance regions for each cluster along with other stations in our sample (rejects) in Figure \ref{latlonreg}. From this figure, we can reject regions where the number of rejected stations within the predicted variance regions is similar to or higher than the number of stations in our shortlist for a specified cluster.
+\section{Results}
+
+We selected clusters of climatologically similar stations across Colombia using an unsupervised learning low-dimensional embedding algorithm for each measured variable. From these clusters, 70 weather stations came up as potential candidates for identifying high-mountain regions (at an elevation greater that 2000 masl) with an unusually dry, sunny weather.\\
+
+Figure \ref{geobic}b shows 6 candidate regions of interest, where weather stations indicating dry, sunny climate are regionally correlated. In order to visualize the extent of those regions we plotted the predicted variance regions for each cluster along with other (rejected) stations in our sample in Figure \ref{latlonreg}. From this figure, we can reject regions where the number of rejected stations within the predicted variance regions is too similar to the number of stations in our shortlist for a specified candidate region in Figure \ref{geobic}b. We discuss the suitability of each of these regions below, from South to North.
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.55]{latlonreg.pdf}
+\caption{Geographical clustering results  for the lowest-BIC spherical covariance Gaussian Mixture Model shown in Figure \ref{geobic}b, indicating the predicted variance regions for each cluster (red circles), and plotted along rejected stations in our original dataset (black points).}\label{latlonreg}
+\end{center}
+\end{figure}
 
 \subsection{La Sabana}
 
@@ -375,7 +382,9 @@ Seasonality plots\\
 
  
 
+\section{Conclusions}
 
+%The points of interest outside this region are too sparsely located to suggest a candidate region of interest, \\
   
 
  \section*{References}
