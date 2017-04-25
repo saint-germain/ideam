@@ -237,7 +237,7 @@ We start by creating a shortlist of stations that meet criteria for (and only fo
 However, we want to give a measure of the quality of the station vis-a-vis our criteria, i.e. a station that meets less than all four criteria should still be considered in our analysis, but it cannot be given the same importance as a station that meets all four criteria. In order to account for this, and controlling for the fact that stations are not distributed evenly in elevation (Figure \ref{totmap}b), we propose a quality measure based on a probabilistic analysis of the data.
 
 
-\subsection{Bayesian probabilistic analysis}
+\subsection{Bayesian probabilistic analysis}\label{bpa}
 
 We quantify the quality of a given site using the probability for the hypothesis that a station which appears in our shortlist meets all four criteria, given that it is located at a given elevation. We can write down this probability in terms of the following events:
 
@@ -312,7 +312,7 @@ Given that many of our 83 candidate stations were lacking in relative humidity a
 
 We rejected 9 of the stations in Figure \ref{shortlist}a, i.e. those located outside of the region located within the latitude, longitude range $[(4.3,6.2),(-72.4,-74.5)]$. Even tough they could be indicative of unusually dry, sunny regions, there are simply not enough stations nearby to say anything conclusively, as evidenced in Figure \ref{outliers}. Adding to this, the only variable they measured was precipitation ($Q_j=2.2$), which leads us to reject them from our shortlist. \\
 
-The final 70 stations located in the Cundinamarca-Boyac\'a region of Colombia are shown in more detail in Figure \ref{shortlist}b. This figure shows two candidate locations in the northern region (Boyac\'a department), where the quality index $Q_j$ (proportional to the point size) indicates that all four criteria are satisfied. In order to see if those regions are geographically correlated, we grouped together these stations in a simplified manner using a lowest-BIC spherical covariance Gaussian Mixture Model on their coordinates \ref{geobic}.
+The final 70 stations located in the Cundinamarca-Boyac\'a region of Colombia are shown in more detail in Figure \ref{shortlist}b. This figure shows two candidate locations in the northern region (Boyac\'a department), where the quality index $Q_j$ (proportional to the point size) indicates that all four criteria are satisfied. In order to see if those regions are geographically correlated, we grouped together these stations in a simplified manner using a lowest-BIC spherical covariance Gaussian Mixture Model on their coordinates \ref{unif}.
 
 \begin{figure}
 \begin{center}
@@ -321,56 +321,54 @@ The final 70 stations located in the Cundinamarca-Boyac\'a region of Colombia ar
 \end{center}
 \end{figure}
 
-\begin{figure}
-\begin{center}
-\includegraphics[scale=0.55]{geobic.pdf}
-\includegraphics[scale=0.55]{geobic2.pdf}
-\caption{Geographical clustering results  for a lowest-BIC spherical covariance Gaussian Mixture Model of the stations located inside the red circle in Figure \ref{shortlist}b. (a) BIC results for different number of clusters. (b) Lowest-BIC GMM geographical clustering classification. Marker size is proportional to the probability $P_j$, where the largest size corresponds to  $Q_j=10$ and the smallest size corresponds to $Q_j=2.2$. }\label{geobic}
-\end{center}
-\end{figure}
+
 
 \section{Results}
 
 We selected clusters of climatologically similar stations across Colombia using an unsupervised learning low-dimensional embedding algorithm for each measured variable. From these clusters, 70 weather stations came up as potential candidates for identifying high-mountain regions (at an elevation greater that 2000 masl) with an unusually dry, sunny weather.\\
 
-Figure \ref{geobic}b shows 6 candidate regions of interest, where weather stations indicating dry, sunny climate are regionally correlated. In order to visualize the extent of those regions we plotted the predicted variance regions for each cluster along with other (rejected) stations in our sample in Figure \ref{latlonreg}. From this figure, we can reject regions where the number of rejected stations within the predicted variance regions is too similar to the number of stations in our shortlist for a specified candidate region in Figure \ref{geobic}b. We discuss the suitability of each of these regions below, from South to North.
+Figure \ref{unif} shows 6 candidate regions of interest, where weather stations indicating dry, sunny climate are regionally correlated. In order to visualize the extent of those regions we plotted the predicted variance regions for each cluster along with other (rejected) stations in our sample in Figure \ref{unif}. It should be noted that the spherical variance GMM geographical clustering overestimates the extent of each region, and tells us nothing of their actual shape. We can now reject regions where the number of rejected stations within the predicted variance regions is too similar to the number of stations in our shortlist in Figure \ref{unif}.  We discuss the suitability of each of these regions below, from South-West to North-East based on our Bayesian probabilistic quality index (Section \ref{bpa}).
+
+
 
 \begin{figure}
 \begin{center}
-\includegraphics[scale=0.55]{latlonreg.pdf}
-\caption{Geographical clustering results  for the lowest-BIC spherical covariance Gaussian Mixture Model shown in Figure \ref{geobic}b, indicating the predicted variance regions for each cluster (red circles), and plotted along rejected stations in our original dataset (black points).}\label{latlonreg}
+\includegraphics[scale=0.65]{unif.pdf}
+\caption{Geographical clustering results  for a lowest-BIC spherical covariance Gaussian Mixture Model of the stations located inside the red circle in Figure \ref{shortlist}b, indicating the predicted variance regions for each cluster (red circles), and plotted along rejected stations in our original dataset (black points). Marker size is proportional to the probability $P_j$, where the largest size corresponds to  $Q_j=10$ and the smallest size corresponds to $Q_j=2.2$. Embedded plot: BIC results for different number of clusters. }\label{unif}
 \end{center}
 \end{figure}
 
+
 \subsection{La Sabana}
 
-The region located to the west of Bogot\'a is a hilly region at an elevation above 2600 masl, with a large variety of microclimates, which explains the significant amount of stations from this region in our shortlist. However, Figure \ref{lasabana} shows that within this predicted variance region there are more stations that do not satisfy our criteria than stations that do. Furthermore, stations that meet and do not meet our criteria are homogeneously distributed. This, compounded with the fact that most (70\%) of these stations have a $Q$ value lower than 5.6 due to the lack of humidity/sunshine data, implies that at the moment this is not a strong candidate region of interest.
+The first cluster is located at ($4.77^\circ$N, $74.18^\circ$W) and covers an radius of 15.3 km$^2$. This is a region located to the west of Bogot\'a at an elevation above 2600 masl, with a large variety of microclimates. This explains the significant amount of stations from this region in our shortlist. However, Figure \ref{unif} shows that within this predicted variance region there are more stations that do not satisfy our criteria than stations that do, and no single sub-region can be identified. This, compounded with the fact that most (70\%) of these stations have a $Q$ value lower than 5.6 due to the lack of humidity/sunshine data, implies that at the moment this is not a strong candidate region of interest.
 %light blue
+
 \subsection{Valle de Ubat\'e}
 
-This region, located to the NNE of Bogot\'a s a hilly region along a valley at an elevation above 2600 masl. The ratio of number of stations that do not meet our criteria to the stations in this predicted variance region is low (0.3), and almost half of these stations (\%46) have a $Q$ value higher than 6. This indicates a potential candidate region, although more  sunshine and humidity data are needed. In our next paper we will study the amount of atmospheric water vapor near this region.
+This cluster is located at ($5.30^\circ$N, $73.80^\circ$W) and covers a radius of 11.4 km$^2$. This region, located to the NNE of Bogot\'a s a hilly region along a valley at an elevation above 2600 masl. The ratio of number of stations that do not meet our criteria to the stations in this predicted variance region is low (0.3), and almost half of these stations (46\%) have a $Q_j$ value higher than 6. This indicates a potential candidate region, although more  sunshine and humidity data are needed.
 %cyan
 
 \subsection{Villa de Leyva}
 
-The region near the town of Villa de Leyva is known for its dry weather, and the stations located within this region seem to support this belief. The ratio of stations not in our shortlist vs. the stations in this predicted variance region is not very low (0.4). However, Figure \ref{villadeley} seems to indicate that the actual region of interest is narrower than the predicted variance region, as the stations that do not satisfy our criteria are on the NNW and SSW fringes of said region. The presence of one very high-$Q$ station is very suggestive of this region being a strong candidate. However, its relatively low elevation (near 2200 masl) can signify the presence of too much atmospheric water vapor above the surface. This will be covered in our next paper.
+This cluster is located at ($5.61^\circ$N, $73.55^\circ$W) and covers a radius of 7.11 km$^2$. This region is located near the town of Villa de Leyva, and it is known for its dry weather.  The ratio of stations not in our shortlist vs. the stations in this predicted variance region is not very low (0.4). However, Figure \ref{villadeley} seems to indicate that the actual region of interest is narrower than the predicted variance region, as the stations that do not satisfy our criteria are on the NNW and SSW fringes of said region. The presence of one very high-$Q_j$ station and the narrow GMM-predicted variance is indicative of this region being a strong candidate. However, its relatively low elevation (near 2200 masl) can signify the presence of too much atmospheric water vapor above the surface. 
 %red
 
-\subsection{Tunja Canton}
+\subsection{Cant\'on de Tunja}
 
-The variance predicted region west of Tunja is located in the historic Tunja Canton, and even though the ratio of stations not in our shortlist to stations in this predicted region is low (0.31), there are simply not enough humidity and sunshine data to make any strong conclusion regarding this region. However, the high-elevation location of some of these stations is tantalizing, which is why we will keep this as a region of interest for our next paper.
+This cluster is located at ($5.59^\circ$N, $73.24^\circ$W) and covers a radius of 8.29 km$^2$. The GMM-predicted variance region west of Tunja is located in the historic Tunja Canton, and even though the ratio of stations not in our shortlist to stations in this predicted region is low (0.31), there are simply not enough humidity and sunshine data to make any strong conclusion about this region. However, the high altitude of some of these stations is tantalizing, which is why we will keep this as a region of interest for our next paper.
 
 % dark blue
 
 \subsection{Valle del Sol}
 
-This is one of the most promising regions in our sample. Located in a wide, sunny valley (hence the name) at an elevation of 2600 masl, it is surrounded by mountains, and rains are not as common as elsewhere in the country. This region has the lowest ratio of not in our shortlist stations to stations in this predicted variance region (0.2), $\%40$ of the stations have a $Q$ value higher than 6, and one of the stations has a very high-$Q$ value. This will be one of the regions of interest for our next paper, and we think that it warrants radiometer measurements to be carried out.
+This cluster is located at ($5.72^\circ$N, $72.96^\circ$W) and covers a radius of 8.06 km$^2$. This is one of the most promising regions in our sample. Located in a wide, sunny valley (hence the name) at an elevation of 2600 masl, it is surrounded by mountains, and rains are not as common as elsewhere in the country. This region has the lowest ratio of not in our shortlist stations to stations in this predicted variance region (0.2), $\%40$ of the stations have a $Q_j$ value higher than 6, and one of the stations has a very high-$Q_j$ value. This will be one of the regions of interest for our next paper, and we think that it warrants radiometer measurements to be carried out.
 
 \subsection{Pisba National Park}
 
-This is a \emph{p\'aramo} region, characterized by high-mountain tundra weather. The ratio of stations not in our shortlist to station in this predicted variance region is high (0.5), and it is unlikely that the mist allows for a low-atmospheric water vapor region to be located here, even if rain is sporadic. The lack of a high-$Q$ station means that more sunshine-humidity data are needed, but this is possibly not a region of interest.\\
+This cluster is located at ($6.04^\circ$N, $72.71^\circ$W) and covers a radius of 10.52 km$^2$. This is a \emph{p\'aramo} region, characterized by high-mountain tundra weather. The ratio of stations not in our shortlist to station in this predicted variance region is high (0.5), and it is unlikely that the mist allows for a low-atmospheric water vapor region to be located here, even if rain is sporadic. The lack of a high-$Q$ station means that more sunshine-humidity data are needed, but this is possibly not a region of interest.\\
 
-%figures for all these
+
 
 % tables for our three favorites, Ubat\'e, Villa, Sol.
 
@@ -386,6 +384,9 @@ Seasonality plots\\
 
 %The points of interest outside this region are too sparsely located to suggest a candidate region of interest, \\
   
+  % vdu In our next paper we will study the amount of atmospheric water vapor near this region.
+  
+% vdl  stations located within this region seem to support this belief. This will be covered in our next paper.
 
  \section*{References}
  \bibliography{paperclimate}
