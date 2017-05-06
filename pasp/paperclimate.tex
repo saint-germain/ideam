@@ -11,7 +11,7 @@
 
 %\title[Site Location Study for a Millimeter Observatory in the Colombian Andes I: In Situ]{Site location study for a high-mountain millimeter observatory in the Colombian Andes I: In situ data}
 
-\title[Low Dimensional Embedding of Climate Data for Radio Astronomical Site Testing]{ Low Dimensional Embedding of Climate Data for Radio Astronomical Site Testing in the Colombian Andes}
+\title[Low Dimensional Embedding of Climate Data for Radio Astronomical Site Testing]{Low Dimensional Embedding of Climate Data for Radio Astronomical Site Testing in the Colombian Andes}
 % Low Dimensional Embedding of Climate Data for Radio Astronomical Site Testing in the Colombian Andes
 
 \author{Germ¬\'an Chaparro Molano$^{1}$}
@@ -20,12 +20,13 @@
 \author{Oscar Leonardo Ram\'irez Su\'arez$^{1}$}
 \address{$^1$Grupo de Simulaci\'on, An\'alisis y Modelado, Vicerrector\'ia de Investigaci\'on, Universidad ECCI, Bogot\'a, Colombia}
 \ead{oramirezs@ecci.edu.co}
-\author{Oscar Restrepo$^{1}$}
+\author{Oscar Restrepo$^{1,2}$}
 \address{$^1$Grupo de Simulaci\'on, An\'alisis y Modelado, Vicerrector\'ia de Investigaci\'on, Universidad ECCI, Bogot\'a, Colombia}
+\address{$^2$Radio Astronomy Instrumentation Group, Universidad de Chile, Santiago de Chile, Chile}
 \ead{orestrepog@ecci.edu.co}
-\author{Alexander Mart\'inez$^{1,2}$}
+\author{Alexander Mart\'inez$^{1,3}$}
 \address{$^1$Grupo de Simulaci\'on, An\'alisis y Modelado, Vicerrector\'ia de Investigaci\'on, Universidad ECCI, Bogot\'a, Colombia}
-\address{$^2$Instituto de Hidrolog\'ia, Meteorolog\'ia y Estudios Ambientales, Bogot\'a, Colombia}
+\address{$^3$Instituto de Hidrolog\'ia, Meteorolog\'ia y Estudios Ambientales, Bogot\'a, Colombia}
 \vspace{10pt}
 \begin{indented}
 \item[]December 2016
@@ -68,22 +69,22 @@ If you have any queries about this document or any aspect of preparing your arti
 
 \section{Introduction}
 
-The development of astronomical instrumentation technology in the 0.2-2 THz range has been rapidly growing in recent years. Also, interest in THz technology, specially applied to satellite telecommunications has also grown due to the saturation of the ``classical radio window'' in telecommunications  \cite{newera}, and atmospheric models for absorption of THz photons \cite{rosenkranz,lababs} and artifact removal models \cite{removal} have been developed recently due to this interest. Near-equatorial countries face a challenge in using this frequency band for astronomical observations and telecommunications using terabit satellite links  \cite{suen2016} due to the presence of a tropical belt of dense water vapor which efficiently absorbs THz radiation \cite{tropicalbelt}. In the Northern Andes, previous studies of astronomical site testing in the visible range have shown that high nighttime humidity conditions make this region suitable only for educational observatories \cite{pinzon}. However, considering that millimeter/sub-millimeter observations need not be done during the night, unusually dry, clear-daytime-sky, high altitude regions in the Northern Andes could be suitable candidates for a world-class millimeter-wave observatory. \\
+The development of astronomical instrumentation technology in the 0.2-2 THz range has been rapidly growing in recent years. Another recent surge in interest in telecommunications THz technology has appeared recently due to the saturation of the ``classical radio window'' in telecommunications  \cite{newera}. For this reason, there has been development of atmospheric models for absorption of THz photons \cite{rosenkranz,lababs} and artifact removal models \cite{removal}. Near-equatorial countries face a challenge in using this frequency band for astronomical observations and telecommunications using terabit satellite links  \cite{suen2016} due to the presence of a tropical belt of dense water vapor which efficiently absorbs THz radiation \cite{tropicalbelt}. In the northern Andes, previous studies of astronomical site testing in the visible range have shown that high nighttime humidity conditions make this region suitable only for educational observatories \cite{pinzon}. However, considering that millimeter/sub-millimeter observations need not be done during the night, unusually dry, clear-daytime-sky, high altitude regions in the Northern Andes could be suitable candidates for a world-class millimeter-wave observatory. \\
 
 Astronomical observations in the millimeter and sub-millimeter wavelength range require that atmospheric effects affecting absorption at these wavelengths are kept to a minimum \cite{southpole,radford2016,chajpwv}. The main factor contributing to the atmospheric opacity is water vapor, which very efficiently absorbs light in the THz range \cite{pardocerni,pardocerni2,cont350} due to a continuum absorption spectrum formed by collisionally broadened absorption lines of water vapor in this frequency range  \cite{linecont,submmlines,turner2009}. In order to characterize a site according to its atmospheric transparency to THz radiation, it is necessary to retrieve the precipitable water vapor profile either via remote sensing techniques such as microwave radiometry \cite{radiometer,paine2000fourier,southpole2}, satellite measurements \cite{aqua,spacemols,suen2014,spaceradio}, radiosonde humidity measurements \cite{radiosonde,radiosonde2} or indirectly via models of in situ climatological measurements \cite{climatology} or GPS-delay studies \cite{gpsorig,gpsmap}. \\
 
 Most of the precipitable water vapor that can potentially affect the path of a THz photon hoping to get through the atmosphere actually exists in the troposphere. The lower the elevation of a potential site, the longer the path becomes for that photon, increasing its chances of being absorbed by a water vapor molecule \cite{liebe1989mpm,linecont,lababs}. For this reason, the quality of a site is determined by the atmospheric water vapor column above the potential site \cite{mkradio,southpole3,he2012,atacama}. This water vapor column is usually expressed as the amount of precipitable water vapor, given in mm.\\
 
-The water vapor column above a potential site can change rapidly (during the course of the day) or it can change seasonally \cite{arm2013,caumont2016}. This is why medium-to-long term monitoring of the atmosphere above a site is required before building an expensive mm/sub-mm wave radio telescope. However, even in best-case scenarios, earth-based telescopes will always be limited by atmospheric absorption of light specially at THz frequencies, where windows of observations are few and in some cases, narrow \cite{arrlim,limits}. \\
+The water vapor column above a potential site can change rapidly (during the course of the day) or it can change seasonally \cite{arm2013,caumont2016}. This is why medium-to-long term monitoring of the atmosphere above a site is required before building an expensive mm/sub-mm wave radio telescope. However, even in best-case scenarios, earth-based telescopes will always be limited by atmospheric absorption of light specially at THz frequencies, where frequency windows of observations are few and in some cases, narrow \cite{arrlim,limits}. \\
 
-Although radiometer measurements are desirable for directly measuring the atmospheric water vapor column, their development and/or deployment can be complex and expensive \cite{radiopro,receiver}. For this reason we screened historic climate data for evidence of local long-term clear sky, low humidity conditions as proxies for a locally low precipitable water vapor column. By low-dimensionally embedding the data, we are able to reduce the dimensionality of multi-annual monthly data from $N_\mathrm{dim}=12$ to $N_\mathrm{dim}\le3$. Thus, we can correlate unusually dry regions regardless of their geographical location. Given that the climatological variables were sparsely measured by weather stations across Colombia, we evaluated the aptness of a given location using a Bayesian probability-derived quality index. Finally, we geographically clustered our candidate locations in order to identify regions of interest. We compared our regions of interest with regions with unusually low precipitable water vapor in low-resolution water vapor satellite maps \cite{suen2016} and find a possibly significative geographical correlation.  In an upcoming paper we will analize satellite data in order to retrieve high-resolution seasonal precipitable water vapor maps for our regions of interest.\\
+Although radiometer measurements are desirable for directly measuring the atmospheric water vapor column, their development and/or deployment can be complex and expensive \cite{radiopro,receiver}. For this reason we screened historic climate data for evidence of local long-term clear sky, low humidity conditions as proxies for a locally low precipitable water vapor column. By low-dimensionally embedding the data, we are able to reduce the dimensionality of multi-annual monthly data from $N_\mathrm{dim}=12$ to $N_\mathrm{dim}\le3$ while preserving $>95$\% of the variance in the data. Thus, we can correlate unusually dry regions regardless of their geographical location. Given that the climatological variables were sparsely measured by weather stations across Colombia, we evaluated the aptness of a given location using a Bayesian probability-derived quality index. Finally, we geographically clustered our candidate locations in order to identify regions of interest. We compared these regions of interest with regions with unusually low precipitable water vapor in low-resolution ($\sim20$ km) water vapor satellite maps \cite{suen2016} and find a possibly significative geographical correlation.  In an upcoming paper we will analize satellite data in order to retrieve high-resolution seasonal precipitable water vapor maps for the regions of interest reported here.\\
 
 This paper is organized as follows. We describe our dataset and the distribution and types of weather stations in Section 2. In Section 3 we describe how we applied low-dimensional embedding algorithms to our data. This is followed by a discussion in Section 4, where we include an overview of climate patterns in Colombia, and describe our Bayesian probabilistic quality index to assess the suitability of a given weather station. We summarize our results in Section 5, where we identify candidate regions of interest for a mm-wave astronomical observatory site. Finally, we discuss our main conclusions and future perspectives in Section 6 .
   
   
 \section{The Dataset}
 
-The meteorological data used in this study were gathered over 30 years (1981-2010) in 2046 weather stations monitored by the Instituto de Hidrolog\'ia, Meteorolog\'ia y Estudios Ambientales (IDEAM) in Colombia (Figure \ref{totmap}). The  variables that we considered relevant to our work were: Precipitation (mm/mo), Rain Days (d/mo),  Relative Humidity (\%), and Sunshine Duration (h/d). These variables are reported as multi-annual monthly data, i.e. each variable is reported monthly from January to December averaged over the 30 year range. For precipitation, each monthly datum corresponds to the cumulative monthly value.  For rain days, each monthly datum corresponds to the number of rain days for that month.  For relative humidity, each monthly datum corresponds to the  average daily value averaged over each month. For sunshine duration, each monthly datum corresponds to the daily value averaged over each month. All stations reported precipitation values, although only 2002 reported rain days, 445 reported relative humidity, and 336 reported sunshine duration. This means that not all stations registered all the meteorological variables relevant to this work. Thus, we classify stations according to which variables they measured (Table \ref{tabstype}).\\
+The meteorological data used in this study were gathered over 30 years (1981-2010) in 2046 weather stations monitored by the Instituto de Hidrolog\'ia, Meteorolog\'ia y Estudios Ambientales (IDEAM) in Colombia (Figure \ref{totmap}). The  variables that we considered relevant to our work were: Elevation (in meters above sea level, or masl), Precipitation (mm/mo), Rain Days (d/mo),  Relative Humidity (\%), and Sunshine Duration (h/d). The climatological variables are reported as multi-annual monthly data, i.e. each variable is reported monthly from January to December averaged over the 30 year range. For precipitation, each monthly datum corresponds to the cumulative monthly value.  For rain days, each monthly datum corresponds to the number of rain days for that month.  For relative humidity, each monthly datum corresponds to the  average daily value averaged over each month. For sunshine duration, each monthly datum corresponds to the daily value averaged over each month. All stations reported precipitation values, although only 2002 reported rain days, 445 reported relative humidity, and 336 reported sunshine duration. This means that not all stations registered all the meteorological variables relevant to this work. Thus, we classify stations according to which variables they measured (Table \ref{tabstype}).\\
 
 \begin{figure}
 \begin{center}
@@ -96,7 +97,7 @@ The meteorological data used in this study were gathered over 30 years (1981-201
 
 
 \begin{table}
-\caption{\label{tabstype}Types of stations classified according to its measured variables.}
+\caption{\label{tabstype}Types of stations classified according to its measured variables. Y = measured, N = not measured.}
 \begin{indented}
 \item[]\begin{tabular}{@{}cccccc}
 \br
@@ -120,11 +121,11 @@ $T_8$&Y&Y&Y&Y&314\\
 
 Our goal is to classify and group together stations that show a similar climatological behavior for each variable, regardless of the station's location, elevation or type. Since climate data track multi-annual seasonal variations, we can correlate weather patterns of regions which are not obviously related climatologically but might show a similar behavior, e.g. dry weather patterns in Guajira (a desert region in the north of Colombia) with similar dry conditions present at high-mountain sites in the Andes.\\
 
-We classified stations using a low-dimensional embedding of the data \cite{embed} for each variable. This ensures that a classification algorithm can uncover features in the data even even when the data are projected across a number of dimensions that is lower than the native dimensionality of the data (which in this case is monthly, i.e. $N_\mathrm{dim}=12$). This involves applying a dimensionality reduction algorithm followed by a clustering algorithm. Given that we wish to make a grouping of stations showing similar climatological patterns without making too many assumptions on the data, we decided to use unsupervised learning techniques.  In our case, we chose Principal Component Analysis (PCA) covering 95\% of the variance followed by a Gaussian Mixture Model selected by a low/locally minimum Bayesian Information Criterion (BIC). 
+We classified stations using a low-dimensional embedding of the data \cite{embed} for each variable. This ensures that a classification algorithm can uncover features in the data even when the data are projected across a number of dimensions that is lower than the native dimensionality of the data (which in this case is monthly, i.e. $N_\mathrm{dim}=12$). This involves applying a dimensionality reduction algorithm followed by a clustering algorithm. Given that we wish to make a grouping of stations showing similar climatological patterns without making assumptions on the data, we decided to use unsupervised learning techniques.  In our case, we chose Principal Component Analysis (PCA) covering 95\% of the variance followed by a Gaussian Mixture Model selected by a low/locally minimum Bayesian Information Criterion (BIC). 
 
 \subsection{Principal Component Analysis}
 
-We were able to reduce the dimensionality of the data for each variable from  $N_\mathrm{dim}=12$ to  $N_\mathrm{dim}^\mathrm{PCA}\le3$, while ensuring that at least 95\% of the variance of the data is explained by the least amount of components. For precipitation, rain days and sunshine duration, $N_\mathrm{dim}^\mathrm{PCA}(95\%)=3$ and for relative humidity $N_\mathrm{dim}^\mathrm{PCA}(95\%)=2$. To do this we used the Python \texttt{sklearn.decomposition.PCA} module \cite{sklearn}. Figure \ref{pcah} shows the relative humidity data projected across 2 principal components explaining 95\% of the variance, thus preserving most of the original structure of the data.
+We were able to reduce the dimensionality of the data for each variable from  $N_\mathrm{dim}=12$ to  $N_\mathrm{dim}^\mathrm{PCA}\le3$, while ensuring that at least 95\% of the variance of the data is explained by the least amount of components. For precipitation, rain days and sunshine duration, $N_\mathrm{dim}^\mathrm{PCA}(95\%)=3$ and for relative humidity $N_\mathrm{dim}^\mathrm{PCA}(95\%)=2$. To do this we used the Python \texttt{sklearn.decomposition.PCA} module \cite{sklearn}. To illustrate, Figure \ref{pcah} shows the relative humidity data projected across 2 principal components explaining 95\% of the variance, thus preserving most of the original structure of the data. Dimensionality-reduced precipitation, rain days, and sunshine duration data are shown later (Figure \ref{lde}).
 
 \begin{figure}
 \begin{center}
@@ -135,7 +136,7 @@ We were able to reduce the dimensionality of the data for each variable from  $N
 
 \subsection{Gaussian Mixture Models}
 
-After projecting the data along the components found by the PCA algorithm, we clustered the dimensionally-reduced data using a Gaussian Mixture Model, which uses an Expectation-Maximization algorithm to find a Maximum Likelihood model composed of a number $N_\mathrm{G-C}$ of Gaussian distributions, each of which represents a cluster in the data \cite{gmm}. Depending on the restrictions put on the covariance of each Gaussian distribution across the data space, the number of free parameters can go from $N_\mathrm{G-C}(N_\mathrm{dim}+1)$ (spherical covariance) to  $N_\mathrm{G-C}(3N_\mathrm{dim}+1)$ (full covariance). Since the number of components and covariance restriction is given by the user and not \emph{a posteriori} by the algorithm, me need to make sure that the Gaussian components do not over-fit the data, e.g. a model which yields one cluster per datum should be disallowed.\\
+After projecting the data along the components found by the PCA algorithm, we clustered the dimensionally-reduced data using a Gaussian Mixture Model, which uses an Expectation-Maximization algorithm to find a Maximum Likelihood model composed of a number $N_\mathrm{G-C}$ of Gaussian distributions, each of which represents a cluster in the data \cite{gmm}. Depending on the restrictions put on the covariance of each Gaussian distribution across the data space, the number of free parameters can go from $N_\mathrm{G-C}(N_\mathrm{dim}+1)$ (spherical covariance) to  $N_\mathrm{G-C}(3N_\mathrm{dim}+1)$ (full covariance). Since the number of components and covariance restriction is given by the user and not \emph{a posteriori} by the algorithm, we need to make sure that the Gaussian components do not over-fit the data, e.g. a model which yields one cluster per datum should be disallowed.\\
 
 In order to achieve this, we compare the Bayesian Information Criterion \cite{bicref} for a grid of Gaussian clusters ($N_\mathrm{G-C}<20$) and covariance restriction methods for each variable (Figure \ref{bic}). To do this we used the Python \texttt{sklearn.mixture.GMM} module \cite{sklearn}. We selected the models which produced the lowest BIC value, and plotted the GMM-classified, PCA-projected climate data in Figure \ref{lde}. \\
 
@@ -147,7 +148,7 @@ From the climatological clusters in Figures \ref{clusth}-\ref{clustb} we selecte
 \includegraphics[scale=0.5]{bicl.pdf}\\
 \includegraphics[scale=0.5]{bicd.pdf}
 \includegraphics[scale=0.5]{bicb.pdf}
-\caption{Bayesian Information Criterion (BIC) results for Gaussian Mixture Models using a different number of clusters and using different covariance restriction methods applied on each measured variable dataset.}\label{bic}
+\caption{Bayesian Information Criterion (BIC) results for Gaussian Mixture Models using a different number of clusters and using different covariance restriction methods \cite{sklearn} applied on each measured variable dataset.}\label{bic}
 \end{center}
 \end{figure}
 
@@ -169,7 +170,7 @@ From the climatological clusters in Figures \ref{clusth}-\ref{clustb} we selecte
 \begin{center}
 \includegraphics[scale=0.5]{gmmh0.pdf}
 \includegraphics[scale=0.5]{gmmh1.pdf}
-\caption{Climate clusters as predicted by the lowest-BIC Gaussian Mixture Model for relative humidity. Left column: Average monthly relative humidity and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each relative humidity cluster.}\label{clusth}
+\caption{Climate clusters (1-2 of 2) as predicted by the lowest-BIC Gaussian Mixture Model for relative humidity. Left column: Average monthly relative humidity and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each relative humidity cluster.}\label{clusth}
 \end{center}
 \end{figure}
 
@@ -178,7 +179,7 @@ From the climatological clusters in Figures \ref{clusth}-\ref{clustb} we selecte
 \includegraphics[scale=0.5]{gmml0.pdf}
 \includegraphics[scale=0.5]{gmml1.pdf}
 \includegraphics[scale=0.5]{gmml2.pdf}
-\caption{Climate clusters as predicted by the lowest-BIC Gaussian Mixture Model for precipitation. Left column: Average monthly precipitation and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each precipitation cluster.}\label{clustl}
+\caption{Climate clusters (1-3 of 11) as predicted by the lowest-BIC Gaussian Mixture Model for precipitation. Left column: Average monthly precipitation and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each precipitation cluster.}\label{clustl}
 \end{center}
 \end{figure}
 
@@ -187,7 +188,7 @@ From the climatological clusters in Figures \ref{clusth}-\ref{clustb} we selecte
 \includegraphics[scale=0.5]{gmml3.pdf}
 \includegraphics[scale=0.5]{gmml4.pdf}
 \includegraphics[scale=0.5]{gmml5.pdf}
-\caption{Climate clusters as predicted by the lowest-BIC Gaussian Mixture Model for precipitation. Left column: Average monthly precipitation and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each precipitation cluster.}
+\caption{Climate clusters  (4-6 of 11) as predicted by the lowest-BIC Gaussian Mixture Model for precipitation. Left column: Average monthly precipitation and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each precipitation cluster. Continuation of Figure \ref{clustl}.}\label{clustl2}
 \end{center}
 \end{figure}
 
@@ -197,7 +198,7 @@ From the climatological clusters in Figures \ref{clusth}-\ref{clustb} we selecte
 \includegraphics[scale=0.5]{gmml6.pdf}
 \includegraphics[scale=0.5]{gmml7.pdf}
 \includegraphics[scale=0.5]{gmml8.pdf}
-\caption{Climate clusters as predicted by the lowest-BIC Gaussian Mixture Model for precipitation. Left column: Average monthly precipitation and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each precipitation cluster.}
+\caption{Climate clusters (7-9 of 11) as predicted by the lowest-BIC Gaussian Mixture Model for precipitation. Left column: Average monthly precipitation and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each precipitation cluster. Continuation of Figure \ref{clustl2}.}\label{clustl3}
 \end{center}
 \end{figure}
 
@@ -205,7 +206,7 @@ From the climatological clusters in Figures \ref{clusth}-\ref{clustb} we selecte
 \begin{center}
 \includegraphics[scale=0.5]{gmml9.pdf}
 \includegraphics[scale=0.5]{gmml10.pdf}
-\caption{Climate clusters as predicted by the lowest-BIC Gaussian Mixture Model for precipitation. Left column: Average monthly precipitation and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each precipitation cluster.}
+\caption{Climate clusters (10-11 of 11) as predicted by the lowest-BIC Gaussian Mixture Model for precipitation. Left column: Average monthly precipitation and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each precipitation cluster. Continuation of Figure \ref{clustl3}.}\label{clustl4}
 \end{center}
 \end{figure}
 
@@ -214,7 +215,7 @@ From the climatological clusters in Figures \ref{clusth}-\ref{clustb} we selecte
 \includegraphics[scale=0.5]{gmmd0.pdf}
 \includegraphics[scale=0.5]{gmmd1.pdf}
 \includegraphics[scale=0.5]{gmmd2.pdf}
-\caption{Climate clusters as predicted by the lowest-BIC Gaussian Mixture Model for rain days. Left column: Average monthly rain days and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each rain days cluster.}\label{clustd}
+\caption{Climate clusters (1-3 of 6) as predicted by the lowest-BIC Gaussian Mixture Model for rain days. Left column: Average monthly rain days and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each rain days cluster.}\label{clustd}
 \end{center}
 \end{figure}
 
@@ -223,7 +224,7 @@ From the climatological clusters in Figures \ref{clusth}-\ref{clustb} we selecte
 \includegraphics[scale=0.5]{gmmd3.pdf}
 \includegraphics[scale=0.5]{gmmd4.pdf}
 \includegraphics[scale=0.5]{gmmd5.pdf}
-\caption{Climate clusters as predicted by the lowest-BIC Gaussian Mixture Model for rain days. Left column: Average monthly rain days and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each rain days cluster.}
+\caption{Climate clusters (4-6 of 6) as predicted by the lowest-BIC Gaussian Mixture Model for rain days. Left column: Average monthly rain days and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each rain days cluster. Continuation of Figure \ref{clustd}.}
 \end{center}
 \end{figure}
 
@@ -232,7 +233,7 @@ From the climatological clusters in Figures \ref{clusth}-\ref{clustb} we selecte
 \includegraphics[scale=0.5]{gmmb0.pdf}
 \includegraphics[scale=0.5]{gmmb1.pdf}
 \includegraphics[scale=0.5]{gmmb2.pdf}
-\caption{Climate clusters as predicted by the lowest-BIC Gaussian Mixture Model for sunshine duration. Left column: Average monthly sunshine duration and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each sunshine duration cluster.}
+\caption{Climate clusters (1-3 of 5) as predicted by the lowest-BIC Gaussian Mixture Model for sunshine duration. Left column: Average monthly sunshine duration and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each sunshine duration cluster.}\label{clustb1}
 \end{center}
 \end{figure}
 
@@ -240,22 +241,22 @@ From the climatological clusters in Figures \ref{clusth}-\ref{clustb} we selecte
 \begin{center}
 \includegraphics[scale=0.5]{gmmb3.pdf}
 \includegraphics[scale=0.5]{gmmb4.pdf}
-\caption{Climate clusters as predicted by the lowest-BIC Gaussian Mixture Model for sunshine duration. Left column: Average monthly sunshine duration and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each sunshine duration cluster.}\label{clustb}
+\caption{Climate clusters (4-5 of 5) as predicted by the lowest-BIC Gaussian Mixture Model for sunshine duration. Left column: Average monthly sunshine duration and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each sunshine duration cluster. Continuation of Figure \ref{clustb1}.}\label{clustb}
 \end{center}
 \end{figure}
 
 
 \begin{table}
-\caption{\label{tabclu}Climate clusters according to a lowest BIC-based selection of Gaussian Mixture Models. See Figure \ref{bic}.}
+\caption{\label{tabclu}Climate clusters according to a lowest BIC-based selection of Gaussian Mixture Models following Figure \ref{bic}. The selected clusters column refers to the climate clusters shown in Figures \ref{clusth} to \ref{clustd}. }
 \begin{indented}
 \item[]\begin{tabular}{@{}lclll}
 \br
-Variable&Symbol&Lowest BIC&Lowest BIC&Preferred Clusters\\
+Variable&Symbol&Lowest BIC&Lowest BIC&Selected Clusters\\
 &&No. of Clusters&Cov. Method &\\
 \mr
+Relative Humidity&$H$&2&Full&2\\
 Precipitation &$R$&11&Full&2,3,7,11\\
 Rain Days&$D$&6&Full&1,4,6\\
-Relative Humidity&$H$&2&Full&2\\
 Sunshine Duration&$S$&5&Tied&1,4,5\\
 \br
 \end{tabular}
@@ -264,7 +265,7 @@ Sunshine Duration&$S$&5&Tied&1,4,5\\
 
 \section{Discussion}
 
-We wish to identify all stations for whom all four criteria (humidity, precipitation, rain days, sunshine duration) for identifying a region as having a stable sunny, dry climate can be met.  However, since only a few stations measured all variables, it is not straightforward to accept or reject stations based on their satisfing a criterion, i.e. belonging to one of our preferred clusters. This requires setting up a measure of quality for individual stations depending on their location and the variables they measured. We will describe the selection process and probabilistic analysis that allows us to quantify a station's capability for indicating regions with an unusually dry, sunny climate.\\
+We wish to identify all stations for whom all four criteria (humidity, precipitation, rain days, sunshine duration) for identifying a region as having a stable sunny, dry climate can be met.  However, since only a few stations measured all variables, it is not straightforward to accept or reject stations based on their satisfying a criterion, i.e. belonging to one of our preferred clusters. This requires setting up a measure of quality for individual stations depending on their location and the variables they measured. We will describe the selection process and probabilistic analysis that allows us to quantify a station's capability for indicating regions with an unusually dry, sunny climate.\\
 
 We start by creating a shortlist of stations that meet criteria for (and only for) the variables they measured. This means that if a station has precipitation and humidity data, it should belong to a humidity and precipitation cluster listed in Table \ref{tabclu} or else it is rejected. 665 stations across Colombia showed such behavior. However, since we are interested in high-mountain regions, we included a criterion for elevation limiting our list to 119 stations located above 2000 masl. This shortlist was further reduced by requiring that the total average plus 1$\sigma$ for precipitation, rain days, and relative humidity is less than 4.3 mm/d, 17 d/mo, and 81\% respectively, and for sunshine duration, more than 4 h/d for any given station. This left us with 83 weather stations. \\
 
@@ -273,12 +274,12 @@ However, we want to give a measure of the quality of the station vis-a-vis our c
 
 \subsection{Bayesian probabilistic analysis}\label{bpa}
 
-We quantify the quality of a given site using the probability for the hypothesis that a station which appears in our shortlist meets all four criteria, given that it is located at a given elevation. We can write down this probability in terms of the following events:
+We quantify the quality of a given site using the probability for the hypothesis that a station $j$ which appears in our shortlist meets all four criteria, given that it is located at a given elevation. We can write down this probability $P_j$ in terms of the following events:
 
 \begin{itemize}
 \item $C$ is the event that a given station meets all four criteria, i.e. belongs to our preferred clusters for the four variables relevant to this study.
 \begin{itemize}
-\item $C$ is actually the conjunction of all four of the $R,D,H,S$ events ``The station belongs to a preferred cluster for variable $X$'', i.e. $C=R\cap D\cap H \cap S$.
+\item $C$ is actually the conjunction of all four of the $R,D,H,S$ events ``the station belongs to a selected cluster for variable $X$'', i.e. $C=R\cap D\cap H \cap S$ (See Table \ref{tabclu}).
 \end{itemize}
 \item $A$ is the event that a given station appears in our shortlist.
 \item $T_i$ is the event that a given station is of type $T_i$ (See Table \ref{tabstype}).
@@ -288,19 +289,28 @@ We quantify the quality of a given site using the probability for the hypothesis
 \item $h$ is the event that a given station is located at an elevation $h$.
 \end{itemize}
 
-Thus, the probability that a station $j=(0,1,...,N_\mathrm{stations})$ of type $T_i$, meets all four criteria ($C$) and appears in our shortlist ($A$) given that it is located at an elevation $h$, can be written as $P_j=P(C\cap A\cap T_i\ |\ h)$. We cannot  calculate exactly this probability, as it depends on unknown unknowns, i.e. whether a station that did not measure a given variable in reality belongs to one of our preferred climatological clusters for that variable. Thus we will use Bayes' theorem to help estimate this probability using simpler conditional probabilities. First we control for the inhomogeneous distribution of elevations $P(h)$,
+Thus, the probability that a station $j=(0,1,...,N_\mathrm{stations})$ of type $T_i$, meets all four criteria ($C$) and appears in our shortlist ($A$) given that it is located at an elevation $h$, can be written as $P_j=P(C\cap A\cap T_i\ |\ h)$. We cannot  calculate exactly this probability, as it depends on unknown unknowns, i.e. whether a station that did not measure a given variable in reality belongs to one of our preferred climatological clusters for that variable (Table \ref{tabclu}). Thus we will use Bayes' theorem to help estimate this probability using simpler conditional probabilities. First we control for the inhomogeneous distribution of elevations $P(h)$,
 \begin{equation}
-P(C\cap A\cap T_i\ |\ h)=\frac{P(C\cap A\cap T_i\cap h)}{P(h)}\ .
+P_j=P(C\cap A\cap T_i\ |\ h)=\frac{P(C\cap A\cap T_i\cap h)}{P(h)}\ .
 \end{equation}
 The joint probability of all events $C\cap A\cap T_i\cap h$ can be rewritten as,
 \begin{equation}
-P(C\cap A\cap T_i\ |\ h)=\frac{P(h\ |\ C\cap A\cap T_i)}{P(h)}P(C\cap A\cap T_i)\ .
+P_j=\frac{P(h\ |\ C\cap A\cap T_i)}{P(h)}P(C\cap A\cap T_i)\ .
 \end{equation}
 If a station satisfies all four criteria, $P(C\cap A\cap T_i)=1$. This probability can be expressed in terms of simpler conditional probabilities,
-\begin{equation}
-P(C\cap A\cap T_i\ |\ h)=\frac{P(h\ |\ C\cap A\cap T_i)}{P(h)}P(C\ |\ A\cap T_i)P(A\ |\ T_i)P(T_i)\ .
+\begin{equation}\label{peejay}
+P_j=\frac{P(h\ |\ C\cap A\cap T_i)}{P(h)}P(C\ |\ A\cap T_i)P(A\ |\ T_i)P(T_i)\ ,
 \end{equation}
-Here $P(h\ |\ C\cap A\cap T_i$ is the distribution of elevations for a station type ($T_i$) on our shortlist ($C\cap A$), $P(A\ |\ T_i)$ is the probability that a station of type $T_i$ is in our shortlist, $P(T_i)$ is the probability that a station type is $T_i$, and $P(C\ |\ A\cap T_i)$ is the probability that a station meets all four criteria ($C$) given that it is in our shortlist ($A$) and is of type $T_i$. All of these probabilities except for the last one can be computed directly from the data\footnote{Distributions of elevation-related probabilities were approximated discretely using a bin size estimated from the mean elevation difference between stations when sorted by elevation. }.  The probability $P(C\ |\ A\cap T_i)$ has to be estimated indirectly, as we cannot presume to know under which conditions a station can satisfy all our criteria. We can rewrite this probability as,
+where 
+\begin{itemize}
+\item $P(h\ |\ C\cap A\cap T_i)$ is the distribution of elevations for a station type ($T_i$) on our shortlist ($C\cap A$), 
+\item $P(A\ |\ T_i)$ is the probability that a station of type $T_i$ is in our shortlist, 
+\item $P(T_i)$ is the probability that a station type is $T_i$, and 
+\item $P(C\ |\ A\cap T_i)$ is the probability that a station meets all four criteria ($C$) given that it is in our shortlist ($A$) and is of type $T_i$. 
+\end{itemize}
+All of these probabilities except for the last one can be computed directly from the data\footnote{Distributions of elevation-related probabilities were approximated discretely using a bin size estimated from the mean elevation difference between stations when sorted by elevation. }.\\
+
+ The probability $P(C\ |\ A\cap T_i)$ has to be estimated indirectly, as we cannot presume to know under which conditions a station can satisfy all our criteria. However, we can rewrite this probability as,
 \begin{eqnarray}
 P(C\ |\ A\cap T_i)&=P(R\cap D\cap H\cap S\ |\ A\cap T_i)\ , \\
 \label{pclanti}
@@ -316,15 +326,15 @@ P(R\cap D\cap H\cap S\cap A\cap T_1)=P( H\cap S\ |\ A\cap T_1)\ .
 \end{equation}
 Substituting this into Eq. (\ref{pclanti}),
 \begin{equation}
-P(C\ |\ A\cap T_1)=\frac{P( H\cap S\ |\ A\cap T_1)}{P(A\cap T_1)}=P(H\cap S\ |\ A\cap T_1)
+P(C\ |\ A\cap T_1)=\frac{P( H\cap S\ |\ A\cap T_1)}{P(A\cap T_1)}=P(H\cap S\ |\ A\cap T_1) \ .
 \end{equation}
 The last term in the previous expression is unknown, but we can approximate it assuming, as mentioned above, that it is independent of the station type. Therefore, 
 \begin{equation}
-P(C\ |\ A\cap T_i)\simeq P(H\cap S)\ .
+P(C\ |\ A\cap T_)\simeq P(H\cap S)\ .
 \end{equation}
 The probability on the right hand side of the previous equation can be directly computed from the data, as it only requires counting how many stations meet both $H$ and $S$ criteria. This procedure can be extended to all other station types.\\
 
-Since the probabilities for stations in our shortlist vary by orders of magnitude, for clarity's sake we decided to use a probability-based logarithmic quality index for all stations in our shortlist. For $j=(0,1,...,N_\mathrm{stations})$,
+The probabilities for stations in our shortlist ($P_j$ in Equation \ref{peejay}) can be used to evaluate the quality of a site, but since they vary by orders of magnitude, for the sake of clarity we decided to use instead a probability-derived logarithmic quality index. Thus, we define the quality index $Q_j$ for a station $j$ in our shortlist as,
 \begin{equation}
 Q_j=9\ \frac{\log (\nicefrac{P_\mathrm{j}}{P_\mathrm{min}})}{\log (\nicefrac{P_\mathrm{max}}{P_\mathrm{min}})}+1\ .
 \end{equation}
@@ -336,7 +346,7 @@ Here $P_\mathrm{min},P_\mathrm{max}$ are the lowest and highest values for the p
 \begin{center}
 \includegraphics[scale=0.55]{slist.pdf}
 \includegraphics[scale=0.55]{slistz.pdf}
-\caption{Map of stations in our shortlist. The highlighted region on (a) is seen in more detail in (b), which corresponds approximately to the Colombian \emph{altiplano} region. Marker size is proportional to the probability $P_j$, where the largest size corresponds to $Q_j=10$.}\label{shortlist}
+\caption{Map of stations in our shortlist. The highlighted region in (a) is seen in more detail in (b), which corresponds approximately to the Colombian \emph{altiplano} region. Marker size is proportional to the probability $P_j$, where the largest size corresponds to $Q_j=10$.}\label{shortlist}
 \end{center}
 \end{figure}
 
@@ -344,7 +354,7 @@ Here $P_\mathrm{min},P_\mathrm{max}$ are the lowest and highest values for the p
 
 Given that many of our 83 candidate stations were lacking in relative humidity and sunshine duration data, we extrapolated using data from nearby stations (at less than 4 km away and at an elevation difference of less than 100 m). We made sure that in general, for stations less than 5 km away, the difference in relative humidity and sunshine duration data is less than 15\%. The extrapolated data evidenced that 4 of the stations in the shortlist did not satisfy the relative humidity and sunshine duration criteria.  The remaining 79 stations are mapped in Figure \ref{shortlist}a.\\
 
-We rejected 9 of the stations in Figure \ref{shortlist}a, i.e. those located outside of the region located within the latitude, longitude range $[(4.3,6.2)^\circ,(-72.4,-74.5)^\circ]$. Even tough they could be indicative of unusually dry, sunny regions, there are simply not enough stations nearby to say anything conclusively, as evidenced in Figure \ref{outliers}. Adding to this, the only variable they measured was precipitation ($Q_j=2.2$), which leads us to reject them from our shortlist. \\
+We rejected 9 of the stations in Figure \ref{shortlist}a, i.e. those located outside of the region located within the latitude, longitude range $[(4.3,6.2)^\circ,(-72.4,-74.5)^\circ]$. Even though they could be indicative of unusually dry, sunny regions, there are simply not enough stations nearby to say anything conclusively, as evidenced in Figure \ref{outliers}. Adding to this, the only variable they measured was precipitation ($Q_j=2.2$), which leads us to reject them from our shortlist. \\
 
 The final 70 stations located in the Cundinamarca-Boyac\'a region of Colombia are shown in more detail in Figure \ref{shortlist}b. This figure shows two candidate locations in the northern region (Boyac\'a department), where the quality index $Q_j$ (proportional to the point size) indicates that all four criteria are satisfied. In order to see if those regions are geographically correlated, we grouped together these stations in a simplified manner using a lowest-BIC spherical covariance Gaussian Mixture Model on their coordinates \ref{unif}.
 
@@ -359,11 +369,13 @@ The final 70 stations located in the Cundinamarca-Boyac\'a region of Colombia ar
 
 \section{Results}
 
-We selected clusters of climatologically similar stations across Colombia using an unsupervised learning low-dimensional embedding algorithm for each measured variable. From these clusters, 70 weather stations came up as potential candidates for identifying high-mountain regions (at an elevation greater that 2000 masl) with an unusually dry, sunny weather. Seasonally, the driest months of the year for all the candidate regions of interest are December-February and June-August. 
+We selected clusters of climatologically similar stations across Colombia using an unsupervised learning low-dimensional embedding algorithm for each measured variable. From these clusters, 70 weather stations came up as potential candidates for identifying high-mountain regions (at an elevation greater that 2000 masl) with an unusually dry, sunny weather. Seasonally, the driest months of the year for all the candidate regions of interest are December-February and June-August (Figures \ref{clusth}-\ref{clustb}). 
 
 \subsection{Candidate regions of interest}
 
-Figure \ref{unif} shows 6 candidate regions of interest, where weather stations indicating dry, sunny climate are regionally correlated. In order to visualize the extent of those regions we plotted the predicted variance regions for each cluster along with other (rejected) stations in our sample in Figure \ref{unif}. It should be noted that the spherical variance GMM geographical clustering overestimates the extent of each region, and tells us nothing of their actual shape. We can now reject regions where the number of rejected stations within the predicted variance regions is too similar to the number of stations in our shortlist in Figure \ref{unif}.  We discuss the suitability of each of these regions below, from South-West to North-East based on our Bayesian probabilistic quality index (Section \ref{bpa}).
+Figure \ref{unif} shows 6 candidate regions of interest, where weather stations indicating dry, sunny climate are regionally correlated within a $10-20$ km radius. In order to visualize the extent of those regions we plotted the predicted variance regions for each cluster along with other (rejected) stations in our sample in Figure \ref{unif}. It should be noted that the spherical variance GMM geographical clustering overestimates the extent of each region, and tells us nothing of their actual geographical shape. \\
+
+We can now reject regions where the number of rejected stations within the predicted variance regions is similar or greater than the number of stations in our shortlist in Figure \ref{unif}.  We discuss the suitability of each of these regions below, from South-West to North-East based on our Bayesian probabilistic quality index (Section \ref{bpa}).
 
 
 
@@ -377,36 +389,36 @@ Figure \ref{unif} shows 6 candidate regions of interest, where weather stations 
 
 \subsubsection{La Sabana}
 
-The first cluster is located at ($4.77^\circ$N, $74.18^\circ$W) and covers an radius of 15.3 km$^2$. This is a region located to the west of Bogot\'a at an elevation above 2600 masl, with a large variety of microclimates. This explains the significant amount of stations from this region in our shortlist. However, Figure \ref{unif} shows that within this predicted variance region there are more stations that do not satisfy our criteria than stations that do, and no single sub-region can be identified. This, compounded with the fact that most (70\%) of these stations have a $Q$ value lower than 5.6 due to the lack of humidity/sunshine data, implies that at the moment this is not a strong candidate region of interest.
+The first cluster is located at ($4.77^\circ$N, $74.18^\circ$W) and covers an radius of 15.3 km. This is a region located to the west of Bogot\'a at an elevation above 2600 masl, with a large variety of microclimates. This explains the significant amount of stations from this region in our shortlist. However, Figure \ref{unif} shows that within this predicted variance region there are more stations that do not satisfy our criteria than stations that do, and no single sub-region can be identified. This, compounded with the fact that most (70\%) of these stations have a $Q$ value lower than 5.6 due to the lack of humidity/sunshine data, implies that at the moment this is not a strong candidate region of interest.
 
 
 \subsubsection{Valle de Ubat\'e}
 
-This cluster is located at ($5.30^\circ$N, $73.80^\circ$W) and covers a radius of 11.4 km$^2$. This region, located to the NNE of Bogot\'a s a hilly region along a valley at an elevation above 2600 masl. The ratio of number of stations that do not meet our criteria to the stations in this predicted variance region is low (0.3), and almost half of these stations (46\%) have a $Q_j$ value higher than 6. This indicates a potential candidate region, although more  sunshine and humidity data are needed.
+This cluster is located at ($5.30^\circ$N, $73.80^\circ$W) and covers a radius of 11.4 km. This region, located to the NNE of Bogot\'a s a hilly region along a valley at an elevation above 2600 masl. The ratio of number of stations that do not meet our criteria to the stations in this predicted variance region is low (0.3), and almost half of these stations (46\%) have a $Q_j$ value higher than 6. This indicates a potential candidate region, although more  sunshine and humidity data are needed.
 
 
 \subsubsection{Villa de Leyva}
 
-This cluster is located at ($5.61^\circ$N, $73.55^\circ$W) and covers a radius of 7.11 km$^2$. This region is located near the town of Villa de Leyva, and it is known for its dry weather.  The ratio of stations not in our shortlist vs. the stations in this predicted variance region is not very low (0.4). However, Figure \ref{unif} seems to indicate that the actual region of interest is narrower than the predicted variance region, as the stations that do not satisfy our criteria are on the NNW and SSW fringes of said region. The presence of one very high-$Q_j$ station and the narrow GMM-predicted variance is indicative of this region being a strong candidate. However, its relatively low elevation (near 2200 masl) can signify the presence of too much atmospheric water vapor above the surface. 
+This cluster is located at ($5.61^\circ$N, $73.55^\circ$W) and covers a radius of 7.11 km. This region is located near the town of Villa de Leyva, and it is known for its dry weather.  The ratio of stations not in our shortlist vs. the stations in this predicted variance region is not very low (0.4). However, Figure \ref{unif} seems to indicate that the actual region of interest is narrower than the predicted variance region, as the stations that do not satisfy our criteria are on the NNW and SSW fringes of said region. The presence of one very high-$Q_j$ station and the narrow GMM-predicted variance is indicative of this region being a strong candidate. However, its relatively low elevation (near 2200 masl) can signify the presence of too much atmospheric water vapor above the surface. 
 
 
 \subsubsection{Cant\'on de Tunja}
 
-This cluster is located at ($5.59^\circ$N, $73.24^\circ$W) and covers a radius of 8.29 km$^2$. The GMM-predicted variance region west of Tunja is located in the historic Tunja Canton, and even though the ratio of stations not in our shortlist to stations in this predicted region is low (0.31), there are simply not enough humidity and sunshine data to make any strong conclusion about this region. However, the high altitude of some of these stations is tantalizing, which is why we will keep this as a region of interest for our next paper.
+This cluster is located at ($5.59^\circ$N, $73.24^\circ$W) and covers a radius of 8.29 km. The GMM-predicted variance region west of Tunja is located in the historic Tunja Canton, and even though the ratio of stations not in our shortlist to stations in this predicted region is low (0.31), there are simply not enough humidity and sunshine data to make any strong conclusion about this region. However, the high altitude of some of these stations is tantalizing, which is why we will keep this as a region of interest for our next paper.
 
 
 
 \subsubsection{Valle del Sol}
 
-This cluster is located at ($5.72^\circ$N, $72.96^\circ$W) and covers a radius of 8.06 km$^2$. This is one of the most promising regions in our sample. Located in a wide, sunny valley (hence the name) at an elevation of 2600 masl, it is surrounded by mountains, and rains are not as common as elsewhere in the country. This region has the lowest ratio of not in our shortlist stations to stations in this predicted variance region (0.2), $40\%$ of the stations have a $Q_j$ value higher than 6, and one of the stations has a very high-$Q_j$ value. This will be one of the regions of interest for our next paper, and we think that it warrants radiometer measurements to be carried out.
+This cluster is located at ($5.72^\circ$N, $72.96^\circ$W) and covers a radius of 8.06 km. This is one of the most promising regions in our sample. Located in a wide, sunny valley (hence the name) at an elevation of 2600 masl, it is surrounded by mountains, and rains are not as common as elsewhere in the country. This region has the lowest ratio of not in our shortlist stations to stations in this predicted variance region (0.2), $40\%$ of the stations have a $Q_j$ value higher than 6, and one of the stations has a very high-$Q_j$ value. This will be one of the regions of interest for our next paper, and we think that it warrants radiometer measurements to be carried out.
 
 \subsubsection{Parque Nacional Natural Pisba}
 
-This cluster is located at ($6.04^\circ$N, $72.71^\circ$W) and covers a radius of 10.52 km$^2$. This is a \emph{p\'aramo} region, characterized by high-mountain tundra weather, with some mountains reaching an elevation of up to 3800 masl. The ratio of stations rejected stations to stations in this predicted variance region is high (0.5), and it is unlikely that the mist allows for a low-atmospheric water vapor region to be located here, even if rain is sporadic. The lack of a high-$Q$ station means that more sunshine-humidity data are needed, but this is possibly not a region of interest.
+This cluster is located at ($6.04^\circ$N, $72.71^\circ$W) and covers a radius of 10.52 km. This is a \emph{p\'aramo} region, characterized by high-mountain tundra weather, with some mountains reaching an elevation of up to 3800 masl. The ratio of stations rejected stations to stations in this predicted variance region is high (0.5), and it is unlikely that the mist allows for a low-atmospheric water vapor region to be located here, even if rain is sporadic. The lack of a high-$Q$ station means that more sunshine-humidity data are needed, but this is possibly not a region of interest.
 
 \subsection{Comparison to other works}
 
-We compared our results with the work of  \citeasnoun{suen2014} and \citeasnoun{suen2016}, where they obtained global precipitable water vapor maps for 2012 using data from the MODIS instrument on board the Aqua and Terra satellites. The lowest mean pwv ($\sim15$ mm) regions in the \citeasnoun{suen2014} map for Colombia are near the Ubat\'e, Tunja, Valle del Sol, and Pisba regions. The \citeasnoun{suen2016} global median pwv map has an upper bound of 10 mm for stations located in the clusters corresponding to those same regions. Unfortunately, the resolution of the maps is not fine enough to pinpoint a site location at a precision higher than $\sim20$ km. 
+We compared our results to the work of  \citeasnoun{suen2014} and \citeasnoun{suen2016}, where they obtained global precipitable water vapor maps for 2012 using data from the MODIS instrument on board the Aqua and Terra satellites. The lowest mean pwv ($\sim15$ mm) regions in the \citeasnoun{suen2014} map for Colombia are near the Ubat\'e, Tunja, Valle del Sol, and Pisba regions. The \citeasnoun{suen2016} global median pwv map has an upper bound of 10 mm for stations located in the clusters corresponding to those same regions. Unfortunately, the resolution of the maps is not fine enough to pinpoint a site location at a precision higher than $\sim20$ km. 
 
 \section{Conclusions}
 
@@ -464,12 +476,13 @@ From our shortlist of 79 stations that met our criteria, we selected 70 stations
 
 From those 70 stations we obtained 6 geographically correlated candidate regions of interest: La Sabana, Valle de Ubat\'e, Cant\'on de Tunja, Villa de Leyva, Valle del Sol, and Parque Nacional Natural Pisba. Seasonally, there appear to be two times of the year (Dec-Feb and Jun-Aug) where the weather conditions indicate the best daytime dry, clear-sky conditions. These months could be the best for mm-wave astronomical observations to be carried out.\\
 
-We summarize the information about two regions of interest (Valle de Ubat\'e and Valle del Sol) in Table \ref{tabfin}, selected based on a Bayesian probabilistic quality index. Most of the stations in this table are located at elevations above 2600 masl and below 3000 masl. The upper bound for precipitable water vapor given by  \citeasnoun{suen2014} and \citeasnoun{suen2016} for these regions is $\sim15$ mm, which means that it is not implausible to find a site with an even lower pwv column in one of the regions of interest identified here. For instance, there are some mountains nearby Valle de Ubat\'e and Valle del Sol which have altitudes of up to 3400 masl, which are sites that warrant further measurements using radio sondes and radiometers. \\
+We summarize the information about two regions of interest (Valle de Ubat\'e and Valle del Sol) in Table \ref{tabfin}, selected based on a Bayesian probabilistic quality index. Most of the stations in this table are located at elevations above 2600 masl and below 3000 masl. We validated our results using satellite measurements of the upper bound for precipitable water vapor \cite{suen2014,suen2016} for those two regions, whis is reported to be $\sim15$ mm. This means that it is not implausible to find a site with an even lower water vapor column in one of the regions of interest identified here. Some mountains nearby Valle de Ubat\'e and Valle del Sol  have altitudes of up to 3400 masl, and therefore warrant further measurements using radio sondes and radiometers. \\
 
 The Villa de Leyva region, despite having a dry, sunny climate, is located at a comparatively low altitude (2200 masl), which means that the precipitable water vapor column above this region is too high ($>20$ mm according to the \citeasnoun{suen2016} maps).\\
 
-There is an additional issue with the Valle del Sol region. The high industrial activity in this region could fill the air with particulate material, which would nullify the suitability of this region. Besides obtaining seasonal high-resolution precipitable water vapor maps, in our next paper we will study the amount of particulate material in this region using MODIS (Aqua and Terra) satellite data.
+There is an additional issue with the Valle del Sol region. The high industrial activity in this region could fill the air with particulate material, which would nullify the suitability of this region. Besides obtaining seasonal high-resolution precipitable water vapor maps, in our next paper we will study the amount of particulate material in this region using MODIS (Aqua and Terra) satellite data.\\
   
+The methods used here can be extended and adapted to similar climatological datasets for other countries. This can be a first step in radio astronomy site testing for developing nations.
 
 \section*{Acknowledgments}
 
