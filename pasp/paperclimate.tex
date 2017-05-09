@@ -69,7 +69,7 @@ If you have any queries about this document or any aspect of preparing your arti
 
 \section{Introduction}
 
-The development of astronomical instrumentation technology in the 0.2-2 THz range has been rapidly growing in recent years. Another recent surge in interest in telecommunications THz technology has appeared recently due to the saturation of the ``classical radio window'' in telecommunications  \cite{newera}. For this reason, there has been development of atmospheric models for absorption of THz photons \cite{rosenkranz,lababs} and artifact removal models \cite{removal}. Near-equatorial countries face a challenge in using this frequency band for astronomical observations and telecommunications using terabit satellite links  \cite{suen2016} due to the presence of a tropical belt of dense water vapor which efficiently absorbs THz radiation \cite{tropicalbelt}. In the northern Andes, previous studies of astronomical site testing in the visible range have shown that high nighttime humidity conditions make this region suitable only for educational observatories \cite{pinzon}. However, considering that millimeter/sub-millimeter observations need not be done during the night, unusually dry, clear-daytime-sky, high altitude regions in the Northern Andes could be suitable candidates for a world-class millimeter-wave observatory. \\
+The development of astronomical instrumentation technology in the 0.2-2 THz range has been rapidly growing in recent years. Another recent surge in interest in telecommunications THz technology has appeared recently due to the saturation of the ``classical radio window'' in telecommunications  \cite{newera}. For this reason, there has been development of atmospheric models for absorption of THz photons \cite{rosenkranz,lababs} and artifact removal models \cite{removal}. Near-equatorial countries face a challenge in using this frequency band for astronomical observations and telecommunications using terabit satellite links  \cite{suen2016} due to the presence of a tropical belt of dense water vapor which efficiently absorbs THz radiation \cite{tropicalbelt}. In northern South-America, previous studies of astronomical site testing in the visible range have shown that high nighttime humidity conditions make this region suitable only for educational observatories \cite{pinzon}. However, considering that millimeter/sub-millimeter observations need not be done during the night, unusually dry, clear-daytime-sky, high altitude regions in the northern Andes could be suitable candidates for a world-class millimeter-wave observatory. \\
 
 Astronomical observations in the millimeter and sub-millimeter wavelength range require that atmospheric effects affecting absorption at these wavelengths are kept to a minimum \cite{southpole,radford2016,chajpwv}. The main factor contributing to the atmospheric opacity is water vapor, which very efficiently absorbs light in the THz range \cite{pardocerni,pardocerni2,cont350} due to a continuum absorption spectrum formed by collisionally broadened absorption lines of water vapor in this frequency range  \cite{linecont,submmlines,turner2009}. In order to characterize a site according to its atmospheric transparency to THz radiation, it is necessary to retrieve the precipitable water vapor profile either via remote sensing techniques such as microwave radiometry \cite{radiometer,paine2000fourier,southpole2}, satellite measurements \cite{aqua,spacemols,suen2014,spaceradio}, radiosonde humidity measurements \cite{radiosonde,radiosonde2} or indirectly via models of in situ climatological measurements \cite{climatology} or GPS-delay studies \cite{gpsorig,gpsmap}. \\
 
@@ -90,14 +90,14 @@ The meteorological data used in this study were gathered over 30 years (1981-201
 \begin{center}
 \includegraphics[scale=0.5]{totmap.pdf}
 \includegraphics[scale=0.5]{elev.pdf}
-\caption{Distribution of weather stations in the dataset. (a) 1$\sigma$ (solid) and 2$\sigma$ (dashed) countours of a gaussian kernel density estimation of the geographical distribution of weather stations (small green points) from the IDEAM 1981-2010 database. The estimation was done using the Python \texttt{scipy.stats.gaussian\_kde}  function. (b) Altitude histogram for all stations in the dataset.}\label{totmap}
+\caption{Distribution of weather stations in the dataset. (a) 1$\sigma$ (solid) and 2$\sigma$ (dashed) countours of a gaussian kernel density estimation of the geographical distribution of weather stations (small green points) from the IDEAM 1981-2010 database. The estimation was done using the Python \texttt{scipy.stats.gaussian\_kde}  function \cite{scipy}. (b) Altitude histogram for all stations in the dataset.}\label{totmap}
 \end{center}
 \end{figure}
 
 
 
 \begin{table}
-\caption{\label{tabstype}Types of stations classified according to its measured variables. Y = measured, N = not measured.}
+\caption{\label{tabstype}Types of stations classified according to its reported variables. Y = measured, N = not measured.}
 \begin{indented}
 \item[]\begin{tabular}{@{}cccccc}
 \br
@@ -121,7 +121,7 @@ $T_8$&Y&Y&Y&Y&314\\
 
 Our goal is to classify and group together stations that show a similar climatological behavior for each variable, regardless of the station's location, elevation or type. Since climate data track multi-annual seasonal variations, we can correlate weather patterns of regions which are not obviously related climatologically but might show a similar behavior, e.g. dry weather patterns in Guajira (a desert region in the north of Colombia) with similar dry conditions present at high-mountain sites in the Andes.\\
 
-We classified stations using a low-dimensional embedding of the data \cite{embed} for each variable. This ensures that a classification algorithm can uncover features in the data even when the data are projected across a number of dimensions that is lower than the native dimensionality of the data (which in this case is monthly, i.e. $N_\mathrm{dim}=12$). This involves applying a dimensionality reduction algorithm followed by a clustering algorithm. Given that we wish to make a grouping of stations showing similar climatological patterns without making assumptions on the data, we decided to use unsupervised learning techniques.  In our case, we chose Principal Component Analysis (PCA) covering 95\% of the variance followed by a Gaussian Mixture Model selected by a low/locally minimum Bayesian Information Criterion (BIC). 
+We classified stations using a low-dimensional embedding \cite{embed} of the available climate data. This ensures that a classification algorithm can uncover features in the data even when the data are projected across a number of dimensions that is lower than its native dimensionality (which in this case is monthly, i.e. $N_\mathrm{dim}=12$). This involves performing a dimensionality reduction algorithm followed by a clustering algorithm. Given that we wish to make a grouping of stations showing similar climatological patterns without making assumptions on the data, we decided to use unsupervised learning techniques.  In our case, we chose Principal Component Analysis (PCA) covering 95\% of the variance followed by a Gaussian Mixture Model selected by a low/locally minimum Bayesian Information Criterion (BIC). 
 
 \subsection{Principal Component Analysis}
 
@@ -346,17 +346,17 @@ Here $P_\mathrm{min},P_\mathrm{max}$ are the lowest and highest values for the p
 \begin{center}
 \includegraphics[scale=0.55]{slist.pdf}
 \includegraphics[scale=0.55]{slistz.pdf}
-\caption{Map of stations in our shortlist. The highlighted region in (a) is seen in more detail in (b), which corresponds approximately to the Colombian \emph{altiplano} region. Marker size is proportional to the probability $P_j$, where the largest size corresponds to $Q_j=10$.}\label{shortlist}
+\caption{Map of stations in our shortlist. The highlighted region in (a) is seen in more detail in (b), which corresponds approximately to the Colombian \emph{altiplano cundiboyacense} region. Marker size is proportional to the probability $P_j$, where the largest size corresponds to $Q_j=10$.}\label{shortlist}
 \end{center}
 \end{figure}
 
 
 
-Given that many of our 83 candidate stations were lacking in relative humidity and sunshine duration data, we extrapolated using data from nearby stations (at less than 4 km away and at an elevation difference of less than 100 m). We made sure that in general, for stations less than 5 km away, the difference in relative humidity and sunshine duration data is less than 15\%. The extrapolated data evidenced that 4 of the stations in the shortlist did not satisfy the relative humidity and sunshine duration criteria.  The remaining 79 stations are mapped in Figure \ref{shortlist}a.\\
+Many of our 83 candidate stations, selected using the method described at the beginning of this section, were lacking in relative humidity and sunshine duration data. Given that for stations less than 5 km away the difference in relative humidity and sunshine duration data is less than 15\%, we extrapolated using data from nearby stations (at less than 4 km away and at an elevation difference of less than 100 m). The extrapolated data evidenced that 4 of the stations in the shortlist did not satisfy the relative humidity and sunshine duration criteria.  The remaining 79 stations are mapped in Figure \ref{shortlist}a.\\
 
 We rejected 9 of the stations in Figure \ref{shortlist}a, i.e. those located outside of the region located within the latitude, longitude range $[(4.3,6.2)^\circ,(-72.4,-74.5)^\circ]$. Even though they could be indicative of unusually dry, sunny regions, there are simply not enough stations nearby to say anything conclusively, as evidenced in Figure \ref{outliers}. Adding to this, the only variable they measured was precipitation ($Q_j=2.2$), which leads us to reject them from our shortlist. \\
 
-The final 70 stations located in the Cundinamarca-Boyac\'a region of Colombia are shown in more detail in Figure \ref{shortlist}b. This figure shows two candidate locations in the northern region (Boyac\'a department), where the quality index $Q_j$ (proportional to the point size) indicates that all four criteria are satisfied. In order to see if those regions are geographically correlated, we grouped together these stations in a simplified manner using a lowest-BIC spherical covariance Gaussian Mixture Model on their coordinates \ref{unif}.
+The final 70 stations located in the Cundinamarca-Boyac\'a region of Colombia are shown in more detail in Figure \ref{shortlist}b. This figure shows two candidate locations in the northern region (Boyac\'a department), where the quality index $Q_j$ (proportional to the point size) indicates that all four criteria are satisfied. In order to see if those regions are geographically correlated, we grouped together these stations in a simplified manner using a lowest-BIC spherical covariance Gaussian Mixture Model on their coordinates (Figure \ref{unif}).
 
 \begin{figure}
 \begin{center}
@@ -394,7 +394,7 @@ The first cluster is located at ($4.77^\circ$N, $74.18^\circ$W) and covers an ra
 
 \subsubsection{Valle de Ubat\'e}
 
-This cluster is located at ($5.30^\circ$N, $73.80^\circ$W) and covers a radius of 11.4 km. This region, located to the NNE of Bogot\'a s a hilly region along a valley at an elevation above 2600 masl. The ratio of number of stations that do not meet our criteria to the stations in this predicted variance region is low (0.3), and almost half of these stations (46\%) have a $Q_j$ value higher than 6. This indicates a potential candidate region, although more  sunshine and humidity data are needed.
+This cluster is located at ($5.30^\circ$N, $73.80^\circ$W) and covers a radius of 11.4 km. This region, located to the NNE of Bogot\'a is a hilly region along a valley at an elevation above 2600 masl. The ratio of number of stations that do not meet our criteria to the stations in this predicted variance region is low (0.3), and almost half of these stations (46\%) have a $Q_j$ value higher than 6. This indicates a potential candidate region, although more  sunshine and humidity data are needed.
 
 
 \subsubsection{Villa de Leyva}
@@ -472,7 +472,7 @@ We compared our results to the work of  \citeasnoun{suen2014} and \citeasnoun{su
 
 In this paper we seek to find plausible locations for a high-mountain mm-wave astronomical observatory in the northern Andes of Colombia, by analizing 30 years of climate data from 2046 weather stations. By low-dimensionally embedding the data, we are able to group together and correlate climate behavior indicative of daytime dry, clear-sky weather conditions at elevations higher than 2000 masl.  A repository with all our code and the full dataset is available at \texttt{https://github.com/saint-germain/ideam}.\\
 
-From our shortlist of 79 stations that met our criteria, we selected 70 stations located  in the Cundinamarca-Boyaca \emph{altiplano} region of Colombia, which is a high-mountain basin with an average altitude of 2600 masl. Weather stations in our shortlist but outside this region are too sparsely located to suggest a candidate region of interest. \\
+From our shortlist of 79 stations that met our criteria, we selected 70 stations located  in the Cundinamarca-Boyac\'a \emph{altiplano} region of Colombia, which is a high-mountain basin with an average altitude of 2600 masl. Weather stations in our shortlist but outside this region are too sparsely located to suggest a candidate region of interest. \\
 
 From those 70 stations we obtained 6 geographically correlated candidate regions of interest: La Sabana, Valle de Ubat\'e, Cant\'on de Tunja, Villa de Leyva, Valle del Sol, and Parque Nacional Natural Pisba. Seasonally, there appear to be two times of the year (Dec-Feb and Jun-Aug) where the weather conditions indicate the best daytime dry, clear-sky conditions. These months could be the best for mm-wave astronomical observations to be carried out.\\
 
