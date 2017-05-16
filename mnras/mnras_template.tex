@@ -35,7 +35,7 @@
 % Don't change these lines unless you know what you are doing
 \usepackage[T1]{fontenc}
 \usepackage{ae,aecompl}
-
+\pdfminorversion=5
 
 %%%%% AUTHORS - PLACE YOUR OWN PACKAGES HERE %%%%%
 
@@ -60,14 +60,14 @@
 
 % Title of the paper, and the short title which is used in the headers.
 % Keep the title short and informative.
-\title[Low Dimensional Embedding of Climate Data for Radio Astronomical Site Testing]{Low Dimensional Embedding of Climate Data for Radio Astronomical Site Testing in the Colombian Andes}
+\title[Embedding of Climate Data for Site Testing]{Low Dimensional Embedding of Climate Data for Radio Astronomical Site Testing in the Colombian Andes}
 
 % The list of authors, and the short list which is used in the headers.
 % If you need two or more lines of authors, add an extra line using \newauthor
-\author[G. Chaparro-Molano et al.]{Germ\'an Chaparro-Molano$^{1}$\thanks{E-mail: gchaparrom@ecci.edu.co}
-Oscar Leonardo Ram\'irez-Su\'arez$^{1}$
-Oscar Restrepo$^{1,2}$\newauthor
-and Alexander Mart\'inez$^{1,3}$\\
+\author[G. Chaparro-Molano et al.]{Germ\'an Chaparro-Molano$^{1}$\thanks{E-mail: gchaparrom@ecci.edu.co},
+Oscar Leonardo Ram\'irez-Su\'arez$^{1}$,
+Oscar Restrepo$^{1,2},$\newauthor
+and Alexander Mart\'inez$^{1,3}$\newauthor \\
 % List of institutions
 $^{1}$Grupo de Simulaci\'on, An\'alisis y Modelado, Vicerrector\'ia de Investigaci\'on, Universidad ECCI, Bogot\'a, Colombia\\
 $^{2}$Radio Astronomy Instrumentation Group, Universidad de Chile, Santiago de Chile, Chile\\
@@ -88,10 +88,9 @@ $^{3}$Instituto de Hidrolog\'ia, Meteorolog\'ia y Estudios Ambientales, Bogot\'a
 
 % Abstract of the paper
 \begin{abstract}
-This is a simple template for authors to write new MNRAS papers.
-The abstract should briefly describe the aims, methods, and main results of the paper.
-It should be a single paragraph not more than 250 words (200 words for Letters).
-No references should appear in the abstract.
+We set out to evaluate the potential of the Colombian Andes for millimeter-wave astronomical observations. Previous studies for astronomical site testing in this region have suggested that nighttime humidity and cloud cover conditions make most sites unsuitable for professional visible-light observations. Millimeter observations can be done during the day, but require that the precipitable water vapor column above a site stays below $\sim$10 mm. Due to a lack of direct radiometric or radiosonde measurements, we present a method for correlating climate data from weather stations to sites with a low precipitable water vapor column. We use unsupervised learning techniques to low-dimensionally embed climate data (precipitation, rain days, relative humidity, and sunshine duration) in order to group together stations with similar long-term climate behavior. The data were taken over a period of 30 years by 2046 weather stations across the Colombian territory. We find 6 regions with unusually dry, clear-sky conditions, ranging in elevations from 2200 to 3800 masl. We evaluate the suitability of each region using a quality index derived from a Bayesian probabilistic analysis of the station type and elevation distributions. Two of these regions show a high probability of having an exceptionally low precipitable water vapor column. We compared our results with global precipitable water vapor maps and find a plausible geographical correlation with regions with low water vapor columns ($\sim15$ mm) at an accuracy of $\sim20$ km. Our methods can be applied to similar datasets taken in other countries as a first step toward astronomical site evaluation.
+
+
 \end{abstract}
 
 % Select between one and six entries from the list of approved keywords.
@@ -107,7 +106,7 @@ atmospheric effects -- methods: data analysis -- methods: statistical -- site te
 
 \section{Introduction}
 
-The development of astronomical instrumentation technology in the 0.2-2 THz range has been rapidly growing in recent years. Another recent surge in interest in telecommunications THz technology has appeared recently due to the saturation of the ``classical radio window'' in telecommunications  \citep{newera}. For this reason, there has been development of atmospheric models for absorption of THz photons \citep{rosenkranz,lababs} and artifact removal models \citep{removal}. Near-equatorial countries face a challenge in using this frequency band for astronomical observations and telecommunications using terabit satellite links  \citep{suen2016} due to the presence of a tropical belt of dense water vapor which efficiently absorbs THz radiation \citep{tropicalbelt}. In northern South America, previous studies of astronomical site testing in the visible range have shown that high nighttime humidity conditions make this region suitable only for educational observatories \citep{pinzon}. However, considering that millimeter/sub-millimeter observations need not be done during the night, unusually dry, clear-daytime-sky, high altitude regions in the northern Andes could be suitable candidates for a world-class millimeter-wave observatory. \\
+The development of astronomical instrumentation technology in the 0.2-2 THz range has been rapidly growing in recent years. Another recent surge in interest in telecommunications THz technology has appeared recently due to the saturation of the ``classical radio window'' in telecommunications  \citep{newera}. For this reason, atmospheric models for absorption of THz photons \citep{rosenkranz,lababs} and artifact removal models \citep{removal} have been developed. Countries near the Equator face a challenge in using this frequency band for astronomical observations and telecommunications using terabit satellite links  \citep{suen2016} due to the presence of a tropical belt of dense water vapor which efficiently absorbs THz radiation \citep{tropicalbelt}. In northern South America, previous studies of astronomical site testing in the visible range have shown that high nighttime humidity conditions make this region suitable only for educational observatories \citep{pinzon}. However, considering that millimeter/sub-millimeter observations need not be done during the night, unusually dry, clear-daytime-sky, high elevation regions in the northern Andes could be suitable candidates for a millimeter-wave observatory. \\
 
 Astronomical observations in the millimeter and sub-millimeter wavelength range require that atmospheric effects affecting absorption at these wavelengths are kept to a minimum \citep{southpole,radford2016,chajpwv}. The main factor contributing to the atmospheric opacity is water vapor, which very efficiently absorbs light in the THz range \citep{pardocerni,pardocerni2,cont350} due to a continuum absorption spectrum formed by collisionally broadened absorption lines of water vapor in this frequency range  \citep{linecont,submmlines,turner2009}. In order to characterize a site according to its atmospheric transparency to THz radiation, it is necessary to retrieve the precipitable water vapor profile either via remote sensing techniques such as microwave radiometry \citep{radiometer,paine2000fourier,southpole2}, satellite measurements \citep{aqua,spacemols,suen2014,spaceradio}, radiosonde humidity measurements \citep{radiosonde,radiosonde2} or indirectly via models of in situ climatological measurements \citep{climatology} or GPS-delay studies \citep{gpsorig,gpsmap}. \\
 
@@ -128,7 +127,7 @@ The meteorological data used in this study were gathered over 30 years (1981-201
 \begin{center}
 \includegraphics[scale=0.5]{totmap.pdf}
 \includegraphics[scale=0.5]{elev.pdf}
-\caption{Distribution of weather stations in the dataset. (a) 1$\sigma$ (solid) and 2$\sigma$ (dashed) countours of a gaussian kernel density estimation of the geographical distribution of weather stations (small green points) from the IDEAM 1981-2010 database. The estimation was done using the Python \texttt{scipy.stats.gaussian\_kde}  function \citep{scipy}. (b) Altitude histogram for all stations in the dataset.}\label{totmap}
+\caption{Distribution of weather stations in the dataset. (a) 1$\sigma$ (solid) and 2$\sigma$ (dashed) countours of a gaussian kernel density estimation of the geographical distribution of weather stations (small green points) from the IDEAM 1981-2010 database. The estimation was done using the Python \texttt{scipy.stats.gaussian\_kde}  function \citep{scipy}. (b) Elevation histogram for all stations in the dataset.}\label{totmap}
 \end{center}
 \end{figure*}
 
@@ -177,7 +176,7 @@ After projecting the data along the components found by the PCA algorithm, we cl
 
 In order to achieve this, we compare the Bayesian Information Criterion \citep{bicref} for a grid of Gaussian clusters ($N_\mathrm{G-C}<20$) and covariance restriction methods for each variable (Figure \ref{bic}). To do this we used the Python \texttt{sklearn.mixture.GMM} module \citep{sklearn}. We selected the models which produced the lowest BIC value, and plotted the GMM-classified, PCA-projected climate data in Figure \ref{lde}. \\
 
-From the climatological clusters in Figures \ref{clusth}-\ref{clustb} we selected clusters that indicate a dry, sunny climate. Table \ref{tabclu} shows the selected number of clusters and covariance method for each variable along with our preferred clusters . From here on, if a station appears in one of our preferred clusters, we will say that it satisfies our criterion for that specific variable.\\
+From the climatological clusters in Figures \ref{clusth}-\ref{clustb} we selected clusters that indicate a dry, sunny climate. Table \ref{tabclu} shows the lowest-BIC number of clusters and covariance method for each variable along with our selected clusters. From here on, if a station appears in one of our preferred clusters, we will say that it satisfies our criterion for that specific variable.\\
 
 \begin{figure*}
 \begin{center}
@@ -207,7 +206,7 @@ From the climatological clusters in Figures \ref{clusth}-\ref{clustb} we selecte
 \begin{center}
 \includegraphics[scale=0.5,trim={0 15 0 18},clip]{gmmh0.pdf}
 \includegraphics[scale=0.5,trim={0 15 0 18},clip]{gmmh1.pdf}
-\caption{Climate clusters (1-2 of 2) as predicted by the lowest-BIC Gaussian Mixture Model for relative humidity. Left column: Average monthly relative humidity and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each relative humidity cluster.}\label{clusth}
+\caption{Climate clusters (1-2 of 2) as predicted by the lowest-BIC Gaussian Mixture Model for relative humidity. Left column: Average monthly relative humidity and standard deviation (error bars) for each climate cluster. Right column: Geographical location and elevation of weather stations in each relative humidity cluster.}\label{clusth}
 \end{center}
 \end{figure*}
 
@@ -217,7 +216,7 @@ From the climatological clusters in Figures \ref{clusth}-\ref{clustb} we selecte
 \includegraphics[scale=0.5,trim={0 17 0 18},clip]{gmml1.pdf}
 \includegraphics[scale=0.5,trim={0 17 0 18},clip]{gmml2.pdf}
 \includegraphics[scale=0.5,trim={0 17 0 18},clip]{gmml3.pdf}
-\caption{Climate clusters (1-4 of 11) as predicted by the lowest-BIC Gaussian Mixture Model for precipitation. Left column: Average monthly precipitation and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each precipitation cluster.}\label{clustl}
+\caption{Climate clusters (1-4 of 11) as predicted by the lowest-BIC Gaussian Mixture Model for precipitation. Left column: Average monthly precipitation and standard deviation (error bars) for each climate cluster. Right column: Geographical location and elevation of weather stations in each precipitation cluster.}\label{clustl}
 \end{center}
 \end{figure*}
 
@@ -227,7 +226,7 @@ From the climatological clusters in Figures \ref{clusth}-\ref{clustb} we selecte
 \includegraphics[scale=0.5,trim={0 17 0 18},clip]{gmml5.pdf}
 \includegraphics[scale=0.5,trim={0 17 0 18},clip]{gmml6.pdf}
 \includegraphics[scale=0.5,trim={0 17 0 18},clip]{gmml7.pdf}
-\caption{Climate clusters  (5-8 of 11) as predicted by the lowest-BIC Gaussian Mixture Model for precipitation. Left column: Average monthly precipitation and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each precipitation cluster. Continuation of Figure \ref{clustl}.}\label{clustl2}
+\caption{Climate clusters  (5-8 of 11) as predicted by the lowest-BIC Gaussian Mixture Model for precipitation. Left column: Average monthly precipitation and standard deviation (error bars) for each climate cluster. Right column: Geographical location and elevation of weather stations in each precipitation cluster. Continuation of Figure \ref{clustl}.}\label{clustl2}
 \end{center}
 \end{figure*}
 
@@ -238,7 +237,7 @@ From the climatological clusters in Figures \ref{clusth}-\ref{clustb} we selecte
 \includegraphics[scale=0.5,trim={0 17 0 18},clip]{gmml8.pdf}
 \includegraphics[scale=0.5,trim={0 17 0 18},clip]{gmml9.pdf}
 \includegraphics[scale=0.5,trim={0 17 0 18},clip]{gmml10.pdf}
-\caption{Climate clusters (9-11 of 11) as predicted by the lowest-BIC Gaussian Mixture Model for precipitation. Left column: Average monthly precipitation and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each precipitation cluster. Continuation of Figure \ref{clustl2}.}\label{clustl3}
+\caption{Climate clusters (9-11 of 11) as predicted by the lowest-BIC Gaussian Mixture Model for precipitation. Left column: Average monthly precipitation and standard deviation (error bars) for each climate cluster. Right column: Geographical location and elevation of weather stations in each precipitation cluster. Continuation of Figure \ref{clustl2}.}\label{clustl3}
 \end{center}
 \end{figure*}
 
@@ -248,7 +247,7 @@ From the climatological clusters in Figures \ref{clusth}-\ref{clustb} we selecte
 \includegraphics[scale=0.5,trim={0 17 0 18},clip]{gmmd1.pdf}
 \includegraphics[scale=0.5,trim={0 17 0 18},clip]{gmmd2.pdf}
 \includegraphics[scale=0.5,trim={0 17 0 18},clip]{gmmd3.pdf}
-\caption{Climate clusters (1-4 of 6) as predicted by the lowest-BIC Gaussian Mixture Model for rain days. Left column: Average monthly rain days and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each rain days cluster.}\label{clustd}
+\caption{Climate clusters (1-4 of 6) as predicted by the lowest-BIC Gaussian Mixture Model for rain days. Left column: Average monthly rain days and standard deviation (error bars) for each climate cluster. Right column: Geographical location and elevation of weather stations in each rain days cluster.}\label{clustd}
 \end{center}
 \end{figure*}
 
@@ -256,7 +255,7 @@ From the climatological clusters in Figures \ref{clusth}-\ref{clustb} we selecte
 \begin{center}
 \includegraphics[scale=0.5,trim={0 17 0 18},clip]{gmmd4.pdf}
 \includegraphics[scale=0.5,trim={0 17 0 18},clip]{gmmd5.pdf}
-\caption{Climate clusters (5-6 of 6) as predicted by the lowest-BIC Gaussian Mixture Model for rain days. Left column: Average monthly rain days and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each rain days cluster. Continuation of Figure \ref{clustd}.}
+\caption{Climate clusters (5-6 of 6) as predicted by the lowest-BIC Gaussian Mixture Model for rain days. Left column: Average monthly rain days and standard deviation (error bars) for each climate cluster. Right column: Geographical location and elevation of weather stations in each rain days cluster. Continuation of Figure \ref{clustd}.}
 \end{center}
 \end{figure*}
 
@@ -266,7 +265,7 @@ From the climatological clusters in Figures \ref{clusth}-\ref{clustb} we selecte
 \includegraphics[scale=0.5,trim={0 17 0 18},clip]{gmmb1.pdf}
 \includegraphics[scale=0.5,trim={0 17 0 18},clip]{gmmb2.pdf}
 \includegraphics[scale=0.5,trim={0 17 0 18},clip]{gmmb3.pdf}
-\caption{Climate clusters (1-4 of 5) as predicted by the lowest-BIC Gaussian Mixture Model for sunshine duration. Left column: Average monthly sunshine duration and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each sunshine duration cluster.}\label{clustb1}
+\caption{Climate clusters (1-4 of 5) as predicted by the lowest-BIC Gaussian Mixture Model for sunshine duration. Left column: Average monthly sunshine duration and standard deviation (error bars) for each climate cluster. Right column: Geographical location and elevation of weather stations in each sunshine duration cluster.}\label{clustb1}
 \end{center}
 \end{figure*}
 
@@ -274,7 +273,7 @@ From the climatological clusters in Figures \ref{clusth}-\ref{clustb} we selecte
 \begin{center}
 
 \includegraphics[scale=0.5,trim={0 17 0 18},clip]{gmmb4.pdf}
-\caption{Climate clusters (5 of 5) as predicted by the lowest-BIC Gaussian Mixture Model for sunshine duration. Left column: Average monthly sunshine duration and standard deviation (error bars) for each climate cluster. Right column: Geographical location and altitude of weather stations in each sunshine duration cluster. Continuation of Figure \ref{clustb1}.}\label{clustb}
+\caption{Climate clusters (5 of 5) as predicted by the lowest-BIC Gaussian Mixture Model for sunshine duration. Left column: Average monthly sunshine duration and standard deviation (error bars) for each climate cluster. Right column: Geographical location and elevation of weather stations in each sunshine duration cluster. Continuation of Figure \ref{clustb1}.}\label{clustb}
 \end{center}
 \end{figure*}
 
@@ -428,7 +427,7 @@ This cluster is located at ($5.61^\circ$N, $73.55^\circ$W) and covers a radius o
 
 \subsubsection{Cant\'on de Tunja}
 
-This cluster is located at ($5.59^\circ$N, $73.24^\circ$W) and covers a radius of 8.29 km (Figure \ref{unif}, red circle). The GMM-predicted variance region west of Tunja is located in the historic Tunja Canton, and even though the ratio of stations not in our shortlist to stations in this predicted region is low (0.31), there are simply not enough humidity and sunshine data to make any strong conclusion about this region. However, the high altitude of some of these stations is tantalizing, which is why we will keep this as a region of interest for our next paper.
+This cluster is located at ($5.59^\circ$N, $73.24^\circ$W) and covers a radius of 8.29 km (Figure \ref{unif}, red circle). The GMM-predicted variance region west of Tunja is located in the historic Tunja Canton, and even though the ratio of stations not in our shortlist to stations in this predicted region is low (0.31), there are simply not enough humidity and sunshine data to make any strong conclusion about this region. However, the high elevation of some of these stations is tantalizing, which is why we will keep this as a region of interest for our next paper.
 
 \subsubsection{Valle del Sol}
 
@@ -447,7 +446,7 @@ We compared our results to the work of  \citet{suen2014} and \citet{suen2016}, w
 
 
 \begin{table*}
-\caption{\label{tabfin}Stations in two regions of interest showing a high-altitude daytime dry, clear-sky climate, organized by location, Bayesian probability quality measure ($Q_j$), distance to cluster center ($r_c$), mean precipitation  ($\bar{R}$), mean rain days ($\bar{D}$), mean relative humidity  ($\bar{H}$), mean sunshine duration  ($\bar{S}$), and altitude ($h$). Detailed table (including all clusters) available at \texttt{https://github.com/saint-germain/ideam} .}
+\caption{\label{tabfin}Stations in two regions of interest showing a high-elevation daytime dry, clear-sky climate, organized by location, Bayesian probability quality measure ($Q_j$), distance to cluster center ($r_c$), mean precipitation  ($\bar{R}$), mean rain days ($\bar{D}$), mean relative humidity  ($\bar{H}$), mean sunshine duration  ($\bar{S}$), and elevation ($h$). Detailed table (including all clusters) available at \texttt{https://github.com/saint-germain/ideam} .}
 
 \begin{tabular}{c|llcc|cccc|c}
 \toprule
@@ -495,13 +494,13 @@ interest &    code   &            &    &    (km) &   (mm/mo) &  (d/mo) &   (\%) 
 
 In this paper we find plausible locations for a high-mountain mm-wave astronomical observatory in the northern Andes of Colombia, by analizing 30 years of climate data from 2046 weather stations. By low-dimensionally embedding the data, we are able to group together and correlate climate behavior indicative of daytime dry, clear-sky weather conditions.  A repository with all our code and the full dataset is available at \texttt{https://github.com/saint-germain/ideam}.\\
 
-From our shortlist of 79 stations at elevations higher than 2000 masl that met our criteria, we selected 70 stations located  in the Cundinamarca-Boyac\'a \emph{altiplano} region of Colombia, which is a high-mountain basin with an average altitude of 2600 masl. Weather stations in our shortlist but outside this region are too sparsely located to suggest a candidate region of interest. \\
+From our shortlist of 79 stations at elevations higher than 2000 masl that met our criteria, we selected 70 stations located  in the Cundinamarca-Boyac\'a \emph{altiplano} region of Colombia, which is a high-mountain basin with an average elevation of 2600 masl. Weather stations in our shortlist but outside this region are too sparsely located to suggest a candidate region of interest. \\
 
 From those 70 stations we obtained 6 geographically correlated candidate regions of interest: La Sabana, Valle de Ubat\'e, Cant\'on de Tunja, Villa de Leyva, Valle del Sol, and Parque Nacional Natural Pisba. Seasonally, there appear to be two times of the year (Dec-Feb and Jun-Aug) where the weather conditions indicate the best daytime dry, clear-sky conditions. These months could be the best for mm-wave astronomical observations to be carried out.\\
 
-We summarize the information about two regions of interest (Valle de Ubat\'e and Valle del Sol) in Table \ref{tabfin}, selected based on a Bayesian probabilistic quality index. Most of the stations in this table are located at elevations above 2600 masl and below 3000 masl. We validated our results using satellite measurements of the upper bound for mean precipitable water vapor \citep{suen2014,suen2016} for those two regions, which is reported to be $\sim15$ mm in $\sim20$ km resolution maps. This means that it is not implausible to find a site with an even lower water vapor column in one of the regions of interest identified here. Some mountains nearby Valle de Ubat\'e and Valle del Sol  have altitudes of up to 3400 masl, and therefore warrant further measurements using radio sondes and radiometers. \\
+We summarize the information about two regions of interest (Valle de Ubat\'e and Valle del Sol) in Table \ref{tabfin}, selected based on a Bayesian probabilistic quality index. Most of the stations in this table are located at elevations above 2600 masl and below 3000 masl. We validated our results using satellite measurements of the upper bound for mean precipitable water vapor \citep{suen2014,suen2016} for those two regions, which is reported to be $\sim15$ mm in $\sim20$ km resolution maps. This means that it is not implausible to find a site with an even lower water vapor column in one of the regions of interest identified here. Some mountains nearby Valle de Ubat\'e and Valle del Sol  have elevations of up to 3400 masl, and therefore warrant further measurements using radio sondes and radiometers. \\
 
-The Villa de Leyva region, despite having a dry, sunny climate, is located at a comparatively low altitude (2200 masl), which means that the precipitable water vapor column above this region is too high ($>20$ mm according to the \citet{suen2016} maps).\\
+The Villa de Leyva region, despite having a dry, sunny climate, is located at a comparatively low elevation (2200 masl), which means that the precipitable water vapor column above this region is too high ($>20$ mm according to the \citet{suen2016} maps).\\
 
 There is an additional issue with the Valle del Sol region. The high industrial activity in this region fills the air with particulate material \citep{sogphd,sogamoso}, which would nullify the suitability of this region. Besides obtaining seasonal high-resolution precipitable water vapor maps, in our next paper we will study the amount of particulate material in the reported regions of interest using MODIS (Aqua and Terra) satellite data.\\
   
