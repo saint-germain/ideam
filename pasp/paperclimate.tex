@@ -29,23 +29,11 @@
 \address{$^3$Instituto de Hidrolog\'ia, Meteorolog\'ia y Estudios Ambientales, Bogot\'a, Colombia}
 \vspace{10pt}
 \begin{indented}
-\item[]December 2016
+\item[]
 \end{indented}
 
 \begin{abstract}
-This document describes the  preparation of an article using \LaTeXe\ and 
-\verb"iopart.cls" (the IOP Publishing \LaTeXe\ preprint class file).
-This class file is designed to help 
-authors produce preprints in a form suitable for submission to any of the
-journals listed in table~\ref{jlab1} on the next page.  You are not obliged to use this class file---we accept
-submissions using all common \LaTeX\ class and style files.  The \verb"iopart.cls"
-class file is supplied merely as a convenience for those authors who find it useful.
-This document gives both general advice that applies whatever class file you use, and specific advice
-that applies if you choose to use \verb"iopart.cls".
-
-We also accept submissions in Word format.  Instructions for Word submissions are available via the `Author Guidelines' link at \verb"http://authors.iop.org".
-
-If you have any queries about this document or any aspect of preparing your article for submission please contact us at the e-mail address given above.
+We set out to evaluate the potential of the Colombian Andes for millimeter-wave astronomical observations. Previous studies for astronomical site testing in this region have suggested that nighttime humidity and cloud cover conditions make most sites unsuitable for professional visible-light observations. Millimeter observations can be done during the day, but require that the precipitable water vapor column above a site stays below $\sim$10 mm. Due to a lack of direct radiometric or radiosonde measurements, we present a method for correlating climate data from weather stations to sites with a low precipitable water vapor column. We use unsupervised learning techniques to low-dimensionally embed climate data (precipitation, rain days, relative humidity, and sunshine duration) in order to group together stations with similar long-term climate behavior. The data were taken over a period of 30 years by 2046 weather stations across the Colombian territory. We find 6 regions with unusually dry, clear-sky conditions, ranging in elevations from 2200 to 3800 masl. We evaluate the suitability of each region using a quality index derived from a Bayesian probabilistic analysis of the station type and elevation distributions. Two of these regions show a high probability of having an exceptionally low precipitable water vapor column. We compared our results with global precipitable water vapor maps and find a plausible geographical correlation with regions with low water vapor columns ($\sim15$ mm) at an accuracy of $\sim20$ km. Our methods can be applied to similar datasets taken in other countries as a first step toward astronomical site evaluation.
 \end{abstract}
 
 % Uncomment for PACS numbers
@@ -53,7 +41,7 @@ If you have any queries about this document or any aspect of preparing your arti
 %
 % Uncomment for keywords
 %\vspace{2pc}
-\noindent{\it Keywords}: Water Vapor, Atmospheric Effects, Site Testing, Radio Astronomy, Satellite Communication, \\
+\noindent{\it Keywords}: atmospheric effects -- methods: data analysis -- methods: statistical -- site testing \\
 %
 % Uncomment for Submitted to journal title message
 \submitto{PASP}
@@ -69,7 +57,7 @@ If you have any queries about this document or any aspect of preparing your arti
 
 \section{Introduction}
 
-The development of astronomical instrumentation technology in the 0.2-2 THz range has been rapidly growing in recent years. Another recent surge in interest in telecommunications THz technology has appeared recently due to the saturation of the ``classical radio window'' in telecommunications  \cite{newera}. For this reason, there has been development of atmospheric models for absorption of THz photons \cite{rosenkranz,lababs} and artifact removal models \cite{removal}. Near-equatorial countries face a challenge in using this frequency band for astronomical observations and telecommunications using terabit satellite links  \cite{suen2016} due to the presence of a tropical belt of dense water vapor which efficiently absorbs THz radiation \cite{tropicalbelt}. In northern South America, previous studies of astronomical site testing in the visible range have shown that high nighttime humidity conditions make this region suitable only for educational observatories \cite{pinzon}. However, considering that millimeter/sub-millimeter observations need not be done during the night, unusually dry, clear-daytime-sky, high altitude regions in the northern Andes could be suitable candidates for a world-class millimeter-wave observatory. \\
+The development of astronomical instrumentation technology in the 0.1-2 THz range has been rapidly growing in recent years. Another recent surge in interest in telecommunications THz technology has appeared recently due to the saturation of the ``classical radio window'' in telecommunications  \cite{newera}. For this reason, atmospheric models for absorption of THz photons \cite{rosenkranz,lababs} and artifact removal models \cite{removal} have been developed. Countries near the Equator face a challenge in using this frequency band for astronomical observations and telecommunications using terabit satellite links  \cite{suen2016} due to the presence of a tropical belt of dense water vapor which efficiently absorbs THz radiation \cite{tropicalbelt}. In northern South America, previous studies of astronomical site testing in the visible range have shown that high nighttime humidity conditions make this region suitable only for educational observatories \cite{pinzon}. However, considering that millimeter/sub-millimeter observations need not be done during the night, unusually dry, clear-daytime-sky, high altitude regions in the northern Andes could be suitable candidates for a world-class millimeter-wave observatory. \\
 
 Astronomical observations in the millimeter and sub-millimeter wavelength range require that atmospheric effects affecting absorption at these wavelengths are kept to a minimum \cite{southpole,radford2016,chajpwv}. The main factor contributing to the atmospheric opacity is water vapor, which very efficiently absorbs light in the THz range \cite{pardocerni,pardocerni2,cont350} due to a continuum absorption spectrum formed by collisionally broadened absorption lines of water vapor in this frequency range  \cite{linecont,submmlines,turner2009}. In order to characterize a site according to its atmospheric transparency to THz radiation, it is necessary to retrieve the precipitable water vapor profile either via remote sensing techniques such as microwave radiometry \cite{radiometer,paine2000fourier,southpole2}, satellite measurements \cite{aqua,spacemols,suen2014,spaceradio}, radiosonde humidity measurements \cite{radiosonde,radiosonde2} or indirectly via models of in situ climatological measurements \cite{climatology} or GPS-delay studies \cite{gpsorig,gpsmap}. \\
 
@@ -84,7 +72,7 @@ This paper is organized as follows. We describe our dataset and the distribution
   
 \section{The Dataset}
 
-The meteorological data used in this study were gathered over 30 years (1981-2010) in 2046 weather stations monitored by the Instituto de Hidrolog\'ia, Meteorolog\'ia y Estudios Ambientales (IDEAM) in Colombia (Figure \ref{totmap}). The  variables that we considered relevant to our work were: Elevation (in meters above sea level, or masl), Precipitation (mm/mo), Rain Days (d/mo),  Relative Humidity (\%), and Sunshine Duration (h/d). The climatological variables are reported as multi-annual monthly data, i.e. each variable is reported monthly from January to December averaged over the 30 year range. For precipitation, each monthly datum corresponds to the cumulative monthly value.  For rain days, each monthly datum corresponds to the number of rain days for that month.  For relative humidity, each monthly datum corresponds to the  average daily value averaged over each month. For sunshine duration, each monthly datum corresponds to the daily value averaged over each month. All stations reported precipitation values, although only 2002 reported rain days, 445 reported relative humidity, and 336 reported sunshine duration. This means that not all stations registered all the meteorological variables relevant to this work. Thus, we classify stations according to which variables they measured (Table \ref{tabstype}).\\
+The meteorological data used in this study were gathered over 30 years (1981-2010) in 2046 weather stations monitored by the Instituto de Hidrolog\'ia, Meteorolog\'ia y Estudios Ambientales (IDEAM) in Colombia (Figure \ref{totmap}). The  variables that we considered relevant to our work were: Elevation (in meters above sea level, or masl), Precipitation (mm/mo), Rain Days (d/mo),  Relative Humidity (\%), and Sunshine Duration (h/d). The climatological variables are reported as multi-annual monthly data, i.e. each variable is reported monthly from January to December averaged over the 30 year range. For precipitation, each monthly datum corresponds to the cumulative monthly value.  For rain days, each monthly datum corresponds to the number of rain days for that month.  For relative humidity, each monthly datum corresponds to the  average daily value averaged over each month. For sunshine duration, each monthly datum corresponds to the daily value averaged over each month. All stations reported precipitation values, although only 2002 reported rain days, 445 reported relative humidity, and 336 reported sunshine duration. This means that not all stations registered all the meteorological variables relevant to this work. Thus, we classify stations according to which variables they measured (Table \ref{tabstype}). The data is public and can be found in the repository for this paper at \texttt{https://github.com/saint-germain/ideam} .\\
 
 \begin{figure}
 \begin{center}
@@ -140,7 +128,7 @@ After projecting the data along the components found by the PCA algorithm, we cl
 
 In order to achieve this, we compare the Bayesian Information Criterion \cite{bicref} for a grid of Gaussian clusters ($N_\mathrm{G-C}<20$) and covariance restriction methods for each variable (Figure \ref{bic}). To do this we used the Python \texttt{sklearn.mixture.GMM} module \cite{sklearn}. We selected the models which produced the lowest BIC value, and plotted the GMM-classified, PCA-projected climate data in Figure \ref{lde}. \\
 
-From the climatological clusters in Figures \ref{clusth}-\ref{clustb} we selected clusters that indicate a dry, sunny climate. Table \ref{tabclu} shows the selected number of clusters and covariance method for each variable along with our preferred clusters . From here on, if a station appears in one of our preferred clusters, we will say that it satisfies our criterion for that specific variable.\\
+From the climatological clusters in Figures \ref{clusth}-\ref{clustb} we selected clusters that indicate a dry, sunny climate. Table \ref{tabclu} shows the lowest-BIC number of clusters and covariance method for each variable along with our selected clusters. From here on, if a station appears in one of our preferred clusters, we will say that it satisfies our criterion for that specific variable.\\
 
 \begin{figure}
 \begin{center}
@@ -251,8 +239,8 @@ From the climatological clusters in Figures \ref{clusth}-\ref{clustb} we selecte
 \begin{indented}
 \item[]\begin{tabular}{@{}lclll}
 \br
-Variable&Symbol&Lowest BIC&Lowest BIC&Selected Clusters\\
-&&No. of Clusters&Cov. Method &\\
+Variable&Symbol& No. of&Covariance&Selected \\
+&&clusters&Method &Clusters\\
 \mr
 Relative Humidity&$H$&2&Full&2\\
 Precipitation &$R$&11&Full&2,3,7,11\\
@@ -289,7 +277,7 @@ We quantify the quality of a given site using the probability for the hypothesis
 \item $h$ is the event that a given station is located at an elevation $h$.
 \end{itemize}
 
-Thus, the probability that a station $j=(0,1,...,N_\mathrm{stations})$ of type $T_i$, meets all four criteria ($C$) and appears in our shortlist ($A$) given that it is located at an elevation $h$, can be written as $P_j=P(C\cap A\cap T_i\ |\ h)$. We cannot  calculate exactly this probability, as it depends on unknown unknowns, i.e. whether a station that did not measure a given variable in reality belongs to one of our preferred climatological clusters for that variable (Table \ref{tabclu}). Thus we will use Bayes' theorem to help estimate this probability using simpler conditional probabilities. First we control for the inhomogeneous distribution of elevations $P(h)$,
+Thus, the probability that a station $j=\{0,1,...,N_\mathrm{shortlist}\}$ of type $T_i$, meets all four criteria ($C$) and appears in our shortlist ($A$) given that it is located at an elevation $h$, can be written as $P_j=P(C\cap A\cap T_i\ |\ h)$. We cannot  calculate exactly this probability, as it depends on unknown unknowns, i.e. on whether a station that did not measure a given variable in reality belongs to one of our preferred climatological clusters for that variable (Table \ref{tabclu}). Thus we will use Bayes' theorem to help estimate this probability using simpler conditional probabilities. First we control for the inhomogeneous distribution of elevations $P(h)$,
 \begin{equation}
 P_j=P(C\cap A\cap T_i\ |\ h)=\frac{P(C\cap A\cap T_i\cap h)}{P(h)}\ .
 \end{equation}
@@ -310,27 +298,24 @@ where
 \end{itemize}
 All of these probabilities except for the last one can be computed directly from the data\footnote{Distributions of elevation-related probabilities were approximated discretely using a bin size estimated from the mean elevation difference between stations when sorted by elevation. }.\\
 
- The probability $P(C\ |\ A\cap T_i)$ has to be estimated indirectly, as we cannot presume to know under which conditions a station can satisfy all our criteria. However, we can rewrite this probability as,
-\begin{eqnarray}
-P(C\ |\ A\cap T_i)&=P(R\cap D\cap H\cap S\ |\ A\cap T_i)\ , \\
-\label{pclanti}
-&=\frac{P(R\cap D\cap H\cap S\cap A\cap T_i)}{P(A\cap T_i)}\ . 
-\end{eqnarray}
+\begin{equation}\label{pclanti}
+P(C\ |\ A\cap T_i)=\frac{P(C\cap A\cap T_i)}{P(A\cap T_i)}\  .
+\end{equation}
 In order to estimate $P(C\ |\ A\cap T_i)$ we assume that the probability of a station meeting our criteria for a given number of variables is independent of the station type. To illustrate this, let us assume that a given station is of type 1, so it only measured precipitation and rain days, i.e.,
 \begin{equation}
 T_1=M_R\cap M_D\cap\neg M_H\cap\neg M_S\ .
 \end{equation}
-If this station of type $T_1$ is in our shortlist ($A$), the $R$ and $D$ criteria are met. Thus,
+If this station of type $T_1$ is in our shortlist ($A$), the $R$ and $D$ criteria are already met, so $A\cap R \cap D=A$. Thus,
 \begin{equation}
-P(R\cap D\cap H\cap S\cap A\cap T_1)=P( H\cap S\ |\ A\cap T_1)\ .
+P(C\cap A\cap T_1)=P( H\cap S\ |\ A\cap T_1)\ .
 \end{equation}
 Substituting this into Eq. (\ref{pclanti}),
 \begin{equation}
 P(C\ |\ A\cap T_1)=\frac{P( H\cap S\ |\ A\cap T_1)}{P(A\cap T_1)}=P(H\cap S\ |\ A\cap T_1) \ .
 \end{equation}
-The last term in the previous expression is unknown, but we can approximate it assuming, as mentioned above, that it is independent of the station type. Therefore, 
+The last term in the previous expression is unknown, but we can approximate it by assuming that it is independent of the station type. Therefore, 
 \begin{equation}
-P(C\ |\ A\cap T_)\simeq P(H\cap S)\ .
+P(C\ |\ A\cap T_1)\simeq P(H\cap S)\ .
 \end{equation}
 The probability on the right hand side of the previous equation can be directly computed from the data, as it only requires counting how many stations meet both $H$ and $S$ criteria. This procedure can be extended to all other station types.\\
 
@@ -404,7 +389,7 @@ This cluster is located at ($5.61^\circ$N, $73.55^\circ$W) and covers a radius o
 
 \subsubsection{Cant\'on de Tunja}
 
-This cluster is located at ($5.59^\circ$N, $73.24^\circ$W) and covers a radius of 8.29 km (Figure \ref{unif}, red circle). The GMM-predicted variance region west of Tunja is located in the historic Tunja Canton, and even though the ratio of stations not in our shortlist to stations in this predicted region is low (0.31), there are simply not enough humidity and sunshine data to make any strong conclusion about this region. However, the high altitude of some of these stations is tantalizing, which is why we will keep this as a region of interest for our next paper.
+This cluster is located at ($5.59^\circ$N, $73.24^\circ$W) and covers a radius of 8.29 km (Figure \ref{unif}, red circle). The GMM-predicted variance region west of Tunja is located in the historic Tunja Canton, and even though the ratio of stations not in our shortlist to stations in this predicted region is low (0.31), there are simply not enough humidity and sunshine data to make any strong conclusion about this region. However, the high elevation of some of these stations is tantalizing, which is why we will keep this as a region of interest for our next paper.
 
 
 
@@ -425,44 +410,45 @@ We compared our results to the work of  \citeasnoun{suen2014} and \citeasnoun{su
 
 
 \begin{table}
-\caption{\label{tabfin}Stations in two regions of interest (RI) showing a high-altitude daytime dry, clear-sky climate, organized by location, Bayesian probability quality measure ($Q_j$), distance to cluster center ($r_c$), mean precipitation  ($\bar{R}$), mean rain days ($\bar{D}$), mean relative humidity  ($\bar{H}$), mean sunshine duration  ($\bar{S}$), and altitude ($h$). Detailed table (including all clusters) available at \texttt{https://github.com/saint-germain/ideam} \\}
+\caption{\label{tabfin}Stations in two regions of interest showing a high-elevation daytime dry, clear-sky climate, organized by location, Bayesian probability quality measure ($Q_j$), distance to cluster center ($r_c$), mean precipitation  ($\bar{R}$), mean rain days ($\bar{D}$), mean relative humidity  ($\bar{H}$), mean sunshine duration  ($\bar{S}$), and elevation ($h$). Detailed table (including all clusters) available at \texttt{https://github.com/saint-germain/ideam} .}
 
-\begin{tabular}{c|lcc|cccc|c}
+\begin{tabular}{cllccccccc}
 \toprule
-RI&                   Municipality  &  $Q_j$ &  $r_c$  &   $\bar{R}$ &   $\bar{D}$  &   $\bar{H}$  &  $\bar{S}$ &  $h$ \\
- &                   &    &    (km) &   (mm/mo) &  (d/mo) &   (\%) &   (h/d) &  (masl) \\
+Region of&   Station&                Municipality  &  $Q_j$ &  $r_c$  &   $\bar{R}$ &   $\bar{D}$  &   $\bar{H}$  &  $\bar{S}$ &  $h$ \\
+interest &    code   &            &    &    (km) &   (mm/mo) &  (d/mo) &   (\%) &   (h/d) &  (masl) \\
 \midrule
-            &                       Nemocon &            2.2 &                        28 &                        66 &                   ND &                        ND &                          ND &    2600 \\
-            &                          Susa &            4.6 &                        18 &                        83 &                   12 &                        ND &                          ND &    2600 \\
-            &                      Cucunuba &            4.7 &                         6 &                        57 &                    9 &                        ND &                          ND &    2620 \\
-            &                     Sutatausa &            4.8 &                         6 &                        57 &                   10 &                        ND &                          ND &    2700 \\
-            &                      Guacheta &            4.9 &                        16 &                        73 &                   10 &                        ND &                          ND &    2690 \\
-            &                   Lenguazaque &            5.2 &                        10 &                        63 &                   12 &                        ND &                          ND &    2650 \\
-            &                      Simijaca &            5.2 &                        23 &                        67 &                   11 &                        ND &                          ND &    2572 \\
-            &                        Suesca &            5.6 &                        20 &                        59 &                   10 &                        ND &                          ND &    2575 \\
-                      \rotatebox{90}{\rlap{Valle de Ubat\'e}}
-            &              Carmen de Carupa &            6.1 &                        12 &                        54 &                   12 &                        ND &                          ND &    2970 \\
-            &                      Cucunuba &            6.1 &                         7 &                        51 &                    5 &                        ND &                          ND &    2562 \\
-            &                   Lenguazaque &            6.1 &                         9 &                        57 &                   10 &                        ND &                          ND &    2585 \\
-            &                          Susa &            6.1 &                        11 &                        60 &                    8 &                        ND &                          ND &    3130 \\
-            &   Ubate &            6.1 &                         4 &                        62 &                   13 &                        ND &                          ND &    2555 \\
-            &   Ubate &            6.1 &                         5 &                        62 &                   12 &                        ND &                          ND &    2610 \\
-            &                       Nemocon &            7.6 &                        20 &                        52 &                   10 &                        77 &                           4 &    2580 \\
-                \midrule
-            &                       Duitama &            4.0 &                        17 &                        69 &                   10 &                        ND &                          ND &    2590 \\
-            &                         Paipa &            4.0 &                        12 &                        74 &                    9 &                        ND &                          ND &    2900 \\
-            &                         Nobsa &            5.0 &                         6 &                        66 &                   10 &                        ND &                          ND &    2500 \\
-            &         Santa Rosa &            5.0 &                        10 &                        70 &                    9 &                        ND &                          ND &    2500 \\
-            &                      Sogamoso &            5.0 &                         4 &                        59 &                   10 &                        ND &                          ND &    2500 \\
-            &                      Sogamoso &            5.0 &                         7 &                        60 &                   12 &                        ND &                          ND &    2500 \\
-            &                      Tibasosa &            5.0 &                         5 &                        62 &                    7 &                        ND &                          ND &    2500 \\
-                                              \rotatebox{90}{\rlap{~Valle del Sol}}
-            &                           Iza &            5.6 &                        12 &                        52 &                    9 &                        ND &                          ND &    2470 \\
-            &                    Firavitoba &            6.1 &                         6 &                        57 &                    9 &                        ND &                          ND &    2486 \\
-            &                        Mongui &            6.1 &                        12 &                        65 &                    9 &                        ND &                          ND &    2970 \\
-            &                      Sogamoso &            6.1 &                        11 &                        65 &                   10 &                        ND &                          ND &    3225 \\
-            &                      Sogamoso &            6.7 &                         5 &                        61 &                   12 &                        75 &                           5 &    2500 \\
-            &                         Nobsa &           10.0 &                        10 &                        68 &                   13 &                        74 &                           4 &    2530 \\
+  &   21201410 &           Nemocon &  2.2 &            28 &       66 &       ND &    ND &  ND &    2600 \\
+  &   24011060 &              Susa &  4.6 &            18 &       83 &       12 &    ND &  ND &    2600 \\
+  &   24010140 &          Cucunuba &  4.7 &             6 &       57 &        9 &    ND &  ND &    2620 \\
+  &   24015210 &         Sutatausa &  4.8 &             6 &       57 &       10 &    ND &  ND &    2700 \\
+  &   24010170 &          Guacheta &  4.9 &            16 &       73 &       10 &    ND &  ND &    2690 \\
+  &   24010070 &       Lenguazaque &  5.2 &            10 &       63 &       12 &    ND &  ND &    2650 \\
+  &   24015130 &          Simijaca &  5.2 &            23 &       67 &       11 &    ND &  ND &    2572 \\
+  &   21201620 &            Suesca &  5.6 &            20 &       59 &       10 &    ND &  ND &    2575 \\
+                                       \rotatebox{90}{\rlap{Valle de Ubat\'e}}
+  &   24010610 &  Carmen de Carupa &  6.1 &            12 &       54 &       12 &    ND &  ND &    2970 \\
+  &   24011080 &          Cucunuba &  6.1 &             7 &       51 &        5 &    ND &  ND &    2562 \\
+  &   24010280 &       Lenguazaque &  6.1 &             9 &       57 &       10 &    ND &  ND &    2585 \\
+  &   24010440 &              Susa &  6.1 &            11 &       60 &        8 &    ND &  ND &    3130 \\
+  &   24011090 &             Ubate &  6.1 &             4 &       62 &       13 &    ND &  ND &    2555 \\
+  &   24015110 &             Ubate &  6.1 &             5 &       62 &       12 &    ND &  ND &    2610 \\
+  &   21205400 &           Nemocon &  7.6 &            20 &       52 &       10 &    77 &   4 &    2580 \\
+      \midrule
+  &   24030760 &           Duitama &  4.0 &            17 &       69 &       10 &    ND &  ND &    2590 \\
+  &   24030510 &             Paipa &  4.0 &            12 &       74 &        9 &    ND &  ND &    2900 \\
+  &   24030790 &             Nobsa &  5.0 &             6 &       66 &       10 &    ND &  ND &    2500 \\
+  &   24031040 &        Santa Rosa &  5.0 &            10 &       70 &        9 &    ND &  ND &    2500 \\
+  &   24035140 &          Sogamoso &  5.0 &             4 &       59 &       10 &    ND &  ND &    2500 \\
+  &   24030940 &          Sogamoso &  5.0 &             7 &       60 &       12 &    ND &  ND &    2500 \\
+  &   24030410 &          Tibasosa &  5.0 &             5 &       62 &        7 &    ND &  ND &    2500 \\
+                                      \rotatebox{90}{\rlap{~Valle del Sol}}
+  &   24030410 &               Iza &  5.6 &            12 &       52 &        9 &    ND &  ND &    2470 \\
+  &   24030540 &        Firavitoba &  6.1 &             6 &       57 &        9 &    ND &  ND &    2486 \\
+  &   24030190 &            Mongui &  6.1 &            12 &       65 &        9 &    ND &  ND &    2970 \\
+  &   24030760 &          Sogamoso &  6.1 &            11 &       65 &       10 &    ND &  ND &    3225 \\
+  &   24035340 &          Sogamoso &  6.7 &             5 &       61 &       12 &    75 &   5 &    2500 \\
+  &   24035150 &             Nobsa & 10.0 &            10 &       68 &       13 &    74 &   4 &    2530 \\
+
 
 
 
@@ -472,15 +458,15 @@ RI&                   Municipality  &  $Q_j$ &  $r_c$  &   $\bar{R}$ &   $\bar{D
 \end{table}
 
 
-In this paper we seek to find plausible locations for a high-mountain mm-wave astronomical observatory in the northern Andes of Colombia, by analizing 30 years of climate data from 2046 weather stations. By low-dimensionally embedding the data, we are able to group together and correlate climate behavior indicative of daytime dry, clear-sky weather conditions at elevations higher than 2000 masl.  A repository with all our code and the full dataset is available at \texttt{https://github.com/saint-germain/ideam}.\\
+In this paper we find plausible locations for a high-mountain mm-wave astronomical observatory in the northern Andes of Colombia, by analizing 30 years of climate data from 2046 weather stations. By low-dimensionally embedding the data, we are able to group together and correlate climate behavior indicative of daytime dry, clear-sky weather conditions.  A repository with all our code and the full dataset is available at \texttt{https://github.com/saint-germain/ideam}.\\
 
-From our shortlist of 79 stations that met our criteria, we selected 70 stations located  in the Cundinamarca-Boyac\'a \emph{altiplano} region of Colombia, which is a high-mountain basin with an average altitude of 2600 masl. Weather stations in our shortlist but outside this region are too sparsely located to suggest a candidate region of interest. \\
+From our shortlist of 79 stations at elevations higher than 2000 masl that met our criteria, we selected 70 stations located  in the Cundinamarca-Boyac\'a \emph{altiplano} region of Colombia, which is a high-mountain basin with an average elevation of 2600 masl. Weather stations in our shortlist but outside this region are too sparsely located to suggest a candidate region of interest. \\
 
 From those 70 stations we obtained 6 geographically correlated candidate regions of interest: La Sabana, Valle de Ubat\'e, Cant\'on de Tunja, Villa de Leyva, Valle del Sol, and Parque Nacional Natural Pisba. Seasonally, there appear to be two times of the year (Dec-Feb and Jun-Aug) where the weather conditions indicate the best daytime dry, clear-sky conditions. These months could be the best for mm-wave astronomical observations to be carried out.\\
 
-We summarize the information about two regions of interest (Valle de Ubat\'e and Valle del Sol) in Table \ref{tabfin}, selected based on a Bayesian probabilistic quality index. Most of the stations in this table are located at elevations above 2600 masl and below 3000 masl. We validated our results using satellite measurements of the upper bound for precipitable water vapor \cite{suen2014,suen2016} for those two regions, whis is reported to be $\sim15$ mm. This means that it is not implausible to find a site with an even lower water vapor column in one of the regions of interest identified here. Some mountains nearby Valle de Ubat\'e and Valle del Sol  have altitudes of up to 3400 masl, and therefore warrant further measurements using radio sondes and radiometers. \\
+We summarize the information about two regions of interest (Valle de Ubat\'e and Valle del Sol) in Table \ref{tabfin}, selected based on a Bayesian probabilistic quality index. Most of the stations in this table are located at elevations above 2600 masl and below 3000 masl. We validated our results using satellite measurements of the upper bound for mean precipitable water vapor \cite{suen2014,suen2016} for those two regions, which is reported to be $\sim15$ mm in $\sim20$ km resolution maps. This means that it is not implausible to find a site with an even lower water vapor column in one of the regions of interest identified here. Some mountains nearby Valle de Ubat\'e and Valle del Sol  have elevations of up to 3400 masl, and therefore warrant further measurements using radio sondes and radiometers. \\
 
-The Villa de Leyva region, despite having a dry, sunny climate, is located at a comparatively low altitude (2200 masl), which means that the precipitable water vapor column above this region is too high ($>20$ mm according to the \citeasnoun{suen2016} maps).\\
+The Villa de Leyva region, despite having a dry, sunny climate, is located at a comparatively low elevation (2200 masl), which means that the precipitable water vapor column above this region is too high ($>20$ mm according to the \cite{suen2016} maps).\\
 
 There is an additional issue with the Valle del Sol region. The high industrial activity in this region fills the air with particulate material \cite{sogphd,sogamoso}, which would nullify the suitability of this region. Besides obtaining seasonal high-resolution precipitable water vapor maps, in our next paper we will study the amount of particulate material in the reported regions of interest using MODIS (Aqua and Terra) satellite data.\\
   
