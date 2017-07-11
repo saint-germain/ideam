@@ -1,0 +1,35 @@
+COMMENTS TO THE AUTHOR(S)
+
+1- In the abstract, the statement “...but require that the PWV column above a site stays below ~10 mm.” needs to be referenced or justified. This is not again mentioned in the introduction and it is an important condition to justify this study. For example, a plot showing sky transparency across mm wavelengths with 10 mm of PWV using average Colombian atmospheric conditions would support this.
+
+2- In the abstract, “... with regions with low water vapor columns (~15 mm)...” whereas the previous requirement is 10 mm. Check consistency. Is 15 mm still considered low water vapor column for the mm wavelength range that wants to be studied?
+
+3- From the question in 2-, indicate which mm wavelength range are possible to observe under 10 mm (or 15 mm) of PWV to consider for a future radio telescope in Colombia.
+
+OUR RESPONSE (1-3): We now include an plot showing (modelled) atmospheric opacities for different pwv values at simulated sites with typical (Colombian) andean weather conditions. From this plot we estimate the potential frequency bands for observations.
+
+4- In section 4, the limiting criterion for stations below 2000 masl is used after the analysis and discard a significant amount of stations and regions. The analysis could be simplified if that criterion was used from the beginning. Include a discussion about the need of the discarded stations and using this method without them in the paper.
+
+OUR RESPONSE: We rewrote the beginning of this section to explain that we considered all stations in the dataset in order to estimate how likely it is that a station with an incomplete measurement set is in a potential region of interest and deserves consideration in our later analysis. We also explained that large biases arise when we disregard the full dataset information. We moved the elevation selection to the following subsection (4.2 "Final selection"), which I think makes more logical sense.
+
+5- In section 4.2, “...stations less than 5 km away...”. Also add the elevation difference criteria to assume conditions no less than 15% difference. Mentioning a reference for this 15% assumption would be useful.
+
+OUR RESPONSE: We rephrased the entire paragraph in order to show that the 15% difference comes from an inspection of the dataset.
+
+6- In section 5, “... with an unusually dry, sunny weather.” and in section 5.1, “... stations indicating dry, sunny climate...”. What is dry in this case? According to Figure 5-2, dry means 76% humidity for the driest cluster? Probably dry is not the right word for 76% humidity... perhaps clear sky?
+
+OUR RESPONSE: We changed all these occurrences to "clear-sky, potentially dry", and added a sentence explaining that it is not unusual in some of these regions for the RH to drop to 50% and below.
+
+7- It is not clear for this method that a) it could be extended to other regions since it needs a significant amount of stations in a bounded area, b) the analysis could be simplified if the altitude limiting criteria is used priorly, and c) satellite data offers a reasonable first approximation of PWV conditions. Include a discussion of these issues.
+
+OUR RESPONSE: a) We added a sentence claryfying that the data for other countries needs to have a similar geographical-temporal coverage. b) This was addressed in the revision suggested in item 4-. c) We rewrote Section 5.2 "Comparison to other works" to account for this. Unfortunately, the global pwv maps (Suen 2012, 2014) are not open-source, and I cannot include them in the manuscript. This is part of the reason we want to produce our own, seasonal, higher-res local pwv maps for the region of interest.
+
+8- A correlated analysis with recent satellite data would provide an interesting long-term analysis and a more continuous information about conditions at those sites, as suggested by the authors to include in an upcoming paper.
+
+9- It is interesting that the authors conclude that Valle de Ubate and Valle del Sol with elevations up to 3400 masl, higher than all other regions "warrant further measurements using sondes and radiometers” since going higher in elevation PWV necessarily reduces. The method provides 6 regions of interest at different altitudes, but the previous conclusion seems to be based again on the authors altitude rejection criteria rather than the method. Clarify that the method provides a first order selection of candidate sites.
+
+OUR RESPONSE (8-9): See our response to item 7-c. We also modified our final remarks accordingly.
+
+10- There are few grammatical errors across the document that needs to be revised.
+
+OUR RESPONSE: We revised some of the phrasing across the manuscript.
