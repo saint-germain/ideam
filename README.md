@@ -1,3 +1,3 @@
 # ideam
 
-  The MODIS aerosol algorithm, products, and validation (1,395 Times Cited) DOI: 10.1175/JAS3385.1 
+Repository for "Low Dimensional Embedding of Climate Data for Radio Astronomical Site Testing" paper, G. Chaparro Molano, O. L. Ramírez Suárez, O. Restrepo, A. Martínez.
